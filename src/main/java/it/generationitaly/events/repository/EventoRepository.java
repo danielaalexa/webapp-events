@@ -10,4 +10,6 @@ public interface EventoRepository extends JpaRepository<Evento, Integer> {
 	Evento findByNome(String nome);
 
 	List<Evento> findByCitta(String citta);
+	
+	List<Evento> findByGratuito(Boolean gratuito);
 }
