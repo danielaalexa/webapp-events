@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("username", user.getUsername());
 			response.sendRedirect("home.jsp");
 		} else {
-			response.sendRedirect("login-signup.jsp?credenzialiErrate");
+			response.sendRedirect("login.jsp?credenzialiErrate");
 		}
 
 	}

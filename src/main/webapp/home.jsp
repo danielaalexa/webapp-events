@@ -7,7 +7,7 @@
 <title>Homepage/NomeSito</title>
 </head>
 <body>
-<a href="login.jsp">SIGNUP</a>
+<a href="login.jsp">LOGIN</a>
 <a href="signup.jsp">SIGNUP</a>
 </body>
 </html>
