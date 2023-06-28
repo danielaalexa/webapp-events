@@ -28,7 +28,7 @@ public class User {
 	@Column(name = "cognome", length = 45, nullable = false)
 	private String cognome;
 
-	@Column(name = "username", length = 45, nullable = false)
+	@Column(name = "username", unique = true, length = 45, nullable = false)
 	private String username;
 
 	@Column(name = "password", length = 45, nullable = false)
@@ -38,7 +38,7 @@ public class User {
 	private String email;
 
 	@Column(name = "sesso", length = 1, nullable = false)
-	private char sesso;
+	private String sesso;
 
 	@Temporal(TemporalType.DATE)
 	@Column(name = "data_nascita", nullable = false)
@@ -48,7 +48,6 @@ public class User {
 	@JoinColumn(name = "metodo_pagamento_id", nullable = true)
 	private MetodoPagamento metodoPagamento;
 
-	
 	public int getId() {
 		return id;
 	}
@@ -97,11 +96,11 @@ public class User {
 		this.email = email;
 	}
 
-	public char getSesso() {
+	public String getSesso() {
 		return sesso;
 	}
 
-	public void setSesso(char sesso) {
+	public void setSesso(String sesso) {
 		this.sesso = sesso;
 	}
 
