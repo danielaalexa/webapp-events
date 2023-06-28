@@ -17,12 +17,12 @@ public class LogoutServlet extends HttpServlet {
 			throws ServletException, IOException {
 		
 		if (request.getSession().getAttribute("username") == null) {
-			response.sendRedirect("login.jsp");
+			response.sendRedirect("login-signup.jsp");
 			return;
 		}
 		
 		request.getSession().invalidate();
-		response.sendRedirect("login.jsp");
+		response.sendRedirect("login-signup.jsp");
 	}
 
 }
