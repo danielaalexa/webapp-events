@@ -1,6 +1,7 @@
 package it.generationitaly.events.repository.impl;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import it.generationitaly.events.entity.Evento;
@@ -13,6 +14,26 @@ import jakarta.persistence.TypedQuery;
 public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> implements EventoRepository {
 
 	@Override
+	public List<Evento> findByCitta(String citta) {
+		List<Evento> eventi = null;
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			eventi = em.createQuery("select e from Evento e where e.citta=:citta", Evento.class)
+					.setParameter("citta", citta).getResultList();
+		} catch (PersistenceException e) {
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return eventi;
+	}
+
 	public List<Evento> findByTagId(int id) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -21,7 +42,8 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			eventi = em.createQuery("select e from Evento e join fetch p.tagEvento where p.tagEvento = :id", Evento.class)
+			eventi = em
+					.createQuery("select e from Evento e join fetch p.tagEvento where p.tagEvento = :id", Evento.class)
 					.setParameter("id", id).getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
