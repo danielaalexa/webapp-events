@@ -48,23 +48,7 @@ public class User {
 	@JoinColumn(name = "metodo_pagamento_id", nullable = true)
 	private MetodoPagamento metodoPagamento;
 
-	public User() {
-		super();
-	}
-
-	public User(int id, String nome, String cognome, String username, String password, String email, char sesso,
-			Date dataNascita) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.cognome = cognome;
-		this.username = username;
-		this.password = password;
-		this.email = email;
-		this.sesso = sesso;
-		this.dataNascita = dataNascita;
-	}
-
+	
 	public int getId() {
 		return id;
 	}

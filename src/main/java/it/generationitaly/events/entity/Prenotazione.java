@@ -29,13 +29,7 @@ public class Prenotazione {
     @JoinColumn(name = "evento_id", nullable = false)
     private Evento evento;
     
-	public Prenotazione(int id, int quantita, User user, Evento evento) {
-		super();
-		this.id = id;
-		this.quantita = quantita;
-		this.user = user;
-		this.evento = evento;
-	}
+	
 
 	public int getId() {
 		return id;

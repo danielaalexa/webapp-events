@@ -57,23 +57,9 @@ public class Evento {
 	@JoinColumn(name = "tag_evento_id", nullable = false)
 	private TagEvento tagEvento;
 
-	@OneToMany(mappedBy = "regista")
+	@OneToMany(mappedBy = "evento")
 	private List<Prenotazione> prenotazione = new ArrayList<Prenotazione>();
 
-	public Evento(int id, String nome, Date data, String citta, String descrizione, String descrizioneCard,
-			String indirizzo, String immagine, boolean gratuito, double prezzo) {
-		super();
-		this.id = id;
-		this.nome = nome;
-		this.data = data;
-		this.citta = citta;
-		this.descrizione = descrizione;
-		this.descrizioneCard = descrizioneCard;
-		this.indirizzo = indirizzo;
-		this.immagine = immagine;
-		this.gratuito = gratuito;
-		this.prezzo = prezzo;
-	}
 
 	public int getId() {
 		return id;
