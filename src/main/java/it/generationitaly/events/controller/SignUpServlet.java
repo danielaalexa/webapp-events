@@ -28,7 +28,7 @@ public class SignUpServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		int id = Integer.parseInt(request.getParameter("id"));
+		
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
 		String username = request.getParameter("username");
@@ -38,6 +38,7 @@ public class SignUpServlet extends HttpServlet {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
 		String dataNascitaAsString = request.getParameter("dataNascita");
+		System.out.println(dataNascitaAsString);
 		Date dataNascita = null;
 		try {
 			dataNascita = formatter.parse(dataNascitaAsString);
@@ -45,6 +46,7 @@ public class SignUpServlet extends HttpServlet {
 			e.getMessage();
 		}
         int metodoPagamentoId = Integer.parseInt(request.getParameter("metodoPagamentoId"));
+        System.out.println(metodoPagamentoId);
 		MetodoPagamento metodoPagamento = metodoPagamentoRepository.findById(metodoPagamentoId);
 
 		User user = new User();

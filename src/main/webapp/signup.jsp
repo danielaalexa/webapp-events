@@ -7,7 +7,7 @@
 <title>SIGNUP</title>
 </head>
 <body>
-<form method="post" action="/sign-up">
+<form method="post" action="sign-up">
     <label for="signupNome">Nome</label>
 	    <input type="text" id="signupNome" name="nome">
     <label for="signupCognome">Cognome</label>
