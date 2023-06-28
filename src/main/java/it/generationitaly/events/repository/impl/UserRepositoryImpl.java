@@ -17,7 +17,7 @@ public class UserRepositoryImpl extends JpaRepositoryImpl<User, Integer> impleme
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			user = em.createQuery("secletc u from User u where u.username=:username ", User.class).setParameter("username", username).getSingleResult();
+			user = em.createQuery("select u from User u where u.username=:username ", User.class).setParameter("username", username).getSingleResult();
 			tx.commit();
 		} catch (PersistenceException e) {
 			System.err.println(e.getMessage());
