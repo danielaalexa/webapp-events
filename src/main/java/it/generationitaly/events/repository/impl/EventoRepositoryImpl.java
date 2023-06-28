@@ -1,5 +1,7 @@
 package it.generationitaly.events.repository.impl;
 
+import java.util.ArrayList;
+
 import java.util.List;
 
 import it.generationitaly.events.entity.Evento;
@@ -19,7 +21,8 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			eventi = em.createQuery("select e from Evento e where e.citta=:citta", Evento.class).setParameter("citta", citta).getResultList();		
+			eventi = em.createQuery("select e from Evento e where e.citta=:citta", Evento.class)
+					.setParameter("citta", citta).getResultList();
 		} catch (PersistenceException e) {
 			System.err.println(e.getMessage());
 		} finally {
@@ -30,5 +33,29 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 		return eventi;
 	}
 
-	
+	public List<Evento> findByTagId(int id) {
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		List<Evento> eventi = new ArrayList<Evento>();
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			eventi = em
+					.createQuery("select e from Evento e join fetch p.tagEvento where p.tagEvento = :id", Evento.class)
+					.setParameter("id", id).getResultList();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null && tx.isActive())
+				tx.rollback();
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return eventi;
+
+	}
+
 }
