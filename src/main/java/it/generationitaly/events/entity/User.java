@@ -1,5 +1,145 @@
 package it.generationitaly.events.entity;
 
+import java.sql.Date;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
+import jakarta.persistence.Temporal;
+import jakarta.persistence.TemporalType;
+
+@Entity
+@Table(name = "user")
 public class User {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id", nullable = false)
+	private int id;
+
+	@Column(name = "nome", length = 45, nullable = false)
+	private String nome;
+
+	@Column(name = "cognome", length = 45, nullable = false)
+	private String cognome;
+
+	@Column(name = "username", length = 45, nullable = false)
+	private String username;
+
+	@Column(name = "password", length = 45, nullable = false)
+	private String password;
+
+	@Column(name = "email", length = 45, nullable = false)
+	private String email;
+
+	@Column(name = "sesso", length = 1, nullable = false)
+	private char sesso;
+
+	@Temporal(TemporalType.DATE)
+	@Column(name = "data_nascita", nullable = false)
+	private Date dataNascita;
+
+	@OneToOne
+	@JoinColumn(name = "metodo_pagamento_id", nullable = true)
+	private MetodoPagamento metodoPagamento;
+
+	public User() {
+		super();
+	}
+
+	public User(int id, String nome, String cognome, String username, String password, String email, char sesso,
+			Date dataNascita) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.cognome = cognome;
+		this.username = username;
+		this.password = password;
+		this.email = email;
+		this.sesso = sesso;
+		this.dataNascita = dataNascita;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public String getCognome() {
+		return cognome;
+	}
+
+	public void setCognome(String cognome) {
+		this.cognome = cognome;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public char getSesso() {
+		return sesso;
+	}
+
+	public void setSesso(char sesso) {
+		this.sesso = sesso;
+	}
+
+	public Date getDataNascita() {
+		return dataNascita;
+	}
+
+	public void setDataNascita(Date dataNascita) {
+		this.dataNascita = dataNascita;
+	}
+
+	public MetodoPagamento getMetodoPagamento() {
+		return metodoPagamento;
+	}
+
+	public void setMetodoPagamento(MetodoPagamento metodoPagamento) {
+		this.metodoPagamento = metodoPagamento;
+	}
+
+	@Override
+	public String toString() {
+		return "User [id=" + id + ", nome=" + nome + ", cognome=" + cognome + ", username=" + username + ", password="
+				+ password + ", email=" + email + ", sesso=" + sesso + ", dataNascita=" + dataNascita + "]";
+	}
 
 }
