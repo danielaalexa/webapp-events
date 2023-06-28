@@ -8,6 +8,7 @@ import it.generationitaly.events.repository.EventoRepository;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
 import jakarta.persistence.PersistenceException;
+import jakarta.persistence.TypedQuery;
 
 public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> implements EventoRepository {
 
@@ -36,4 +37,29 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 
 	}
 
+	@Override
+	public Evento findByNome(String nome) {
+		Evento evento = null;
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento u where e.nome = :nome",
+					Evento.class);
+			query.setParameter("evento", evento);
+			evento = query.getSingleResult();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null && tx.isActive())
+				tx.rollback();
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return evento;
+	}
 }
