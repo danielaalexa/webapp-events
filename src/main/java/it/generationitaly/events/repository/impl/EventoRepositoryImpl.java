@@ -1,6 +1,7 @@
 package it.generationitaly.events.repository.impl;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import it.generationitaly.events.entity.Evento;
@@ -59,7 +60,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 	}
 
 	@Override
-	public List<Evento> findByNome(String nome) {
+	public List<Evento> findByNome(String searchterm) {
 		List<Evento> eventi = new ArrayList<Evento>();
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -68,7 +69,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			tx = em.getTransaction();
 			tx.begin();
 			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento u where e.nome = :nome", Evento.class);
-			query.setParameter("nome", nome);
+			query.setParameter("nome", "%" + searchterm + "%");
 			eventi = query.getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
@@ -91,6 +92,41 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			em = emf.createEntityManager();
 			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.gratuito = :gratuito", Evento.class)
 					.setParameter("gratuito", gratuito).getResultList();
+		} catch (PersistenceException e) {
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null)
+				em.close();
+		}
+		return eventi;
+	}
+
+	@Override
+	public List<Evento> findByDataBetween(Date date1, Date date2) {
+		EntityManager em = null;
+		List<Evento> eventi = null;
+		try {
+			em = emf.createEntityManager();
+			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.data between (:date1 and :date2) ", Evento.class)
+					.setParameter("date1", date1).setParameter("date2", date2).getResultList();
+		} catch (PersistenceException e) {
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null)
+				em.close();
+		}
+		return eventi;
+
+	}
+
+	@Override
+	public List<Evento> findByData(Date date) {
+		EntityManager em = null;
+		List<Evento> eventi = null;
+		try {
+			em = emf.createEntityManager();
+			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.data=:date", Evento.class)
+					.setParameter("date", date).getResultList();
 		} catch (PersistenceException e) {
 			System.err.println(e.getMessage());
 		} finally {
