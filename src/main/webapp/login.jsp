@@ -31,7 +31,7 @@
 	<form method="post" action="loginServlet">
 	<div  class="form-outline mb-4">
 	<label class="form-label" for="loginUsername">Username</label>
-	    <input class="form-control" type="text" id="loginUsername" name="username" placeholder="name@example.com">
+	    <input class="form-control" type="text" id="loginUsername" name="username">
 	</div>
 	<div  class="form-outline mb-4">
 	<label class="form-label"for="loginPassword">Password</label>
