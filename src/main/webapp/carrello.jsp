@@ -29,7 +29,11 @@
                 <label>Biglietto di ingresso generale</label> 
                 <input type="number">
                 <div class="d-flex justify-content-between align-items-center">
-                  <button class="conferma">Conferma</button>   
+                  <button class="conferma">Conferma</button>
+                  <!-- Cancellare un evento?? -->
+                   <input type="hidden" name="eventoId" value="<%= prenotazione.getEvento().getId() %>">
+                   <button type="submit" class="remove-button">Remove</button>
+                   <!-- Cancellare un evento?? -->
                 </div>
 			    </div>
 			    <% } 
