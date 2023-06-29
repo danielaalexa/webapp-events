@@ -31,7 +31,8 @@
 <title>Homepage/NomeSito</title>
 </head>
 <body>
-
+<a href="login.jsp">login</a>
+<a href="signup.jsp">suignup</a>
 
 
     <main>
