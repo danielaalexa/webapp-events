@@ -32,6 +32,7 @@
 <body>
 	<a href="login.jsp">login</a>
 	<a href="signup.jsp">suignup</a>
+	<a href="form-seatch.jsp">search</a>
 
 
 	<main>
