@@ -91,7 +91,42 @@ Attraverso il Festival Young, desideriamo aprire le porte del meraviglioso unive
 
 INSERT INTO evento VALUES('5','Etna Sound Festival','2023-07-02','Catania','Etna Sound Festival si caratterizza per la capacità di far confluire le diverse realtà del territorio. Non è un semplice Festival o Contest musical... è molto di più. Impegno profuso, con una certezza di riuscita in termini di visibilità e promozione, punta di attivare e connettere relazioni coinvolgendo sempre più locali e turisti nel racconto del territorio, sviluppando le esperienze migliori e raccontando le storie giuste che meglio ci rappresentano. Il viagglatore avrà dunque come destinazione i locali, non le località. Il nostro obiettivo sarà raggiunto integrando al Festival caratterizzato dal Sound e musica di produzione di artisti locali, anche aziende vitivinicole, artigiani, produttori di vario genere, attori teatrali, scuole ed enti di vario genere. In questo caso la valorizzazione e promozione turistica del territorio diventa un insieme di una comunità, cultura, tradizioni, usi e costumi, arte, esperienza, gastronomia, stili di vita, enti locali, associazioni, imprese, infrastrutture, servizi ed ambiente, Rappresenta ovvero il territorio nella sua realtà, nella sua totalità, nella sua essenza.', 'Unitevi a noi per una serata di musica e cultura al Camporè Wine Contrada', 'Camporè Wine Contrada San Lorenzo 95036 Randazzo','https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F534503579%2F1115615723893%2F1%2Foriginal.20230612-220553?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C64%2C2048%2C1024&s=be6ae8da3e71c740e5c1bf559940aeb5','0','15.0','1');
 
+INSERT INTO evento VALUES('6', 'Urban LAB Chiostri di San Pietro', '2023-07-13', 'Bologna', 'Un percorso che vuole far riscoprire a ragazzi e ragazzi il valore comunicativo della lingua inglese anche attraverso strategia, logica e spirito cooperativo e allo stesso tempo cimentarsi in un contesto più disteso nella produzione verbale in lingua inglese.', 'Tour della città in lingua inglese dedicato ai bambini e alle bambine che desiderano esplorare i luoghi di cultura di Reggio Emilia.', 'Chiostri di San Pietro 44c Via Emilia San Pietro 42121 Reggio Emilia', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F512889499%2F1545456473353%2F1%2Foriginal.20230511-163027?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=9d9b9801e47a184e321f2a20e725e73a', 0, 15.0, 2);
 
+INSERT INTO evento VALUES('7', 'Stelli - Stand Up Comedy', '2023-06-29', 'Genova', 'Nel suggestivo e alcolemico esterno dello Stelli un gruppo di comiche e comici si susseguiranno per due orette abbondanti.
+
+Avete mai visto la Stand Up in uno spazio così, davanti al mare? probabilmente si, ma mai così bello.
+
+Proveranno a farvi ridere, proverranno a farvi riflettere, ma soprattutto proveranno a farvi bere.
+
+Infatti (oltre a quei guasconi che si esibiscono) troverai birre gustose, cocktails ben fatti e cibo succulento da accompagnare con qualche stuzzicheria davvero zozza.', 'Ciao GENOVA! Giovedì 29 Giugno allo Stelli sul Mare *STELLI UP COMEDY* con comici eccezionali!', 'Stelli sul Mare 19 Lungomare Lombardo 16145 Genova', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F540151369%2F1453673065623%2F1%2Foriginal.20230621-121225?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1640%2C820&s=351378d4130d8de9ca1b5d6774fcedbb', 1, 0.0, 3);
+
+INSERT INTO evento VALUES('8', 'Matteo Fallica - Cicale - Comedy Show', '2023-07-04', 'Palermo', 'Matteo Fallica nasce a Bologna in una torrida estate del 1989, senza sapere che ci vorranno quasi trent’anni prima che decida di lanciarsi (più o meno letteralmente) sui palchi della stand-up comedy italiana.
+
+Tra i pochi stand-up comedian LGBT+ attivi in Italia, ha partecipato a due edizioni di “Stand-Up Comedy” in onda su Comedy Central e nel 2023 ha aperto gli spettacoli di Alessandro Cattelan nel tour “Salutava Sempre”.
+
+Nei suoi monologhi non mancano i grandi temi che tanto stanno a cuore ai millennial con partita iva (e non solo): mascolinità tossica, omofobi al bar, faccine di whatsapp, cicale, banche, fagiani e tanto altro. Non esattamente in questo ordine.', 'Matteo Fallica porta a Palermo il suo spettacolo di Stand-Up Comedy: Cicale.', 'Parco Villa Filippina Parco Villa Filippina 90138 Palermo', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F523540669%2F1573455745833%2F1%2Foriginal.20230526-184255?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C14%2C1200%2C600&s=529bc55378b8ca8037a9315390d6f79c', 0, 20.0, 3);
+
+INSERT INTO evento VALUES('9', 'La Ripartenza 2023 - Sessione Mattina', '2023-07-08', 'Bari', 'La quinta tappa de La Ripartenza si terrà, come da tradizione, al Teatro Petruzzelli di Bari il 7 luglio.
+
+La Ripartenza23 proporrà una serie di tavole rotonde sui temi dell’economia, con un focus sul lusso il primo giorno e sull’industria e i servizi il secondo.
+
+Si apre venerdì, con la breve pièce teatrale "Sfumature scorrette" a cura di Massimiliano Lenzi e Sarah Biacchi. Successivamente, ci sarà una lettura, sempre sul tema del politicamente corretto, tratta dal libro "Tolleranza", autore Luigi Marco Bassani e dell’attrice Ludovica Frasca Meral. A seguire avremo un panel sul mercato del lusso in Italia, a cui parteciperanno tra gli altri Remo Ruffini (Moncler), Diego della Valle (Tod’s), Diana Frescobaldi (Frescobaldi Vini).
+
+Il sabato mattina, come da tradizione, si apre con Una Zanzara nella zuppa, lettura irriverente dei giornali realizzata da Nicola Porro e Giuseppe Cruciani. Seguirà un approfondimento sul mercato del turismo in Italia, con Paolo Barletta (Arsenale Spa), Bernardo Mattarella (Invitalia), Guido Grimaldi (Grimaldi), Mara Panajia (Henkel) e Michele Centemero (Mastercard).
+
+Nel pomeriggio di sabato ci saranno una serie di lecture culturali con la collaborazione di Vittorio Sgarbi .
+
+A seguire un panel dedicato alla necessità di avere una forte presenza industriale nel nostro paese. Restiamo la seconda manifattura d’Europa, la transizione ambientale rischia di penalizzarci, ma immaginare un’Italia senza fabbriche è rischioso e costoso. Sono previsti gli interventi di Marco Bonometti (Omr), Mario Rossetti (Open Fiber), Pietro Labriola (Tim), Cristina Scocchia (illycaffè) e altri.
+
+Il tutto si concluderà con una tavola rotonda sul futuro di questo governo. Ne parleranno Alessandro Sallusti,Giuseppe Cruciani, Paola Ferrari, Pietrangelo Buttafuoco e Nicola Porro.', 'Una giornata di dibattiti e approfondimenti, condotti da Nicola Porro, nella cornice del teatro Petruzzelli di Bari', 'Teatro Petruzzelli 12 Corso Cavour 70122 Bari', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F514127539%2F536090669847%2F1%2Foriginal.20230513-143534?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C4320%2C2160&s=d6f3c65347d5c241b72beeb913e294d9', 1, 0.0, 2);
+
+INSERT INTO evento VALUES('10', 'Film Festival by TATE', '2023-07-03', 'Firenze', 'S﻿ei invitato a una serata dedicata al cinema con una selezione curata da Lorenzo Ciani fondatore del festival che è oggi alla sua 6° edizione.
+Il tutto in una location eccezionale, Auditorium Innovation Center di Fondazione Cassa di Risparmio di Firenze.
+
+Ci sarà una proiezione dei 3 cortometraggi vincitori nelle rispettive categorie 2D, 3D e Stop Motion: - Shell in Love by Svilen Dimitrov - AIKĀNE by Daniel Sousa, Dean Hamer, Joe Wilson - Txotxongiloa by Sonia Estévez - CIRCLE by Ke Wang - Footprints In The Forest by Juhaidah Joemin, Sandra Khoo. E infine, la proiezione del miglior film di animazione: METAMORPHOSIS - by Michele Fasano (ITA).',
+
+'T﻿orna a Nana Bianca il Film Festival organizzato da TATE e curato da Lorenzo Ciani.', 'Nana Bianca 10 Piazza di Cestello 50124 Firenze', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F535878909%2F191653209741%2F1%2Foriginal.20230614-153249?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C4%2C2178%2C1089&s=7275c9cc87a02bf4ca2745b2bf07301c', 0, 20.0, 2);
 
 SELECT * FROM evento;
 DROP TABLE evento;
