@@ -18,9 +18,9 @@
 	<br>
 	<br>
 	<label for="searchData">DA:</label>
-	<input id="searchData" name="dataInizio" value="dataInizio" type="date">
+	<input id="searchData" name="date1" type="date">
 	<label for="searchData">A:</label>
-	<input id="searchData" name="dataFine" value="dataFine" type="date">
+	<input id="searchData" name="date2" type="date">
 	<br>
 	<br>
 	<label for="searchCitta">Città:</label>
