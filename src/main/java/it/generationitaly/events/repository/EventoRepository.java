@@ -1,13 +1,20 @@
 package it.generationitaly.events.repository;
 
+import java.util.Date;
 import java.util.List;
 import it.generationitaly.events.entity.Evento;
 
 public interface EventoRepository extends JpaRepository<Evento, Integer> {
-	
+
 	List<Evento> findByTagId(int id);
-	
-	Evento findByNome(String nome);
+
+	List<Evento> findByNome(String searchTerm);
 
 	List<Evento> findByCitta(String citta);
+
+	List<Evento> findByGratuito(Boolean gratuito);
+
+	List<Evento> findByDataBetween(Date date1, Date date2);
+	
+	List<Evento> findByData(Date date);
 }
