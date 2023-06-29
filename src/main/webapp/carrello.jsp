@@ -1,3 +1,4 @@
+<%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@page import="java.util.List"%>
 <%@page import="it.generationitaly.events.entity.Evento"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -15,24 +16,28 @@
             <div class="card-body">
                 <% if(!eventiSelezionati.isEmpty()) {
                        for(Evento evento : eventiSelezionati) { %>
-			    <p class="card-text">
-                   Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque ad expedita 
-                </p>
-                <p class="event-name"><%= evento.getNome() %></p>
-                <p class="event-date"><%= evento.getData() %></p>
-                <p class="event-citta"><%= evento.getCitta() %></p>
-                
+			    <img src="<%= evento.getImmagine() %>">
+                <p><%= evento.getNome() %></p>
+                <p><%= evento.getData() %></p>
+                <p><%= evento.getIndirizzo() %></p>
+                    <% if (evento.isGratuito()){ %>
+                    <p><%= "Gratuito" %></p>
+                    <% } else {%>
+                    <p><%= evento.getPrezzo() %></p>
+                    <% }  %>
+                <label>Biglietto di ingresso generale</label> 
+                <input type="number">
                 <div class="d-flex justify-content-between align-items-center">
                   <button class="scopri-piu">Scopri di più</button>   
                 </div>
 			    </div>
-			    <%     } 
+			    <% } 
                    }  else { %>
                 <p><%= "0 results found..." %></p>
                 <% } %>
 			<p>Il totale è: </p>
-			<p><input type="submit" name ="submit" value="compra"></p>
+			<p><input type="submit" name ="submit" value=""></p>
 		</form>
-		<button onclick="">Torna alla HOME</button>
+		<button href="home.jsp" >Torna alla HOME</button>
     </body>
 </html>
