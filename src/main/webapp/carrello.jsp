@@ -1,3 +1,4 @@
+<%@page import="it.generationitaly.events.entity.Prenotazione"%>
 <%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@page import="java.util.List"%>
 <%@page import="it.generationitaly.events.entity.Evento"%>
@@ -11,24 +12,24 @@
     </head>
     <body>
         <h1>Il Tuo Carrello</h1>
-         <% List<Evento> eventiSelezionati = (List<Evento>) request.getParameter("eventiSelezionati"); %>
-        <form method="get" action="carrello" name="">
-            <div class="card-body">
-                <% if(!eventiSelezionati.isEmpty()) {
-                       for(Evento evento : eventiSelezionati) { %>
-			    <img src="<%= evento.getImmagine() %>">
-                <p><%= evento.getNome() %></p>
-                <p><%= evento.getData() %></p>
-                <p><%= evento.getIndirizzo() %></p>
-                    <% if (evento.isGratuito()){ %>
+         <% List<Prenotazione> prenotazioni = (List<Prenotazione>) request.getSession("prenotazioni"); %>
+        <form method="get" action="carrello">
+                <% if(!prenotazioni.isEmpty()) {
+                       for(Prenotazione prenotazione : prenotazioni) { %>
+                <div class="card-body">
+			    <img src="<%= prenotazione.getEvento().getImmagine() %>">
+                <p><%= prenotazione.getEvento().getNome() %></p>
+                <p><%= prenotazione.getEvento().getData() %></p>
+                <p><%= prenotazione.getEvento().getIndirizzo() %></p>
+                    <% if (prenotazione.getEvento().isGratuito()){ %>
                     <p><%= "Gratuito" %></p>
                     <% } else {%>
-                    <p><%= evento.getPrezzo() %></p>
+                    <p><%= prenotazione.getEvento().getPrezzo() %></p>
                     <% }  %>
                 <label>Biglietto di ingresso generale</label> 
                 <input type="number">
                 <div class="d-flex justify-content-between align-items-center">
-                  <button class="scopri-piu">Scopri di più</button>   
+                  <button class="conferma">Conferma</button>   
                 </div>
 			    </div>
 			    <% } 

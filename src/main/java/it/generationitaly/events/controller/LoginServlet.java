@@ -1,7 +1,10 @@
 package it.generationitaly.events.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
+import it.generationitaly.events.entity.Prenotazione;
 import it.generationitaly.events.entity.User;
 import it.generationitaly.events.repository.UserRepository;
 import it.generationitaly.events.repository.impl.UserRepositoryImpl;
@@ -22,12 +25,14 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
 
 		User user = uR.findByUsername(username);
 		if (user != null && user.getPassword().equals(password)) {
 			HttpSession session = request.getSession();
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("username", user.getUsername());
+			session.setAttribute("prenotazioni", prenotazioni);
 			response.sendRedirect("home.jsp");
 		} else {
 			response.sendRedirect("login.jsp?credenzialiErrate");
