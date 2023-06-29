@@ -1,7 +1,6 @@
 package it.generationitaly.events.repository.impl;
 
 import java.util.ArrayList;
-
 import java.util.List;
 
 import it.generationitaly.events.entity.Evento;
@@ -60,18 +59,17 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 	}
 
 	@Override
-	public Evento findByNome(String nome) {
-		Evento evento = null;
+	public List<Evento> findByNome(String nome) {
+		List<Evento> eventi = new ArrayList<Evento>();
 		EntityManager em = null;
 		EntityTransaction tx = null;
 		try {
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento u where e.nome = :nome",
-					Evento.class);
-			query.setParameter("evento", evento);
-			evento = query.getSingleResult();
+			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento u where e.nome = :nome", Evento.class);
+			query.setParameter("nome", nome);
+			eventi = query.getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
 			if (tx != null && tx.isActive())
@@ -82,25 +80,23 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 				em.close();
 			}
 		}
-		return evento;
+		return eventi;
 	}
-	
-	
+
 	@Override
 	public List<Evento> findByGratuito(Boolean gratuito) {
-	    EntityManager em = null;
-	    List<Evento> eventi = null;
-	    try {
-	        em = emf.createEntityManager();
-	        eventi = em.createQuery("SELECT e FROM Evento e WHERE e.gratuito = :gratuito", Evento.class)
-	            .setParameter("gratuito", gratuito)
-	            .getResultList();
-	    } catch (PersistenceException e) {
-	        System.err.println(e.getMessage());
-	    } finally {
-	        if (em != null)
-	            em.close();
-	    }
-	    return eventi;
+		EntityManager em = null;
+		List<Evento> eventi = null;
+		try {
+			em = emf.createEntityManager();
+			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.gratuito = :gratuito", Evento.class)
+					.setParameter("gratuito", gratuito).getResultList();
+		} catch (PersistenceException e) {
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null)
+				em.close();
+		}
+		return eventi;
 	}
 }

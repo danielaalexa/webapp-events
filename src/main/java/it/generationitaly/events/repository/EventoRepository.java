@@ -7,7 +7,7 @@ public interface EventoRepository extends JpaRepository<Evento, Integer> {
 	
 	List<Evento> findByTagId(int id);
 	
-	Evento findByNome(String nome);
+	List <Evento> findByNome(String nome);
 
 	List<Evento> findByCitta(String citta);
 	
