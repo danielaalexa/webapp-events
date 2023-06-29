@@ -131,8 +131,12 @@
             <h1 class="main-title">La nostra selezione per te</h1>
              <p class="main-description">Eventi Popolari</p>
           <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            
+           <!-- Qui inizia La Card -->
+            
             <div class="col">
               <div class="card shadow-sm">
+              <!-- Immagine evento -->
                 <img src="https://images.unsplash.com/photo-1549451371-64aa98a6f660?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZXZlbnR8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" alt="">
                   <title>Placeholder</title>
                   <rect width="100%" height="100%" fill="#55595c" />
@@ -140,10 +144,13 @@
                 </svg>
                 <div class="card-body">
                   <p class="card-text">
+                  <!-- Qui inizia la descrizione dell'evento -->
                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque ad expedita 
-                 
+                   <!-- Qui inizia il nome dell'evento -->
                  <p class="event-name">Startup Umbria</p>
+                   <!-- Qui inizia la data dell'evento -->
                 <p class="event-date">20 Sett.2023</p>
+                  <!-- Qui inizia l'indirizzo dell'evento -->
                  <p class="event-indirizzo">Piazza Cavour</p>
                 
                 </p>
@@ -214,6 +221,11 @@
                 </div>
               </div>
             </div>
+            
+            
+            
+            
+            
             <div class="tag-eventi">
             <a class="eventi-regione"> <i class="fa-solid fa-briefcase"></i>Eventi Business</a>
             <a class="eventi-regione"><i class="fa-solid fa-mug-hot"></i>Aperitivi</a>
