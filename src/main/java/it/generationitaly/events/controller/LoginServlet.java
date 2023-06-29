@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("username", user.getUsername());
 			session.setAttribute("prenotazioni", prenotazioni);
-			response.sendRedirect("home.jsp");
+			response.sendRedirect("servletCards.jsp");
 		} else {
 			response.sendRedirect("login.jsp?credenzialiErrate");
 		}

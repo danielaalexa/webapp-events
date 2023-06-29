@@ -35,6 +35,6 @@
 			<input type="submit" name="submit" value="">
 		</p>
 	</form>
-	<button href="home.jsp">Torna alla HOME</button>
+	<button href="servletCards.jsp">Torna alla HOME</button>
 </body>
 </html>

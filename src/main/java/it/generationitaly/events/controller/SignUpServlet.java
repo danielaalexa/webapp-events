@@ -60,7 +60,7 @@ public class SignUpServlet extends HttpServlet {
         user.setMetodoPagamento(metodoPagamento);
         
 		userRepository.save(user);
-		response.sendRedirect("home.jsp");
+		response.sendRedirect("servletCards.jsp");
 
 	}
 
