@@ -43,7 +43,7 @@ public class SignUpServlet extends HttpServlet {
 		try {
 			dataNascita = formatter.parse(dataNascitaAsString);
 		} catch (ParseException e) {
-			e.getMessage();
+			System.err.println(e.getMessage());
 		}
         int metodoPagamentoId = Integer.parseInt(request.getParameter("metodoPagamentoId"));
         System.out.println(metodoPagamentoId);
