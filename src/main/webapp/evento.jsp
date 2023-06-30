@@ -25,6 +25,6 @@
 		<input type="hidden" name="id" value="<%= evento.getId() %>">
 		<button type="submit" class="carrello">Prenota ora</button>
 	</form>
-	<button href="servletCards">Torna alla HOME</button>
+	<a href="servletCards"><button >Torna alla HOME</button></a>
 </body>
 </html>
