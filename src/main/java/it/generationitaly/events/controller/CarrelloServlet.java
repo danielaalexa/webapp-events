@@ -23,10 +23,6 @@ public class CarrelloServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
 		HttpSession session = request.getSession(); // request.getSession(false);
 		int id = Integer.parseInt(request.getParameter("id"));
 		Evento evento = eventoRepository.findById(id);
@@ -36,6 +32,11 @@ public class CarrelloServlet extends HttpServlet {
 		prenotazioni.add(prenotazione);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("carrello.jsp");
 		requestDispatcher.forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
 	}
 
 }
