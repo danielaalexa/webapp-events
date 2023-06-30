@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@page import="it.generationitaly.events.entity.Evento" %>
+<%@page import="it.generationitaly.events.entity.Evento"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -110,9 +110,7 @@
 				<div class="col">
 					<div class="card shadow-sm">
 						<!-- Immagine evento -->
-						<img
-							src="<%=evento1.getImmagine()%>"
-							alt="">
+						<img src="<%=evento1.getImmagine()%>" alt="">
 						<title>Placeholder</title>
 						<rect width="100%" height="100%" fill="#55595c" />
 
@@ -131,8 +129,10 @@
 							</p>
 							<div class="d-flex justify-content-between align-items-center">
 
-								<button class="scopri-piu">Scopri di più</button>
+								
 
+								<a href="evento?id=<%=evento1.getId()%>"><button  class="scopri-piu">Scopri di più</button></a>
+										
 
 							</div>
 						</div>
@@ -141,16 +141,14 @@
 
 				<div class="col">
 					<div class="card shadow-sm">
-						<img
-							src="<%=evento2.getImmagine()%>"
-							alt="">
+						<img src="<%=evento2.getImmagine()%>" alt="">
 						<title>Placeholder</title>
 						<rect width="100%" height="100%" fill="#55595c" />
 
 						</svg>
 						<div class="card-body">
 							<p class="card-text">
-							<%=evento2.getDescrizioneCard()%>
+								<%=evento2.getDescrizioneCard()%>
 							<p class="event-name"><%=evento2.getNome()%></p>
 							<p class="event-date"><%=evento2.getData()%></p>
 							<p class="event-indirizzo"><%=evento2.getIndirizzo()%></p>
@@ -158,7 +156,7 @@
 							</p>
 							<div class="d-flex justify-content-between align-items-center">
 
-								<button class="scopri-piu">Scopri di più</button>
+								<a href="evento?id=<%=evento2.getId()%>"><button  class="scopri-piu">Scopri di più</button></a>
 
 
 							</div>
@@ -168,23 +166,21 @@
 
 				<div class="col">
 					<div class="card shadow-sm">
-						<img
-							src="<%=evento3.getImmagine()%>"
-							alt="">
+						<img src="<%=evento3.getImmagine()%>" alt="">
 						<title>Placeholder</title>
 						<rect width="100%" height="100%" fill="#55595c" />
 
 						</svg>
 						<div class="card-body">
 							<p class="card-text">
-							<%=evento3.getDescrizioneCard()%>
+								<%=evento3.getDescrizioneCard()%>
 							<p class="event-name"><%=evento3.getNome()%></p>
 							<p class="event-date"><%=evento3.getData()%></p>
 							<p class="event-indirizzo"><%=evento3.getIndirizzo()%></p>
 							</p>
 							<div class="d-flex justify-content-between align-items-center">
 
-								<button class="scopri-piu">Scopri di più</button>
+								<a href="evento?id=<%=evento3.getId()%>"><button  class="scopri-piu">Scopri di più</button></a>
 
 
 							</div>

@@ -26,8 +26,10 @@
                     <% } else {%>
                     <p><%= prenotazione.getEvento().getPrezzo() %></p>
                     <% }  %>
-                <label>Biglietto di ingresso generale</label> 
-                <input type="number">
+                
+                <label for="biglietto">Biglietto di ingresso generale</label> 
+	            <input id="biglietto" type="number" value="1">
+                
                 <div class="d-flex justify-content-between align-items-center">
                   <button class="conferma">Conferma</button>
                   <!-- Cancellare un evento?? -->
