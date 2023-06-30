@@ -8,32 +8,22 @@
 <title>Evento</title>
 </head>
 <body>
-	<h1>NOME EVENTO</h1>
 	<% Evento evento = (Evento) request.getAttribute("evento"); %>
-	<form method="get" action="">
-			<img src="<%= evento.getImmagine() %>">
-			<p><%= evento.getNome() %></p>
-			<p><%= evento.getData() %></p>
-			<p><%= evento.getIndirizzo() %></p>
-			<% if (evento.isGratuito()){ %>
-			<p><%= "Gratuito" %></p>
-			<% } else {%>
-			<p><%= evento.getPrezzo() %></p>
-			<% }  %>
-			<label>Biglietto di ingresso generale</label> 
-			<input type="number">
-			
-			    <input type="hidden" value="<% evento.getId(); %>">
-				<button type="submit" class="carrello">Aggiungi al carrello</button>
-		
-		<% } 
-                   }  else { %>
-		<p><%= "0 results found..." %></p>
-		<% } %>
-		<p>Il totale è:</p>
-		<p>
-			<input type="submit" name="submit" value="">
-		</p>
+		<h1><%= evento.getNome() %></h1>
+		<img src="<%= evento.getImmagine() %>">
+		<p><%= evento.getData()%></p>
+		<p><%= evento.getCitta() %></p>
+		<p><%= evento.getIndirizzo() %></p>
+		<p><%= evento.getDescrizione() %></p>
+		<% if (evento.isGratuito()){ %>
+		<p><%= "Gratuito" %></p>
+		<% } else { %>
+		<p><%= evento.getPrezzo() %></p>
+		<% }  %>
+		<p><%= evento.getTagEvento() %></p>
+	<form method="post" action="carrello">
+		<input type="hidden" name="id" value="<%= evento.getId() %>">
+		<button type="submit" class="carrello">Prenota ora</button>
 	</form>
 	<button href="servletCards">Torna alla HOME</button>
 </body>

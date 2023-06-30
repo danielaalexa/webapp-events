@@ -21,11 +21,14 @@ public class CarrelloServlet extends HttpServlet {
 
 	private EventoRepository eventoRepository = new EventoRepositoryImpl();
 
-	// carrello in doPost eventualmente
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		HttpSession session = request.getSession(); // request.getSession(false);
-		int id = Integer.parseInt(request.getParameter("eventoId"));
+		int id = Integer.parseInt(request.getParameter("id"));
 		Evento evento = eventoRepository.findById(id);
 		Prenotazione prenotazione = new Prenotazione();
 		prenotazione.setEvento(evento);
@@ -33,11 +36,6 @@ public class CarrelloServlet extends HttpServlet {
 		prenotazioni.add(prenotazione);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("carrello.jsp");
 		requestDispatcher.forward(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-
 	}
 
 }
