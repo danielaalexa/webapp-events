@@ -33,12 +33,10 @@
 								</div>
 								<form method="post" action="loginServlet">
 									<div class="form-outline mb-4">
-										<label class="form-label" for="loginUsername">Username</label>
 										<input class="form-control" type="text" id="loginUsername"
-											name="username">
+											name="username" placeholder="Username">
 									</div>
 									<div class="form-outline mb-4">
-										<label class="form-label" for="loginPassword">Password</label>
 										<input class="form-control" type="password" id="loginPassword"
 											name="password" placeholder="Password">
 									</div>
