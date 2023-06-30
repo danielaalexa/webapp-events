@@ -43,7 +43,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			tx = em.getTransaction();
 			tx.begin();
 			eventi = em
-					.createQuery("select e from Evento e join fetch e.tagEvento where e.tagEvento = :id", Evento.class)
+					.createQuery("select e from Evento e join fetch e.tagEvento where e.tagEvento.id = :id", Evento.class)
 					.setParameter("id", id).getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {

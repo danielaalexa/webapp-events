@@ -46,7 +46,7 @@
 	<input id="searchPrezzo" name="gratuito" value="false"
 		type="checkbox">
 	<label for="searchPrezzo">Pagamento</label>
-	<input id="searchPrezzo" name="pagamento" value="true"
+	<input id="searchPrezzo" name="gratuito" value="true"
 		type="checkbox">
 	<% if(request.getParameter("campiVuoti") != null) { %>
 				<p style="color: red;">Riempi tutti i campi!</p>
