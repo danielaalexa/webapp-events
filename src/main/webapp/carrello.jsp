@@ -13,7 +13,6 @@
     <body>
         <h1>Il Tuo Carrello</h1>
          <% List<Prenotazione> prenotazioni = (List<Prenotazione>) request.getAttribute("prenotazioni"); %>
-        <form method="get" action="carrello">
                 <% if(!prenotazioni.isEmpty()) {
                        for(Prenotazione prenotazione : prenotazioni) { %>
                 <div class="card-body">
@@ -43,8 +42,9 @@
                 <p><%= "0 results found..." %></p>
                 <% } %>
 			<p>Il totale è: </p>
+			<form>
 			<p><input type="submit" name ="submit" value=""></p>
-		</form>
+			</form>
 		<button href="servletCards" >Torna alla HOME</button>
     </body>
 </html>
