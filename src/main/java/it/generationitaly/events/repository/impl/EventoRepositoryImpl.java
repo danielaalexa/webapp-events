@@ -43,7 +43,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			tx = em.getTransaction();
 			tx.begin();
 			eventi = em
-					.createQuery("select e from Evento e join fetch e.tagEvento where e.tagEvento = :id", Evento.class)
+					.createQuery("select e from Evento e join fetch e.tagEvento where e.tagEvento.id = :id", Evento.class)
 					.setParameter("id", id).getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
@@ -69,7 +69,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			tx = em.getTransaction();
 			tx.begin();
 			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e where e.nome = :nome", Evento.class);
-			query.setParameter("nome", "%" + searchterm + "%");
+			query.setParameter("nome",searchterm);
 			eventi = query.getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {

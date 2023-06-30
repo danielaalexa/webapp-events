@@ -11,6 +11,7 @@
 <form method="get" action="servletSearch">
 	<label for="searchTag">Tipologia evento:</label>
 	<select name="searchTag" id="searchTag">
+	    <option></option>
 		<option value="1">Music</option>
 		<option value="2">Education</option>
 		<option value="3">Comedy</option>
@@ -25,6 +26,7 @@
 	<br>
 	<label for="searchCitta">Città:</label>
 	<select id="searchCitta" name="citta">
+	    <option></option>
 		<option value="1">Napoli</option>
 		<option value="2">Milano</option>
 		<option value="3">Roma</option>
@@ -46,7 +48,7 @@
 	<input id="searchPrezzo" name="gratuito" value="false"
 		type="checkbox">
 	<label for="searchPrezzo">Pagamento</label>
-	<input id="searchPrezzo" name="pagamento" value="true"
+	<input id="searchPrezzo" name="gratuito" value="true"
 		type="checkbox">
 	<% if(request.getParameter("campiVuoti") != null) { %>
 				<p style="color: red;">Riempi tutti i campi!</p>

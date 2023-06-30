@@ -25,38 +25,39 @@ public class ServletSearch extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		if (request.getParameter("id") == null && request.getParameter("nome") == null
-				&& request.getParameter("città") == null && request.getParameter("gratuito") == null) {
-			response.sendRedirect("form-search.jsp?campiVuoti");
-			return;
-		}
-		if (request.getParameter("id") != null) {
+		
+		System.out.println("inizia la ricerca");
+		if (request.getParameter("searchTag") != "") {
 			getEventoTag(request, response);
 			return;
 		}
-		if (request.getParameter("nome") != null) {
+		else if (request.getParameter("nome") != null) {
 			getEventoNome(request, response);
+			return;
 		}
 
-		if (request.getParameter("citta") != null) {
+		else if (request.getParameter("citta") != "") {
 			getEventoCitta(request, response);
+			return;
 		}
 
-		if (request.getParameter("gratuito") != null) {
+		else if (request.getParameter("gratuito") != null) {
 			getEventoGratuito(request, response);
+			return;
 		}
 
-		if (request.getParameter("date1") != null && request.getParameter("date2") != null) {
+		else if (request.getParameter("date1") != null && request.getParameter("date2") != null) {
 			getEventoDateBetween(request, response);
+			return;
 		}
 		
-		getEventoDate(request, response);
+	
 
 	}
 
 	private void getEventoTag(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("id"));
+		int id = Integer.parseInt(request.getParameter("searchTag"));
 		List<Evento> eventi = eR.findByTagId(id);
 		request.setAttribute("eventi", eventi);
 		request.getRequestDispatcher("risultati.jsp").forward(request, response);
@@ -92,7 +93,7 @@ public class ServletSearch extends HttpServlet {
 			throws ServletException, IOException {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-		String data1AsString = request.getParameter("data1");
+		String data1AsString = request.getParameter("date1");
 		Date data1 = null;
 		try {
 			data1 = formatter.parse(data1AsString);
@@ -100,7 +101,7 @@ public class ServletSearch extends HttpServlet {
 			e.getMessage();
 		}
 
-		String data2AsString = request.getParameter("data2");
+		String data2AsString = request.getParameter("date2");
 		Date data2 = null;
 		try {
 			data2 = formatter.parse(data2AsString);
@@ -113,7 +114,7 @@ public class ServletSearch extends HttpServlet {
 		request.getRequestDispatcher("risultati.jsp").forward(request, response);
 	}
 
-	private void getEventoDate(HttpServletRequest request, HttpServletResponse response)
+	/*private void getEventoDate(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
 
@@ -145,4 +146,6 @@ public class ServletSearch extends HttpServlet {
 		}
 
 	}
+	
+	*/
 }
