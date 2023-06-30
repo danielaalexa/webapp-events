@@ -37,7 +37,10 @@
 						<td><%= evento.isGratuito() %></td>
 						<td><%= evento.getPrezzo() %></td>
 						<td>
-							<a href="eventi?id=<%= evento.getId() %>">Info</a>	
+					        <form method="get" action="evento">
+                                <input type="hidden" name="id" value="<%= evento.getId() %>">
+                                <button type="submit">INFO</button>
+                            </form>	
 						</td>
 					</tr>
 				<% } %>
