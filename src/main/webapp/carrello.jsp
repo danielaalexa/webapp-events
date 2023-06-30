@@ -12,7 +12,7 @@
     </head>
     <body>
         <h1>Il Tuo Carrello</h1>
-         <% List<Prenotazione> prenotazioni = (List<Prenotazione>) request.getSession("prenotazioni"); %>
+         <% List<Prenotazione> prenotazioni = (List<Prenotazione>) request.getAttribute("prenotazioni"); %>
         <form method="get" action="carrello">
                 <% if(!prenotazioni.isEmpty()) {
                        for(Prenotazione prenotazione : prenotazioni) { %>
