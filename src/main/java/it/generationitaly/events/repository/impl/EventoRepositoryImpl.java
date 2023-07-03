@@ -68,8 +68,8 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e where e.nome = :nome", Evento.class);
-			query.setParameter("nome",searchterm);
+			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e WHERE e.nome LIKE :searchterm", Evento.class);
+		    query.setParameter("searchterm", "%" + searchterm + "%");
 			eventi = query.getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
@@ -107,7 +107,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 		List<Evento> eventi = null;
 		try {
 			em = emf.createEntityManager();
-			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.data between (:date1 and :date2) ", Evento.class)
+			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.data BETWEEN :date1 AND :date2 ", Evento.class)
 					.setParameter("date1", date1).setParameter("date2", date2).getResultList();
 		} catch (PersistenceException e) {
 			System.err.println(e.getMessage());
