@@ -27,7 +27,7 @@
 							</div>
 							<form method="get" action="servletSearch">
 								<label id="searchTag">Tipologia evento:</label> <select
-									class="form-control" id="searchTag" list="GFGOptions">
+									class="form-control" id="searchTag"list="GFGOptions">
 									<option></option>
 									<option value="1">Music</option>
 									<option value="2">Education</option>
