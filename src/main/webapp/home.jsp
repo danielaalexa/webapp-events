@@ -209,11 +209,11 @@
 	<footer class="text-body-secondary py-5">
 		<div class="container">
 			<p class="float-end mb-1">
-				<a href="#">Back to top</a>
+				<a href="#">Back to the top</a>
 			</p>
 
 			<p class="mb-0">
-				<q> Qui andra messo il footer</q>
+				<%@ include file="foother.html" %>
 
 			</p>
 		</div>
