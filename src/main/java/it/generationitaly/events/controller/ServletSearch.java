@@ -41,12 +41,12 @@ public class ServletSearch extends HttpServlet {
 			return;
 		}
 
-		else if (request.getParameter("gratuito") != null) {
+		if (request.getParameter("gratuito") != null) {
 			getEventoGratuito(request, response);
 			return;
 		}
 
-		else if (request.getParameter("date1") != null && request.getParameter("date2") != null) {
+		if (request.getParameter("date1") != null && request.getParameter("date2") != null) {
 			getEventoDateBetween(request, response);
 			return;
 		}
