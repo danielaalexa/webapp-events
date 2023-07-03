@@ -26,18 +26,10 @@
 								<h4 class="mt-1 mb-5 pb-1">...</h4>
 							</div>
 							<form method="get" action="servletSearch">
-								<label id="searchTag">Tipologia evento:</label> <select
-									class="form-control" id="searchTag" list="GFGOptions">
-									<option></option>
-									<option value="1">Music</option>
-									<option value="2">Education</option>
-									<option value="3">Comedy</option>
-								</select> <br> <label for="searchData">DA:</label> <input
-									id="searchData" name="date1" type="date"><label style="margin-left: 10px"
-									for="searchData">A:</label> <input id="searchData" name="date2"
-									type="date"> <br> <br> <label
-									id="searchCitta">Città:</label> <select class="form-control"
-									list="GFGOptions" id="searchCitta">
+								 <input class="form-control" list="GFGOptions" id="searchNome" nome="nome" placeholder="Nome evento">
+								 <br>
+								 <label id="searchCitta">Città:</label>
+								 <select class="form-control" list="GFGOptions" id="searchCitta">
 									<option></option>
 									<option value="1">Napoli</option>
 									<option value="2">Milano</option>
@@ -50,6 +42,10 @@
 									<option value="9">Bari</option>
 									<option value="10">Firenze</option>
 								</select>
+								<br>
+								<button id="searchTag" name="searchTag" value="1" class="btn btn-dark" type="submit">Music</button>
+								<button id="searchTag" name="searchTag" value="2" class="btn btn-dark" type="submit">Education</button>
+								<button id="searchTag" name="searchTag" value="3" class="btn btn-dark" type="submit">Comedy</button>
 								<%
 								if (request.getParameter("campiVuoti") != null) {
 								%>
@@ -57,8 +53,6 @@
 								<%
 								}
 								%>
-								<br>
-								<button class="btn btn-success" type="submit">CERCA</button>
 							</form>
 						</div>
 					</div>
