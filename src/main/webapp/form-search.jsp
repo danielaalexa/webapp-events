@@ -48,6 +48,7 @@
                 placeholder="Città">
             <datalist id="searchCitta">
 	    <option></option>
+
 		<option value="1">Napoli</option>
 		<option value="2">Milano</option>
 		<option value="3">Roma</option>
