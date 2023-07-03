@@ -1,6 +1,7 @@
 package it.generationitaly.events.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import it.generationitaly.events.entity.Evento;
@@ -36,13 +37,11 @@ public class CarrelloServlet extends HttpServlet {
 		Prenotazione prenotazione = new Prenotazione();
 		prenotazione.setEvento(evento);
 		prenotazioneRepository.save(prenotazione);
-		List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
+		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
 		prenotazioni.add(prenotazione);
 		request.setAttribute("prenotazioni", prenotazioni);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("carrello.jsp");
 		requestDispatcher.forward(request, response);
 	}
-	
-	
 
 }
