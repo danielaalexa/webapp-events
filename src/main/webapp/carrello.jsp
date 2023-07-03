@@ -32,8 +32,10 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <button class="conferma">Conferma</button>
                   <!-- Cancellare un evento?? -->
-                   <input type="hidden" name="eventoId" value="<%= prenotazione.getEvento().getId() %>">
-                   <button type="submit" class="remove-button">Remove</button>
+                  <form action="delete-event" method="post">>
+                   <input type="hidden" name="id" value="<%= prenotazione.getEvento().getId() %>">
+                   <input type="submit" name="remove" value="Remove event">
+                  </form>
                    <!-- Cancellare un evento?? -->
                 </div>
 			    </div>
