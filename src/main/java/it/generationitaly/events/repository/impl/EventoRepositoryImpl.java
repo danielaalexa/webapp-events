@@ -42,9 +42,8 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			eventi = em
-					.createQuery("select e from Evento e join fetch e.tagEvento where e.tagEvento.id = :id", Evento.class)
-					.setParameter("id", id).getResultList();
+			eventi = em.createQuery("select e from Evento e join fetch e.tagEvento where e.tagEvento.id = :id",
+					Evento.class).setParameter("id", id).getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
 			if (tx != null && tx.isActive())
@@ -69,7 +68,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			tx = em.getTransaction();
 			tx.begin();
 			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e where e.nome = :nome", Evento.class);
-			query.setParameter("nome",searchterm);
+			query.setParameter("nome", searchterm);
 			eventi = query.getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
@@ -85,7 +84,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 	}
 
 	@Override
-	public List<Evento> findByGratuito(Boolean gratuito) {
+	public List<Evento> findByGratuito(boolean gratuito) {
 		EntityManager em = null;
 		List<Evento> eventi = null;
 		try {
@@ -135,4 +134,33 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 		}
 		return eventi;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Evento> findEventi1(int id, String citta) {
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		List<Evento> eventi = new ArrayList<Evento>();
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			eventi = em
+					.createQuery(
+							"SELECT e FROM Evento e JOIN fetch e.tagEvento t WHERE t.id = :id AND e.citta = :citta")
+					.setParameter("id", id).setParameter("citta", citta).getResultList();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null && tx.isActive())
+				tx.rollback();
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return eventi;
+
+	}
+
 }
