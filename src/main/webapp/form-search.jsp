@@ -25,29 +25,27 @@
                       </div>
       
 <form method="get" action="servletSearch">
-	<input class="form-control" id="searchTag"
-			list="GFGOptions" 
-			placeholder="Tipologia evento">
-	<datalist id="searchTag">
+	<label id="searchTag">Tipologia evento:</label>
+	<select class="form-control" id="searchTag"
+			list="GFGOptions">
 	    <option></option>
 		<option value="1">Music</option>
 		<option value="2">Education</option>
 		<option value="3">Comedy</option>
-		</datalist>
+		</select>
 	<br>
-	<br>
+	
 	<label for="searchData">DA:</label>
 	<input id="searchData" name="date1" type="date">
+	<br>
 	<label for="searchData">A:</label>
 	<input id="searchData" name="date2" type="date">
 	<br>
 	<br>
-	 <input class="form-control"
-                list="GFGOptions" id="searchCitta"
-                placeholder="Città">
-            <datalist id="searchCitta">
+	<label id="searchCitta">Città:</label>
+	 <select class="form-control"
+                list="GFGOptions" id="searchCitta">
 	    <option></option>
-
 		<option value="1">Napoli</option>
 		<option value="2">Milano</option>
 		<option value="3">Roma</option>
@@ -58,19 +56,17 @@
 		<option value="8">Palermo</option>
 		<option value="9">Bari</option>
 		<option value="10">Firenze</option>
-		</datalist>
+		</select>
 	<br>
-	<br>
+	
 	<div class="form-outline mb-4">
                         <input type="text" id="searchNome" class="form-control"
                           placeholder="Nome evento"name = "nome"/>
                       </div>
-	
-	<br>
-	<br>
 	<fieldset>
-        <input id="searchPrezzo" botton type="radio"  name="gratuito" value="false"/> gratuito
-         <input id="searchPrezzo" botton type="radio" name="pagamento" value="true"/> pagamento
+        <input id="searchPrezzo" botton type="checkbox"  name="gratuito" value="false"/> Gratuito
+        <br>
+         <input id="searchPrezzo" botton type="checkbox" name="pagamento" value="true"/> Pagamento
                 </fieldset>
 	
 	<%
