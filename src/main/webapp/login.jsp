@@ -11,7 +11,7 @@
 	crossorigin="anonymous">
 <link rel="stylesheet" href="login.css">
 
-<title>LOGIN</title>
+<title>Log In</title>
 </head>
 <body>
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -62,5 +62,15 @@
 			</div>
 		</div>
 	</section>
+	<footer class="text-body-secondary py-5">
+		<div class="container">
+			<p class="float-end mb-1">
+				<a href="#">Back to the top</a>
+			</p>
+			<p class="mb-0">
+				<%@ include file="foother.html" %>
+			</p>
+		</div>
+	</footer>
 </body>
 </html>

@@ -32,8 +32,10 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <button class="conferma">Conferma</button>
                   <!-- Cancellare un evento?? -->
-                   <input type="hidden" name="eventoId" value="<%= prenotazione.getEvento().getId() %>">
-                   <button type="submit" class="remove-button">Remove</button>
+                  <form action="delete-event" method="post">>
+                   <input type="hidden" name="id" value="<%= prenotazione.getEvento().getId() %>">
+                   <input type="submit" name="remove" value="Remove event">
+                  </form>
                    <!-- Cancellare un evento?? -->
                 </div>
 			    </div>
@@ -46,5 +48,15 @@
 			<p><input type="submit" name ="submit" value=""></p>
 			</form>
 		<button href="servletCards" >Torna alla HOME</button>
+		<footer class="text-body-secondary py-5">
+		<div class="container">
+			<p class="float-end mb-1">
+				<a href="#">Back to the top</a>
+			</p>
+			<p class="mb-0">
+				<%@ include file="foother.html" %>
+			</p>
+		</div>
+	</footer>
     </body>
 </html>
