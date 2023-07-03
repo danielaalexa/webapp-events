@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<
 <!DOCTYPE html
 <html lang="en">
 <head>
@@ -90,6 +89,16 @@
 </div>
 </div>
 </div>
-</section>	
+</section>
+<footer class="text-body-secondary py-5">
+		<div class="container">
+			<p class="float-end mb-1">
+				<a href="#">Back to the top</a>
+			</p>
+			<p class="mb-0">
+				<%@ include file="foother.html" %>
+			</p>
+		</div>
+	</footer>
 </body>
 </html>
