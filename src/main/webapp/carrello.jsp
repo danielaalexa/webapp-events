@@ -30,14 +30,14 @@
 	            <input id="biglietto" type="number" value="1">
                 
                 <div class="d-flex justify-content-between align-items-center">
-                  <button class="conferma">Conferma</button>
-                  <!-- Cancellare un evento?? -->
-                  <form action="delete-event" method="post">>
-                   <input type="hidden" name="id" value="<%= prenotazione.getEvento().getId() %>">
-                   <input type="submit" name="remove" value="Remove event">
-                  </form>
-                   <!-- Cancellare un evento?? -->
+                  <button class="conferma">Conferma</button> 
                 </div>
+                <!-- Cancellare un evento?? -->
+		          <form action="delete-event" method="post">
+					  <input type="hidden" name="id" value="<%= prenotazione.getEvento().getId() %>">
+					  <input type="submit" name="remove" value="Remove event">
+				  </form>
+                   <!-- Cancellare un evento?? -->
 			    </div>
 			    <% } 
                    }  else { %>
@@ -47,7 +47,7 @@
 			<form>
 			<p><input type="submit" name ="submit" value=""></p>
 			</form>
-		<button href="servletCards" >Torna alla HOME</button>
+		<a href="servletCards"><button >Torna alla HOME</button></a>
 		<footer class="text-body-secondary py-5">
 		<div class="container">
 			<p class="float-end mb-1">

@@ -164,4 +164,22 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 
 	}
 
+	@Override
+	public List<Evento> findByNomeAndCitta(String nome, String citta) {
+	    EntityManager em = null;
+	    List<Evento> eventi = null;
+	    try {
+	        em = emf.createEntityManager();
+	        eventi = em.createQuery("SELECT e FROM Evento e WHERE e.nome LIKE :nome AND e.citta = :citta", Evento.class)
+	                .setParameter("nome", "%" + nome + "%").setParameter("citta", citta).getResultList();
+	    } catch (PersistenceException e) {
+	        System.err.println(e.getMessage());
+	    } finally {
+	        if (em != null) {
+	            em.close();
+	        }
+	    }
+	    return eventi;
+	}
+
 }

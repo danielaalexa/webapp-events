@@ -26,10 +26,10 @@
 								<h4 class="mt-1 mb-5 pb-1">...</h4>
 							</div>
 							<form method="get" action="servletSearch">
-								 <input class="form-control" list="GFGOptions" id="searchNome" name="nome" placeholder="Nome evento">
-								 <br>
-								 <label id="searchCitta">Città:</label>
-								 <select class="form-control" list="GFGOptions" id="searchCitta" name="citta" >
+								<input class="form-control" list="GFGOptions" id="searchNome"
+									name="nome" placeholder="Nome evento"> <br> <label
+									id="searchCitta">Città:</label> <select class="form-control"
+									list="GFGOptions" id="searchCitta" name="citta">
 									<option></option>
 									<option value="Napoli">Napoli</option>
 									<option value="Milano">Milano</option>
@@ -41,12 +41,29 @@
 									<option value="Palermo">Palermo</option>
 									<option value="Bari">Bari</option>
 									<option value="Firenze">Firenze</option>
-								</select>
-								<br>
-								<button id="searchTag" name="searchTag" value="1" class="btn btn-dark" type="submit">Music</button>
-								<button id="searchTag" name="searchTag" value="2" class="btn btn-dark" type="submit">Education</button>
-								<button id="searchTag" name="searchTag" value="3" class="btn btn-dark" type="submit">Comedy</button>
+								</select> <br>
+								<button id="searchTag" name="searchTag" value="1"
+									class="btn btn-dark" type="submit">Music</button>
+								<button id="searchTag" name="searchTag" value="2"
+									class="btn btn-dark" type="submit">Education</button>
+								<button id="searchTag" name="searchTag" value="3"
+									class="btn btn-dark" type="submit">Comedy</button>
 							</form>
+							<hr>
+							<hr>
+							<form method="get" action="SearchByNameAndCityServlet">
+								<input class="form-control" list="GFGOptions" id="searchNome"
+									name="nome" placeholder="Nome evento"> <br> <label
+									id="searchCitta">Città:</label> <select class="form-control"
+									list="GFGOptions" id="searchCitta" name="citta">
+									<option></option>
+									<option value="Napoli">Napoli</option>
+									<option value="Milano">Milano</option>
+									<!-- Other city options... -->
+								</select> <br>
+								<button class="btn btn-dark" type="submit">Search(this search button only for the second form)</button>
+							</form>
+
 						</div>
 					</div>
 				</div>
