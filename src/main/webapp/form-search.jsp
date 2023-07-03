@@ -26,10 +26,10 @@
 								<h4 class="mt-1 mb-5 pb-1">...</h4>
 							</div>
 							<form method="get" action="servletSearch">
-								 <input class="form-control" list="GFGOptions" id="searchNome" nome="nome" placeholder="Nome evento">
+								 <input class="form-control" list="GFGOptions" id="searchNome" name="nome" placeholder="Nome evento">
 								 <br>
 								 <label id="searchCitta">Città:</label>
-								 <select class="form-control" list="GFGOptions" id="searchCitta">
+								 <select class="form-control" list="GFGOptions" id="searchCitta" name="citta" >
 									<option></option>
 									<option value="Napoli">Napoli</option>
 									<option value="Milano">Milano</option>
