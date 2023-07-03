@@ -20,8 +20,8 @@
 		<% } else { %>
 		<p><%= evento.getPrezzo() %></p>
 		<% }  %>
-		<p><%= evento.getTagEvento() %></p>
-	<form method="get" action="carrello">
+		<p><%= evento.getTagEvento().getNome() %></p>
+	<form method="post" action="carrello">
 		<input type="hidden" name="id" value="<%= evento.getId() %>">
 		<button type="submit" class="carrello">Prenota ora</button>
 	</form>

@@ -6,7 +6,9 @@ import java.util.List;
 import it.generationitaly.events.entity.Evento;
 import it.generationitaly.events.entity.Prenotazione;
 import it.generationitaly.events.repository.EventoRepository;
+import it.generationitaly.events.repository.PrenotazioneRepository;
 import it.generationitaly.events.repository.impl.EventoRepositoryImpl;
+import it.generationitaly.events.repository.impl.PrenotazioneRepositoryImpl;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -20,23 +22,25 @@ public class CarrelloServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	private EventoRepository eventoRepository = new EventoRepositoryImpl();
+	private PrenotazioneRepository prenotazioneRepository = new PrenotazioneRepositoryImpl();
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		HttpSession session = request.getSession(); // request.getSession(false);
 		int id = Integer.parseInt(request.getParameter("id"));
 		Evento evento = eventoRepository.findById(id);
 		Prenotazione prenotazione = new Prenotazione();
 		prenotazione.setEvento(evento);
+		prenotazioneRepository.save(prenotazione);
 		List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
 		prenotazioni.add(prenotazione);
+		request.setAttribute("prenotazioni", prenotazioni);
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("carrello.jsp");
 		requestDispatcher.forward(request, response);
-	}
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		
 	}
 	
 	
