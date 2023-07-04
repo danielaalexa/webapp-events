@@ -9,6 +9,7 @@
 </head>
 <body>
 	<% Evento evento = (Evento) request.getAttribute("evento"); %>
+	<%@ include file="navbar.jsp" %>
 		<h1><%= evento.getNome() %></h1>
 		<img src="<%= evento.getImmagine() %>">
 		<p><%= evento.getData()%></p>

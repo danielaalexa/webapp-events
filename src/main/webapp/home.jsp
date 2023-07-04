@@ -28,10 +28,11 @@
 <title>Stivaletto | Homepage</title>
 </head>
 <body>
-	<a href="login.jsp">LOGIN</a>
+<%@ include file="navbar.jsp" %>
+	<!--  <a href="login.jsp">LOGIN</a>
 	<a href="signup.jsp">SIGN UP</a>
 	<a href="form-search.jsp">SEARCH</a>
-
+	-->
 
 	<main>
 		<section class="py-5 text-center container carousel-container">
