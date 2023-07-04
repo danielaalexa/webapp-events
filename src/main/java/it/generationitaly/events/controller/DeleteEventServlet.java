@@ -31,7 +31,6 @@ public class DeleteEventServlet extends HttpServlet {
 		RequestDispatcher requestDispatcher = request.getRequestDispatcher("carrello.jsp");
 		requestDispatcher.forward(request, response);
     	
-    	
         }
         
     	

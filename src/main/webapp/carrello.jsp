@@ -13,40 +13,36 @@
     <body>
         <h1>Il Tuo Carrello</h1>
          <% List<Prenotazione> prenotazioni = (List<Prenotazione>) request.getAttribute("prenotazioni"); %>
-                <% if(!prenotazioni.isEmpty()) {
-                       for(Prenotazione prenotazione : prenotazioni) { %>
-                <div class="card-body">
-			    <img src="<%= prenotazione.getEvento().getImmagine() %>">
-                <p><%= prenotazione.getEvento().getNome() %></p>
-                <p><%= prenotazione.getEvento().getData() %></p>
-                <p><%= prenotazione.getEvento().getIndirizzo() %></p>
-                    <% if (prenotazione.getEvento().isGratuito()){ %>
-                    <p><%= "Gratuito" %></p>
-                    <% } else {%>
-                    <p><%= prenotazione.getEvento().getPrezzo() %></p>
-                    <% }  %>
-                
-                <label for="biglietto">Biglietto di ingresso generale</label> 
-	            <input id="biglietto" type="number" value="1">
-                
-                <div class="d-flex justify-content-between align-items-center">
-                  <button class="conferma">Conferma</button> 
-                </div>
-                <!-- Cancellare un evento?? -->
-		          <form action="delete-event" method="post">
-					  <input type="hidden" name="id" value="<%= prenotazione.getEvento().getId() %>">
-					  <input type="submit" name="remove" value="Remove event">
-				  </form>
-                   <!-- Cancellare un evento?? -->
-			    </div>
-			    <% } 
-                   }  else { %>
-                <p><%= "0 results found..." %></p>
-                <% } %>
-			<p>Il totale �: </p>
-			<form>
-			<p><input type="submit" name ="submit" value=""></p>
-			</form>
+            <% if(prenotazioni.isEmpty()){ %>
+            	 <p><%= "Il tuo carrello è vuoto..." %></p>
+            <% } else {
+                     for(Prenotazione prenotazione : prenotazioni) { %>
+                 <div class="card-body">
+			         <img src="<%= prenotazione.getEvento().getImmagine() %>">
+                     <p><%= prenotazione.getEvento().getNome() %></p>
+                     <p><%= prenotazione.getEvento().getData() %></p>
+                     <p><%= prenotazione.getEvento().getIndirizzo() %></p>
+                     <% if (prenotazione.getEvento().isGratuito()){ %>
+                     <p><%= "Gratuito" %></p>
+                     <% } else {%>
+                     <p>Prezzo</p>
+                     <p><%= prenotazione.getEvento().getPrezzo() + " €" %></p>
+                     <% }  %>
+                 <form method="post" action="carrello">
+                     <label for="biglietto">Biglietto di ingresso</label> 
+	                 <input id="biglietto" type="number" value="1">
+                 </form>
+                     <!-- Cancellare un evento?? -->
+                 <form action="delete-event" method="post">>
+                     <input type="hidden" name="id" value="<%= prenotazione.getEvento().getId() %>">
+                     <button type="submit" name="remove" value="Remove event">Rimuovi evento</button>
+                 </form>
+                     <!-- Cancellare un evento?? -->
+                 </div>        
+                     <% } %>
+            <p>Il totale è: <%  %></p>
+                     <% } %>
+			       <a href="carrello?buy"><button class="buy" type="submit">Prenota</button></a>
 		<a href="servletCards"><button >Torna alla HOME</button></a>
 		<footer class="text-body-secondary py-5">
 		<div class="container">
