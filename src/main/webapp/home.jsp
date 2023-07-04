@@ -1,11 +1,11 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <%@page import="it.generationitaly.events.entity.Evento"%>
 <!DOCTYPE html>
 <html>
 <head>
 
-<meta charset="utf-8" />
+<meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="" />
 <meta name="author" content="Livingstone Amang" />
@@ -131,7 +131,7 @@
 
 
 								<a href="evento?id=<%=evento1.getId()%>"><button
-										class="scopri-piu">Scopri di più</button></a>
+										class="scopri-piu">Scopri di piÃ¹</button></a>
 
 
 							</div>
@@ -157,7 +157,7 @@
 							<div class="d-flex justify-content-between align-items-center">
 
 								<a href="evento?id=<%=evento2.getId()%>"><button
-										class="scopri-piu">Scopri di più</button></a>
+										class="scopri-piu">Scopri di piÃ¹</button></a>
 
 
 							</div>
@@ -182,7 +182,7 @@
 							<div class="d-flex justify-content-between align-items-center">
 
 								<a href="evento?id=<%=evento3.getId()%>"><button
-										class="scopri-piu">Scopri di più</button></a>
+										class="scopri-piu">Scopri di piÃ¹</button></a>
 
 
 							</div>

@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html
 <html lang="en">
 <head>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
@@ -28,7 +28,7 @@
 							<form method="get" action="servletSearch">
 								<input class="form-control" list="GFGOptions" id="searchNome" name="nome" placeholder="Nome evento">
 									<br>
-									<label id="searchCitta">Città:</label>
+									<label id="searchCitta">CittÃ :</label>
 									<select class="form-control" list="GFGOptions" id="searchCitta" name="citta">
 									<option value="Napoli">Napoli</option>
 									<option value="Milano">Milano</option>
@@ -57,7 +57,7 @@
 							<form method="get" action="searchByNameAndCityServlet">
 								<input class="form-control" list="GFGOptions" id="searchNome"
 									name="nome" placeholder="Nome evento"> <br> <label
-									id="searchCitta">Città:</label> <select class="form-control"
+									id="searchCitta">CittÃ :</label> <select class="form-control"
 									list="GFGOptions" id="searchCitta" name="citta">
 									<option></option>
 									<option value="Napoli">Napoli</option>

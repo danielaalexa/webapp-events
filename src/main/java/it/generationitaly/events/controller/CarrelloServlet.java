@@ -75,13 +75,13 @@ public class CarrelloServlet extends HttpServlet {
 
 	private void getRemove(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		/* HttpSession session = request.getSession();
-		List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
+		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("user");
 		int id = Integer.parseInt(request.getParameter("id"));
 		Prenotazione prenotazione = prenotazioneRepository.findById(id);
 		prenotazioni.remove(prenotazione);
 		session.setAttribute("prenotazioni", prenotazioni);
 		response.sendRedirect("carrello");
-        */
 	}
 }

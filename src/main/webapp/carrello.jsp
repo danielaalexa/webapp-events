@@ -2,12 +2,12 @@
 <%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@page import="java.util.List"%>
 <%@page import="it.generationitaly.events.entity.Evento"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="UTF-8">
         <title>Carrello</title>
     </head>
     <body>
@@ -33,7 +33,7 @@
                  <form method="post" action="carrello">
                      <input type="hidden" name="idPrenotazione" value="<%= prenotazione.getId() %>">
                      <label for="quantita">Biglietto di ingresso</label> 
-	                 <input id="quantita" name="quantita" type="number" min="1" max="25">
+	                 <input id="quantita" name="quantita" type="number" min="1" max="25" placeholder="0">
                  </form>
                      <!-- Cancellazione-->
                  <form method="post" action="delete-event">
@@ -42,7 +42,7 @@
                  </form>
                  </div>        
                      <% } %>
-            <p>Il totale è: <%  %></p>
+            <p>Il totale è: <%=  " €"%></p>
                      <% } %>
 			       <a href="carrello?buy"><button class="buy" type="submit">Prenota</button></a>
 		<a href="servletCards"><button >Torna alla HOME</button></a>

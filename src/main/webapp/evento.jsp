@@ -1,12 +1,12 @@
 <%@page import="it.generationitaly.events.entity.Evento"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <script src="https://kit.fontawesome.com/43c824bcfa.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="evento.css" ></link>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Evento</title>
 
 </head>
@@ -26,7 +26,7 @@
 		<% if (evento.isGratuito()){ %>
 		<p class="event-type"><%= "Gratuito" %></p>
 		<% } else { %>
-		<p class="event-type"><i class="fa-solid fa-money-bill"></i> <%= evento.getPrezzo() %></p>
+		<p class="event-type"><i class="fa-solid fa-money-bill"></i> <%= evento.getPrezzo() + " €"%></p>
 		<% }  %>
 
 		<p class="event-tag"><%= evento.getTagEvento().getNome() %></p>
