@@ -10,12 +10,10 @@
 <meta name="description" content="" />
 <meta name="author" content="Livingstone Amang" />
 <meta name="generator" content="Hugo 0.112.5" />
-<title>JAITA MAIN PAGE</title>
-
+<title>Stivaletto | Homepage</title>
 <link rel="stylesheet" href="carousel.css" />
 <link rel="stylesheet"
 	href="path/to/font-awesome/css/font-awesome.min.css">
-
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -27,13 +25,14 @@
 
 <meta name="theme-color" content="#712cf9" />
 <meta charset="ISO-8859-1">
-<title>Homepage/NomeSito</title>
+<title>Stivaletto | Homepage</title>
 </head>
 <body>
-	<a href="login.jsp">login</a>
-	<a href="signup.jsp">suignup</a>
-	<a href="form-search.jsp">search</a>
-
+<%@ include file="navbar.jsp" %>
+	<!--  <a href="login.jsp">LOGIN</a>
+	<a href="signup.jsp">SIGN UP</a>
+	<a href="form-search.jsp">SEARCH</a>
+	-->
 
 	<main>
 		<section class="py-5 text-center container carousel-container">
@@ -54,7 +53,7 @@
 							src="https://images.unsplash.com/photo-1674574124792-3be232f1957f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
 							class="d-block w-100" alt="..." />
 						<div class="carousel-caption d-none d-md-block">
-							<h5 class="c-title">Benvenuto su JAITA Events</h5>
+							<h5 class="c-title">Benvenuto su Stivaletto Events</h5>
 							<p class="c-description">Some representative placeholder
 								content for the first slide.</p>
 						</div>
@@ -74,7 +73,7 @@
 							src="https://images.unsplash.com/photo-1682695794947-17061dc284dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
 							class="d-block w-100" alt="..." />
 						<div class="carousel-caption d-none d-md-block">
-							<h5 class="c-title">I tuoi eventi su JAITA</h5>
+							<h5 class="c-title">I tuoi eventi su Stivaletto</h5>
 							<p class="c-description">Some representative placeholder
 								content for the third slide.</p>
 						</div>
@@ -129,10 +128,11 @@
 							</p>
 							<div class="d-flex justify-content-between align-items-center">
 
-								
 
-								<a href="evento?id=<%=evento1.getId()%>"><button  class="scopri-piu">Scopri di più</button></a>
-										
+
+								<a href="evento?id=<%=evento1.getId()%>"><button
+										class="scopri-piu">Scopri di più</button></a>
+
 
 							</div>
 						</div>
@@ -156,7 +156,8 @@
 							</p>
 							<div class="d-flex justify-content-between align-items-center">
 
-								<a href="evento?id=<%=evento2.getId()%>"><button  class="scopri-piu">Scopri di più</button></a>
+								<a href="evento?id=<%=evento2.getId()%>"><button
+										class="scopri-piu">Scopri di più</button></a>
 
 
 							</div>
@@ -180,7 +181,8 @@
 							</p>
 							<div class="d-flex justify-content-between align-items-center">
 
-								<a href="evento?id=<%=evento3.getId()%>"><button  class="scopri-piu">Scopri di più</button></a>
+								<a href="evento?id=<%=evento3.getId()%>"><button
+										class="scopri-piu">Scopri di più</button></a>
 
 
 							</div>
@@ -193,27 +195,38 @@
 
 
 				<div class="tag-eventi">
-					<a class="eventi-regione"> <i class="fa-solid fa-briefcase"></i>Eventi
-						Business
-					</a> <a class="eventi-regione"><i class="fa-solid fa-mug-hot"></i>Aperitivi</a>
-					<a class="eventi-regione"><i class="fa-solid fa-refrigerator"></i>Feste</a>
-					<a class="eventi-regione">Eventi in Sicilia</a> <a
-						class="eventi-regione">Eventi in Basilicata</a> <a
-						class="eventi-regione">Eventi in Toscana</a> <a
-						class="eventi-regione">Altri...</a>
-
-
+					<%--
+					<a class="eventi-regione"><i class="fa-solid fa-music"></i> Music</a>
+					<a class="eventi-regione"><i class="fa-solid fa-school"></i> Education</a>
+					<a class="eventi-regione"><i class="fa-solid fa-laugh"></i> Comedy</a>
+					<a href="form-search.jsp" class="eventi-regione">Altri...</a>
+					--%>
+					<form method="get" action="searchByTag">
+						<button id="searchTag" name="searchTag" value="1"
+							class="eventi-regione" type="submit">
+							<i class="fa-solid fa-music"></i> Music
+						</button>
+						<button id="searchTag" name="searchTag" value="2"
+							class="eventi-regione" type="submit">
+							<i class="fa-solid fa-school"></i> Education
+						</button>
+						<button id="searchTag" name="searchTag" value="3"
+							class="eventi-regione" type="submit">
+							<i class="fa-solid fa-laugh"></i> Comedy
+						</button>
+					</form>
+					<a href="form-search.jsp"><button class="eventi-regione">Altri...</button></a>
 				</div>
 	</main>
 
 	<footer class="text-body-secondary py-5">
 		<div class="container">
 			<p class="float-end mb-1">
-				<a href="#">Back to top</a>
+				<a href="#">Back to the top</a>
 			</p>
 
 			<p class="mb-0">
-				<q> Qui andra messo il footer</q>
+				<%@ include file="foother.html"%>
 
 			</p>
 		</div>

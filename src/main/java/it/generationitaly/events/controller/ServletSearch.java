@@ -25,33 +25,12 @@ public class ServletSearch extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		
-		System.out.println("inizia la ricerca");
-		if (request.getParameter("searchTag") != "") {
-			getEventoTag(request, response);
-			return;
-		}
-		else if (request.getParameter("nome") != null) {
-			getEventoNome(request, response);
-			return;
-		}
+		int id = Integer.parseInt(request.getParameter("searchTag"));
+		String citta = request.getParameter("citta");	
+		List<Evento> eventi = eR.findEventi1(id, citta);
+		request.setAttribute("eventi", eventi);
+		request.getRequestDispatcher("risultati.jsp").forward(request, response);
 
-		else if (request.getParameter("citta") != "") {
-			getEventoCitta(request, response);
-			return;
-		}
-
-		if (request.getParameter("gratuito") != null) {
-			getEventoGratuito(request, response);
-			return;
-		}
-
-		if (request.getParameter("date1") != null && request.getParameter("date2") != null) {
-			getEventoDateBetween(request, response);
-			return;
-		}
-		
-	
 
 	}
 
@@ -114,38 +93,11 @@ public class ServletSearch extends HttpServlet {
 		request.getRequestDispatcher("risultati.jsp").forward(request, response);
 	}
 
-	/*private void getEventoDate(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-
-		String data1AsString = request.getParameter("data1");
-		String data2AsString = request.getParameter("data2");
-
-		if (data1AsString != null && data2AsString == null) {
-			Date data1 = null;
-			try {
-				data1 = formatter.parse(data1AsString);
-			} catch (ParseException e) {
-				e.getMessage();
-			}
-			List<Evento> eventi = eR.findByData(data1);
-			request.setAttribute("eventi", eventi);
-			request.getRequestDispatcher("risultati.jsp").forward(request, response);
-		}
-		if (data1AsString == null && data2AsString != null) {
-			Date data2 = null;
-			try {
-				data2 = formatter.parse(data2AsString);
-			} catch (ParseException e) {
-				e.getMessage();
-			}
-			List<Evento> eventi = eR.findByData(data2);
-			request.setAttribute("eventi", eventi);
-			request.getRequestDispatcher("risultati.jsp").forward(request, response);
-
-		}
-
-	}
 	
-	*/
+
+	
+	
+	
+	
 }
+

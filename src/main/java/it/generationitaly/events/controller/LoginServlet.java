@@ -25,14 +25,14 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
+		
 
 		User user = uR.findByUsername(username);
 		if (user != null && user.getPassword().equals(password)) {
 			HttpSession session = request.getSession();
+			session.setAttribute("user", user);
 			session.setAttribute("userId", user.getId());
 			session.setAttribute("username", user.getUsername());
-			session.setAttribute("prenotazioni", prenotazioni);
 			response.sendRedirect("servletCards");
 		} else {
 			response.sendRedirect("login.jsp?credenzialiErrate");

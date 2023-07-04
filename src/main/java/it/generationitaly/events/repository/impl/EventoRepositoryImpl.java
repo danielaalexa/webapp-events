@@ -42,9 +42,8 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			eventi = em
-					.createQuery("select e from Evento e join fetch e.tagEvento where e.tagEvento.id = :id", Evento.class)
-					.setParameter("id", id).getResultList();
+			eventi = em.createQuery("select e from Evento e join fetch e.tagEvento where e.tagEvento.id = :id",
+					Evento.class).setParameter("id", id).getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
 			if (tx != null && tx.isActive())
@@ -68,8 +67,9 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			em = emf.createEntityManager();
 			tx = em.getTransaction();
 			tx.begin();
-			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e where e.nome = :nome", Evento.class);
-			query.setParameter("nome",searchterm);
+			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e WHERE e.nome LIKE :searchterm", Evento.class);
+		    query.setParameter("searchterm", "%" + searchterm + "%");
+
 			eventi = query.getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
@@ -85,7 +85,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 	}
 
 	@Override
-	public List<Evento> findByGratuito(Boolean gratuito) {
+	public List<Evento> findByGratuito(boolean gratuito) {
 		EntityManager em = null;
 		List<Evento> eventi = null;
 		try {
@@ -107,7 +107,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 		List<Evento> eventi = null;
 		try {
 			em = emf.createEntityManager();
-			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.data between (:date1 and :date2) ", Evento.class)
+			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.data BETWEEN :date1 AND :date2 ", Evento.class)
 					.setParameter("date1", date1).setParameter("date2", date2).getResultList();
 		} catch (PersistenceException e) {
 			System.err.println(e.getMessage());
@@ -135,4 +135,88 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 		}
 		return eventi;
 	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Evento> findEventi1(int id, String citta) {
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		List<Evento> eventi = new ArrayList<Evento>();
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			eventi = em
+					.createQuery(
+							"SELECT e FROM Evento e JOIN fetch e.tagEvento t WHERE t.id = :id AND e.citta = :citta")
+					.setParameter("id", id).setParameter("citta", citta).getResultList();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null && tx.isActive())
+				tx.rollback();
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return eventi;
+
+	}
+
+	@Override
+	public List<Evento> findByNomeAndCitta(String nome, String citta) {
+	    EntityManager em = null;
+	    List<Evento> eventi = null;
+	    try {
+	        em = emf.createEntityManager();
+	        eventi = em.createQuery("SELECT e FROM Evento e WHERE e.nome LIKE :nome AND e.citta = :citta", Evento.class)
+	                .setParameter("nome", "%" + nome + "%").setParameter("citta", citta).getResultList();
+	    } catch (PersistenceException e) {
+	        System.err.println(e.getMessage());
+	    } finally {
+	        if (em != null) {
+	            em.close();
+	        }
+	    }
+	    return eventi;
+	}
+
+	@Override
+	public List<Evento> findByCittaAndGratuito(String citta, boolean gratuito) {
+	    EntityManager em = null;
+	    List<Evento> eventi = null;
+	    try {
+	        em = emf.createEntityManager();
+	        eventi = em.createQuery("SELECT e FROM Evento e WHERE e.citta = :citta AND e.gratuito = :gratuito", Evento.class)
+	                .setParameter("citta", citta)
+	                .setParameter("gratuito", gratuito)
+	                .getResultList();
+	    } catch (PersistenceException e) {
+	        System.err.println(e.getMessage());
+	    } finally {
+	        if (em != null) {
+	            em.close();
+	        }
+	    }
+	    return eventi;
+	}
+
+	public List<Evento> findByCittaDateBetween(String citta, Date date1, Date date2) {
+		EntityManager em = null;
+		List<Evento> eventi = null;
+		try {
+			em = emf.createEntityManager();
+			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.citta =:citta and  e.data BETWEEN :date1 AND :date2 ", Evento.class).setParameter("citta", citta)
+					.setParameter("date1", date1).setParameter("date2", date2).getResultList();
+		} catch (PersistenceException e) {
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null)
+				em.close();
+		}
+		return eventi;
+
+	}
+
 }
