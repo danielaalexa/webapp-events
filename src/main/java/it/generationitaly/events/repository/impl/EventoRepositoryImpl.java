@@ -183,6 +183,25 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 	}
 
 	@Override
+	public List<Evento> findByCittaAndGratuito(String citta, boolean gratuito) {
+	    EntityManager em = null;
+	    List<Evento> eventi = null;
+	    try {
+	        em = emf.createEntityManager();
+	        eventi = em.createQuery("SELECT e FROM Evento e WHERE e.citta = :citta AND e.gratuito = :gratuito", Evento.class)
+	                .setParameter("citta", citta)
+	                .setParameter("gratuito", gratuito)
+	                .getResultList();
+	    } catch (PersistenceException e) {
+	        System.err.println(e.getMessage());
+	    } finally {
+	        if (em != null) {
+	            em.close();
+	        }
+	    }
+	    return eventi;
+	}
+
 	public List<Evento> findByCittaDateBetween(String citta, Date date1, Date date2) {
 		EntityManager em = null;
 		List<Evento> eventi = null;
@@ -199,5 +218,5 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 		return eventi;
 
 	}
-	
+
 }
