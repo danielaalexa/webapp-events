@@ -28,6 +28,7 @@
 <title>Stivaletto | Homepage</title>
 </head>
 <body>
+<%@ include file="navbar.jsp" %>
 	<%
 	List<Evento> eventi = (List<Evento>) request.getAttribute("eventi");
 	%>
