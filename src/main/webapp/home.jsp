@@ -193,16 +193,18 @@
 
 
 				<div class="tag-eventi">
-					<a class="eventi-regione"> <i class="fa-solid fa-briefcase"></i>Eventi
-						Business
-					</a> <a class="eventi-regione"><i class="fa-solid fa-mug-hot"></i>Aperitivi</a>
-					<a class="eventi-regione"><i class="fa-solid fa-refrigerator"></i>Feste</a>
-					<a class="eventi-regione">Eventi in Sicilia</a> <a
-						class="eventi-regione">Eventi in Basilicata</a> <a
-						class="eventi-regione">Eventi in Toscana</a> <a
-						class="eventi-regione">Altri...</a>
-
-
+					<%--
+					<a class="eventi-regione"><i class="fa-solid fa-music"></i> Music</a>
+					<a class="eventi-regione"><i class="fa-solid fa-school"></i> Education</a>
+					<a class="eventi-regione"><i class="fa-solid fa-laugh"></i> Comedy</a>
+					<a href="form-search.jsp" class="eventi-regione">Altri...</a>
+					--%>
+					<form method="get" action="searchByTag">
+					<button id="searchTag" name="searchTag" value="1" class="eventi-regione" type="submit"><i class="fa-solid fa-music"></i> Music</button>
+					<button id="searchTag" name="searchTag" value="2" class="eventi-regione" type="submit"><i class="fa-solid fa-school"></i> Education</button>
+					<button id="searchTag" name="searchTag" value="3" class="eventi-regione" type="submit"><i class="fa-solid fa-laugh"></i> Comedy</button>
+					</form>
+					<a href="form-search.jsp"><button class="eventi-regione">Altri...</button></a>
 				</div>
 	</main>
 
