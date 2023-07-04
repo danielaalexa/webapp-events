@@ -43,11 +43,13 @@
 									<option value="Firenze">Firenze</option>
 								</select> <br>
 								<button id="searchTag" name="searchTag" value="1"
-									class="btn btn-dark" type="submit">Music</button>
+									class="btn btn-dark" type="button">Music</button>
 								<button id="searchTag" name="searchTag" value="2"
-									class="btn btn-dark" type="submit">Education</button>
+									class="btn btn-dark" type="button">Education</button>
 								<button id="searchTag" name="searchTag" value="3"
-									class="btn btn-dark" type="submit">Comedy</button>
+									class="btn btn-dark" type="button">Comedy</button>
+									<br>
+							    <button class="btn btn-dark" type="submit">Search</button>
 							</form>
 							<hr>
 							<hr>
