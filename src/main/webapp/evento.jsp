@@ -29,7 +29,7 @@
 		<p class="event-type"><i class="fa-solid fa-money-bill"></i> <%= evento.getPrezzo() %></p>
 		<% }  %>
 
-		<p class="event-tag"><%= evento.getTagEvento() %></p>
+		<p class="event-tag"><%= evento.getTagEvento().getNome() %></p>
 	<form method="get" action="carrello">
 
 
