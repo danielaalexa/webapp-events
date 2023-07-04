@@ -24,28 +24,23 @@ public class CarrelloServlet extends HttpServlet {
 
 	private EventoRepository eventoRepository = new EventoRepositoryImpl();
 	private PrenotazioneRepository prenotazioneRepository = new PrenotazioneRepositoryImpl();
-	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
 		HttpSession session = request.getSession();
-		 // request.getSession(false);
-		// List<Prenotazione> prenotazioni = (List<Prenotazione>)
-		// session.getAttribute("prenotazioni");
 		User user = (User) session.getAttribute("user");
 		System.out.println(user);
 		if (user == null) {
 			response.sendRedirect("login.jsp");
 			return;
-		}else{
+		} else {
+
 			int id = Integer.parseInt(request.getParameter("id"));
 			Evento evento = eventoRepository.findById(id);
-			System.out.println(evento);
 			Prenotazione prenotazione = new Prenotazione();
 			prenotazione.setUser(user);
 			prenotazione.setEvento(evento);
-			System.out.println(prenotazione);
 			prenotazioneRepository.save(prenotazione);
 			prenotazioni.add(prenotazione);
 			user.setPrenotazioni(prenotazioni);
@@ -53,7 +48,19 @@ public class CarrelloServlet extends HttpServlet {
 			request.setAttribute("prenotazioni", prenotazioni);
 			request.getRequestDispatcher("carrello.jsp").forward(request, response);
 		}
+		if (request.getParameter("quantita") != null) {
+			getQuantita(request, response);
+			return;
+		}
+	}
 
+	protected void getQuantita(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int idPrenotazione = Integer.parseInt(request.getParameter("idPrenotazione"));
+		Prenotazione prenotazione = prenotazioneRepository.findById(idPrenotazione);
+		int quantita = Integer.parseInt(request.getParameter("quantita"));
+		prenotazione.setQuantita(quantita);
+		prenotazioneRepository.update(prenotazione);
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

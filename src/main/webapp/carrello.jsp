@@ -31,15 +31,15 @@
                      <p><%= prenotazione.getEvento().getPrezzo() + " €" %></p>
                      <% }  %>
                  <form method="post" action="carrello">
-                     <label for="biglietto">Biglietto di ingresso</label> 
-	                 <input id="biglietto" type="number" value="1">
+                     <input type="hidden" name="idPrenotazione" value="<%= prenotazione.getId() %>">
+                     <label for="quantita">Biglietto di ingresso</label> 
+	                 <input id="quantita" name="quantita" type="number" min="1" max="25">
                  </form>
-                     <!-- Cancellare un evento?? -->
-                 <form action="delete-event" method="post">>
-                     <input type="hidden" name="id" value="<%= prenotazione.getEvento().getId() %>">
-                     <button type="submit" name="remove" value="Remove event">Rimuovi evento</button>
+                     <!-- Cancellazione-->
+                 <form method="post" action="delete-event">
+                     <input type="hidden" name="id" value="<%= prenotazione.getId() %>">
+                     <button type="submit" name="remove" value="Remove event">Elimina</button>
                  </form>
-                     <!-- Cancellare un evento?? -->
                  </div>        
                      <% } %>
             <p>Il totale è: <%  %></p>
