@@ -1,6 +1,7 @@
 package it.generationitaly.events.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import it.generationitaly.events.entity.Evento;
@@ -23,18 +24,21 @@ public class CarrelloServlet extends HttpServlet {
 
 	private EventoRepository eventoRepository = new EventoRepositoryImpl();
 	private PrenotazioneRepository prenotazioneRepository = new PrenotazioneRepositoryImpl();
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession(); // request.getSession(false);
+		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
+		HttpSession session = request.getSession();
+		 // request.getSession(false);
 		// List<Prenotazione> prenotazioni = (List<Prenotazione>)
 		// session.getAttribute("prenotazioni");
 		User user = (User) session.getAttribute("user");
 		System.out.println(user);
 		if (user == null) {
 			response.sendRedirect("login.jsp");
-		} else {
-			List<Prenotazione> prenotazioni = user.getPrenotazioni();
+			return;
+		}else{
 			int id = Integer.parseInt(request.getParameter("id"));
 			Evento evento = eventoRepository.findById(id);
 			System.out.println(evento);
@@ -44,7 +48,9 @@ public class CarrelloServlet extends HttpServlet {
 			System.out.println(prenotazione);
 			prenotazioneRepository.save(prenotazione);
 			prenotazioni.add(prenotazione);
+			user.setPrenotazioni(prenotazioni);
 			session.setAttribute("prenotazioni", prenotazioni);
+			request.setAttribute("prenotazioni", prenotazioni);
 			request.getRequestDispatcher("carrello.jsp").forward(request, response);
 		}
 
