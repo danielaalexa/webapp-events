@@ -11,11 +11,9 @@
 <meta name="author" content="Livingstone Amang" />
 <meta name="generator" content="Hugo 0.112.5" />
 <title>Stivaletto | Homepage</title>
-
 <link rel="stylesheet" href="carousel.css" />
 <link rel="stylesheet"
 	href="path/to/font-awesome/css/font-awesome.min.css">
-
 <link
 	href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
 	rel="stylesheet"
@@ -30,10 +28,11 @@
 <title>Stivaletto | Homepage</title>
 </head>
 <body>
-	<a href="login.jsp">LOGIN</a>
+<%@ include file="navbar.jsp" %>
+	<!--  <a href="login.jsp">LOGIN</a>
 	<a href="signup.jsp">SIGN UP</a>
 	<a href="form-search.jsp">SEARCH</a>
-
+	-->
 
 	<main>
 		<section class="py-5 text-center container carousel-container">
@@ -129,10 +128,11 @@
 							</p>
 							<div class="d-flex justify-content-between align-items-center">
 
-								
 
-								<a href="evento?id=<%=evento1.getId()%>"><button  class="scopri-piu">Scopri di più</button></a>
-										
+
+								<a href="evento?id=<%=evento1.getId()%>"><button
+										class="scopri-piu">Scopri di più</button></a>
+
 
 							</div>
 						</div>
@@ -156,7 +156,8 @@
 							</p>
 							<div class="d-flex justify-content-between align-items-center">
 
-								<a href="evento?id=<%=evento2.getId()%>"><button  class="scopri-piu">Scopri di più</button></a>
+								<a href="evento?id=<%=evento2.getId()%>"><button
+										class="scopri-piu">Scopri di più</button></a>
 
 
 							</div>
@@ -180,7 +181,8 @@
 							</p>
 							<div class="d-flex justify-content-between align-items-center">
 
-								<a href="evento?id=<%=evento3.getId()%>"><button  class="scopri-piu">Scopri di più</button></a>
+								<a href="evento?id=<%=evento3.getId()%>"><button
+										class="scopri-piu">Scopri di più</button></a>
 
 
 							</div>
@@ -200,9 +202,18 @@
 					<a href="form-search.jsp" class="eventi-regione">Altri...</a>
 					--%>
 					<form method="get" action="searchByTag">
-					<button id="searchTag" name="searchTag" value="1" class="eventi-regione" type="submit"><i class="fa-solid fa-music"></i> Music</button>
-					<button id="searchTag" name="searchTag" value="2" class="eventi-regione" type="submit"><i class="fa-solid fa-school"></i> Education</button>
-					<button id="searchTag" name="searchTag" value="3" class="eventi-regione" type="submit"><i class="fa-solid fa-laugh"></i> Comedy</button>
+						<button id="searchTag" name="searchTag" value="1"
+							class="eventi-regione" type="submit">
+							<i class="fa-solid fa-music"></i> Music
+						</button>
+						<button id="searchTag" name="searchTag" value="2"
+							class="eventi-regione" type="submit">
+							<i class="fa-solid fa-school"></i> Education
+						</button>
+						<button id="searchTag" name="searchTag" value="3"
+							class="eventi-regione" type="submit">
+							<i class="fa-solid fa-laugh"></i> Comedy
+						</button>
 					</form>
 					<a href="form-search.jsp"><button class="eventi-regione">Altri...</button></a>
 				</div>
@@ -215,7 +226,7 @@
 			</p>
 
 			<p class="mb-0">
-				<%@ include file="foother.html" %>
+				<%@ include file="foother.html"%>
 
 			</p>
 		</div>
