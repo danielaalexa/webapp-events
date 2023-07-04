@@ -18,7 +18,7 @@ public class Prenotazione {
 	@Column(name = "id", nullable = false)
 	private int id;
 	
-	@Column(name = "quantita", nullable = false)
+	@Column(name = "quantita", nullable = true)
 	private int quantita;
 	
 	@ManyToOne
@@ -28,8 +28,6 @@ public class Prenotazione {
     @ManyToOne
     @JoinColumn(name = "evento_id", nullable = false)
     private Evento evento;
-    
-	
 
 	public int getId() {
 		return id;
@@ -65,7 +63,8 @@ public class Prenotazione {
 
 	@Override
 	public String toString() {
-		return "Prenotazione [id=" + id + ", quantita=" + quantita + ", user=" + user + "]";
+		return "Prenotazione [id=" + id + ", quantita=" + quantita + ", user=" + user + ", evento=" + evento + "]";
 	}
+
 	
 }

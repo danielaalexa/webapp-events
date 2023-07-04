@@ -1,5 +1,6 @@
 package it.generationitaly.events.entity;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -50,8 +51,8 @@ public class User {
 	@JoinColumn(name = "metodo_pagamento_id", nullable = true)
 	private MetodoPagamento metodoPagamento;
     
-	@OneToMany
-	private List<Prenotazione> prenotazioni;
+	@OneToMany(mappedBy = "user")
+	private List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
 
 	public int getId() {
 		return id;
