@@ -28,14 +28,12 @@ public class CarrelloServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
-		HttpSession session = request.getSession();
+		HttpSession session = request.getSession(); // request.getSession(false);
 		User user = (User) session.getAttribute("user");
 		System.out.println(user);
 		if (user == null) {
 			response.sendRedirect("login.jsp");
-			return;
 		} else {
-
 			int id = Integer.parseInt(request.getParameter("id"));
 			Evento evento = eventoRepository.findById(id);
 			Prenotazione prenotazione = new Prenotazione();
@@ -48,6 +46,7 @@ public class CarrelloServlet extends HttpServlet {
 			request.setAttribute("prenotazioni", prenotazioni);
 			request.getRequestDispatcher("carrello.jsp").forward(request, response);
 		}
+		
 		if (request.getParameter("quantita") != null) {
 			getQuantita(request, response);
 			return;
@@ -62,7 +61,7 @@ public class CarrelloServlet extends HttpServlet {
 		prenotazione.setQuantita(quantita);
 		prenotazioneRepository.update(prenotazione);
 	}
-
+	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		getBuy(request, response);
@@ -76,13 +75,13 @@ public class CarrelloServlet extends HttpServlet {
 
 	private void getRemove(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		HttpSession session = request.getSession();
+		/* HttpSession session = request.getSession();
 		List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
 		int id = Integer.parseInt(request.getParameter("id"));
 		Prenotazione prenotazione = prenotazioneRepository.findById(id);
 		prenotazioni.remove(prenotazione);
 		session.setAttribute("prenotazioni", prenotazioni);
 		response.sendRedirect("carrello");
-
+        */
 	}
 }
