@@ -202,4 +202,21 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 	    return eventi;
 	}
 
+	public List<Evento> findByCittaDateBetween(String citta, Date date1, Date date2) {
+		EntityManager em = null;
+		List<Evento> eventi = null;
+		try {
+			em = emf.createEntityManager();
+			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.citta =:citta and  e.data BETWEEN :date1 AND :date2 ", Evento.class).setParameter("citta", citta)
+					.setParameter("date1", date1).setParameter("date2", date2).getResultList();
+		} catch (PersistenceException e) {
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null)
+				em.close();
+		}
+		return eventi;
+
+	}
+
 }
