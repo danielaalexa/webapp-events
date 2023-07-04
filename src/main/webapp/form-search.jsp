@@ -11,6 +11,7 @@
 <form method="get" action="servletSearch">
 	<label for="searchTag">Tipologia evento:</label>
 	<select name="searchTag" id="searchTag">
+	    <option></option>
 		<option value="1">Music</option>
 		<option value="2">Education</option>
 		<option value="3">Comedy</option>
@@ -25,16 +26,17 @@
 	<br>
 	<label for="searchCitta">Città:</label>
 	<select id="searchCitta" name="citta">
-		<option value="1">Napoli</option>
-		<option value="2">Milano</option>
-		<option value="3">Roma</option>
-		<option value="4">Torino</option>
-		<option value="5">Catania</option>
-		<option value="6">Bologna</option>
-		<option value="7">Genova</option>
-		<option value="8">Palermo</option>
-		<option value="9">Bari</option>
-		<option value="10">Firenze</option>
+	    <option></option>
+		<option value="Napoli">Napoli</option>
+		<option value="Milano">Milano</option>
+		<option value="Roma">Roma</option>
+		<option value="Torino">Torino</option>
+		<option value="Catania">Catania</option>
+		<option value="Bologna">Bologna</option>
+		<option value="Genova">Genova</option>
+		<option value="Palermo">Palermo</option>
+		<option value="Bari">Bari</option>
+		<option value="Firenze">Firenze</option>
 	</select>
 	<br>
 	<br>

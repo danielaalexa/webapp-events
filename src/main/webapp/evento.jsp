@@ -28,8 +28,13 @@
 		<% } else { %>
 		<p class="event-type"><i class="fa-solid fa-money-bill"></i> <%= evento.getPrezzo() %></p>
 		<% }  %>
+
 		<p class="event-tag"><%= evento.getTagEvento() %></p>
 	<form method="get" action="carrello">
+
+		<p><%= evento.getTagEvento().getNome() %></p>
+	<form method="post" action="carrello">
+
 		<input type="hidden" name="id" value="<%= evento.getId() %>">
 		<button type="submit" class="carrello"><i class="fa-solid fa-money-bill" style="color: #ffff;"></i> Prenota ora</button>
 	</form>

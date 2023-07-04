@@ -27,21 +27,21 @@ public class ServletSearch extends HttpServlet {
 
 		
 		System.out.println("inizia la ricerca");
-		if (request.getParameter("searchTag") != null) {
+		if (request.getParameter("searchTag") != "") {
 			getEventoTag(request, response);
 			return;
 		}
-		if (request.getParameter("nome") != null) {
+		else if (request.getParameter("nome") != null) {
 			getEventoNome(request, response);
 			return;
 		}
 
-	    if (request.getParameter("citta") != null) {
+		else if (request.getParameter("citta") != "") {
 			getEventoCitta(request, response);
 			return;
 		}
 
-	    if (request.getParameter("gratuito") != null) {
+		if (request.getParameter("gratuito") != null) {
 			getEventoGratuito(request, response);
 			return;
 		}

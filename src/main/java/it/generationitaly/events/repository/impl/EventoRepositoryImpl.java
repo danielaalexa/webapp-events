@@ -69,7 +69,7 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 			tx = em.getTransaction();
 			tx.begin();
 			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e where e.nome = :nome", Evento.class);
-			query.setParameter("nome", "%" + searchterm + "%");
+			query.setParameter("nome",searchterm);
 			eventi = query.getResultList();
 			tx.commit();
 		} catch (PersistenceException e) {
