@@ -1,5 +1,5 @@
 <%@page import="it.generationitaly.events.entity.Evento"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
@@ -32,18 +32,12 @@
 		<p class="event-tag"><%= evento.getTagEvento() %></p>
 	<form method="get" action="carrello">
 
-		<p><%= evento.getTagEvento().getNome() %></p>
-	<form method="post" action="carrello">
 
 		<input type="hidden" name="id" value="<%= evento.getId() %>">
 		<button type="submit" class="carrello"><i class="fa-solid fa-money-bill" style="color: #ffff;"></i> Prenota ora</button>
 	</form>
 	<a href="servletCards"><button ><i class="fa-solid fa-house" style="color: #ffff;"></i> Torna alla HOME</button></a>
 	</div>
-	
-		<button type="submit" class="carrello">Prenota ora</button></a>
-        </form>
-	    <a href="servletCards"><button >Torna alla HOME</button></a>
 	<footer class="text-body-secondary py-5">
 		<div class="container">
 			<p class="float-end mb-1">
