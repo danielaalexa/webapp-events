@@ -30,9 +30,9 @@
 <title>Homepage/NomeSito</title>
 </head>
 <body>
-	<a href="login.jsp">login</a>
-	<a href="signup.jsp">suignup</a>
-	<a href="form-search.jsp">search</a>
+	<a href="login.jsp">LOGIN</a>
+	<a href="signup.jsp">SIGN UP</a>
+	<a href="form-search.jsp">SEARCH</a>
 
 
 	<main>

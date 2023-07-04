@@ -21,10 +21,10 @@
 		<p><%= evento.getPrezzo() %></p>
 		<% }  %>
 		<p><%= evento.getTagEvento().getNome() %></p>
-	<form method="post" action="carrello">
+	    <form method="get" action="carrello">
 		<input type="hidden" name="id" value="<%= evento.getId() %>">
-		<a href="carrello.jsp"></a><button type="submit" class="carrello">Prenota ora</button>
-	</form>
-	<a href="servletCards"><button >Torna alla HOME</button></a>
+		<button type="submit" class="carrello">Prenota ora</button></a>
+        </form>
+	    <a href="servletCards"><button >Torna alla HOME</button></a>
 </body>
 </html>

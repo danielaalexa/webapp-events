@@ -27,21 +27,35 @@ public class CarrelloServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		HttpSession session = request.getSession(false); // request.getSession(false);
+		if (session == null) {
+			session = request.getSession();
+		} else {
+		if (session.getAttribute("prenotazioni") == null) {
+			List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
+			int id = Integer.parseInt(request.getParameter("id"));
+			Evento evento = eventoRepository.findById(id);
+			Prenotazione prenotazione = new Prenotazione();
+			
+			prenotazione.setEvento(evento);
+			prenotazioni.add(prenotazione);
+			session.setAttribute("prenotazioni", prenotazioni);
+		} }
+		request.getRequestDispatcher("carrello.jsp").forward(request, response);
+	}
+	
+	private void getBuy(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException{
+		
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		HttpSession session = request.getSession(); // request.getSession(false);
+	private void getRemove(HttpServletRequest request, HttpServletResponse response) 
+			throws ServletException, IOException{
+		HttpSession session = request.getSession();
+		List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
 		int id = Integer.parseInt(request.getParameter("id"));
-		Evento evento = eventoRepository.findById(id);
-		Prenotazione prenotazione = new Prenotazione();
-		prenotazione.setEvento(evento);
-		prenotazioneRepository.save(prenotazione);
-		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
-		prenotazioni.add(prenotazione);
-		request.setAttribute("prenotazioni", prenotazioni);
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("carrello.jsp");
-		requestDispatcher.forward(request, response);
+		prenotazioni.remove(eventoRepository.findById(id));
+		session.setAttribute("prenotazioni", prenotazioni);
+		response.sendRedirect("prenotazioni");
 	}
-
 }

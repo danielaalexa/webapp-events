@@ -13,8 +13,8 @@
     <body>
         <h1>Il Tuo Carrello</h1>
          <% List<Prenotazione> prenotazioni = (List<Prenotazione>) request.getAttribute("prenotazioni"); %>
-                <% if(!prenotazioni.isEmpty()) {
-                       for(Prenotazione prenotazione : prenotazioni) { %>
+            <% if(!prenotazioni.isEmpty()){ 
+                   for(Prenotazione prenotazione : prenotazioni) { %>
                 <div class="card-body">
 			    <img src="<%= prenotazione.getEvento().getImmagine() %>">
                 <p><%= prenotazione.getEvento().getNome() %></p>
@@ -28,22 +28,20 @@
                 
                 <label for="biglietto">Biglietto di ingresso generale</label> 
 	            <input id="biglietto" type="number" value="1">
-                
                 <div class="d-flex justify-content-between align-items-center">
-                  <button class="conferma">Conferma</button>
                   <!-- Cancellare un evento?? -->
                   <form action="delete-event" method="post">>
                    <input type="hidden" name="id" value="<%= prenotazione.getEvento().getId() %>">
-                   <input type="submit" name="remove" value="Remove event">
+                   <button type="submit" name="remove" value="Remove event">Rimuovi evento</button>
                   </form>
                    <!-- Cancellare un evento?? -->
                 </div>
+                     <a href="carrello"><button class="buy" type="submit">Prenota</button></a>
 			    </div>
-			    <% } 
-                   }  else { %>
-                <p><%= "0 results found..." %></p>
-                <% } %>
-			<p>Il totale è: </p>
+			<% } else {  %>
+                <p><%= "Il tuo carrello è vuoto..." %></p>
+             <% } %>
+            <p>Il totale è: </p>
 			<form>
 			<p><input type="submit" name ="submit" value=""></p>
 			</form>
