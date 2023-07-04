@@ -10,6 +10,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
@@ -48,7 +49,8 @@ public class User {
 	@ManyToOne
 	@JoinColumn(name = "metodo_pagamento_id", nullable = true)
 	private MetodoPagamento metodoPagamento;
-
+    
+	@OneToMany
 	private List<Prenotazione> prenotazioni;
 
 	public int getId() {

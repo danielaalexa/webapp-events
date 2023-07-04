@@ -23,11 +23,9 @@
 		<p><%= evento.getTagEvento().getNome() %></p>
 	    <form method="get" action="carrello">
 		<input type="hidden" name="id" value="<%= evento.getId() %>">
-<<<<<<< HEAD
 		<button type="submit" class="carrello">Prenota ora</button></a>
         </form>
 	    <a href="servletCards"><button >Torna alla HOME</button></a>
-=======
 		<a href="carrello.jsp"></a><button type="submit" class="carrello">Prenota ora</button>
 	</form>
 	<a href="servletCards"><button >Torna alla HOME</button></a>
@@ -41,6 +39,5 @@
 			</p>
 		</div>
 	</footer>
->>>>>>> refs/heads/master
 </body>
 </html>

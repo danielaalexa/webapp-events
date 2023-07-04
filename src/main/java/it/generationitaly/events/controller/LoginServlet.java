@@ -25,7 +25,6 @@ public class LoginServlet extends HttpServlet {
 			throws ServletException, IOException {
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
 
 		User user = uR.findByUsername(username);
 		if (user != null && user.getPassword().equals(password)) {
