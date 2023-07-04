@@ -10,7 +10,7 @@
 <meta name="description" content="" />
 <meta name="author" content="Livingstone Amang" />
 <meta name="generator" content="Hugo 0.112.5" />
-<title>JAITA MAIN PAGE</title>
+<title>Stivaletto | Homepage</title>
 
 <link rel="stylesheet" href="carousel.css" />
 <link rel="stylesheet"
@@ -27,7 +27,7 @@
 
 <meta name="theme-color" content="#712cf9" />
 <meta charset="ISO-8859-1">
-<title>Homepage/NomeSito</title>
+<title>Stivaletto | Homepage</title>
 </head>
 <body>
 	<a href="login.jsp">LOGIN</a>
@@ -54,7 +54,7 @@
 							src="https://images.unsplash.com/photo-1674574124792-3be232f1957f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
 							class="d-block w-100" alt="..." />
 						<div class="carousel-caption d-none d-md-block">
-							<h5 class="c-title">Benvenuto su JAITA Events</h5>
+							<h5 class="c-title">Benvenuto su Stivaletto Events</h5>
 							<p class="c-description">Some representative placeholder
 								content for the first slide.</p>
 						</div>
@@ -74,7 +74,7 @@
 							src="https://images.unsplash.com/photo-1682695794947-17061dc284dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
 							class="d-block w-100" alt="..." />
 						<div class="carousel-caption d-none d-md-block">
-							<h5 class="c-title">I tuoi eventi su JAITA</h5>
+							<h5 class="c-title">I tuoi eventi su Stivaletto</h5>
 							<p class="c-description">Some representative placeholder
 								content for the third slide.</p>
 						</div>
@@ -209,11 +209,11 @@
 	<footer class="text-body-secondary py-5">
 		<div class="container">
 			<p class="float-end mb-1">
-				<a href="#">Back to top</a>
+				<a href="#">Back to the top</a>
 			</p>
 
 			<p class="mb-0">
-				<q> Qui andra messo il footer</q>
+				<%@ include file="foother.html" %>
 
 			</p>
 		</div>

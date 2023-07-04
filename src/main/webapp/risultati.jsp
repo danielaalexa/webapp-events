@@ -53,5 +53,3 @@
 		</table>
 	</body>
 </html>
-
-

@@ -12,9 +12,17 @@ public interface EventoRepository extends JpaRepository<Evento, Integer> {
 
 	List<Evento> findByCitta(String citta);
 
-	List<Evento> findByGratuito(Boolean gratuito);
+	List<Evento> findByGratuito(boolean gratuito);
 
 	List<Evento> findByDataBetween(Date date1, Date date2);
 	
 	List<Evento> findByData(Date date);
+	
+	List<Evento> findEventi1(int id, String citta);
+	
+	// search by name and city
+	
+	List<Evento> findByNomeAndCitta(String nome, String citta);
+	
+	// search by name and city
 }

@@ -1,6 +1,8 @@
 package it.generationitaly.events.entity;
 
 import java.util.Date;
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -46,6 +48,8 @@ public class User {
 	@ManyToOne
 	@JoinColumn(name = "metodo_pagamento_id", nullable = true)
 	private MetodoPagamento metodoPagamento;
+
+	private List<Prenotazione> prenotazioni;
 
 	public int getId() {
 		return id;
@@ -117,6 +121,14 @@ public class User {
 
 	public void setMetodoPagamento(MetodoPagamento metodoPagamento) {
 		this.metodoPagamento = metodoPagamento;
+	}
+
+	public List<Prenotazione> getPrenotazioni() {
+		return prenotazioni;
+	}
+
+	public void setPrenotazioni(List<Prenotazione> prenotazioni) {
+		this.prenotazioni = prenotazioni;
 	}
 
 	@Override
