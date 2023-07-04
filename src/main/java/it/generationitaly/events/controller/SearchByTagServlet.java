@@ -20,8 +20,10 @@ public class SearchByTagServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("searchTag")); 
+		int id = Integer.parseInt(request.getParameter("searchTag"));
+		
 		List<Evento> eventi = eventoRepository.findByTagId(id);
+		
 		request.setAttribute("eventi", eventi);
 		request.getRequestDispatcher("risultati.jsp").forward(request, response);
 		 
