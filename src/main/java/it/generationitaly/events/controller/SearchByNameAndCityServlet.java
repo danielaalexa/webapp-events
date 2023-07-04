@@ -13,7 +13,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 
-@WebServlet("/SearchByNameAndCityServlet")
+@WebServlet("/searchByNameAndCityServlet")
 public class SearchByNameAndCityServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
