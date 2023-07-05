@@ -18,6 +18,7 @@
             <% if(prenotazioni.isEmpty()){ %>
             	 <p><%= "Il tuo carrello è vuoto..." %></p>
             <% } else {
+            	     double totale = 0;
                      for(Prenotazione prenotazione : prenotazioni) { %>
                  <div class="card-body">
 			         <img src="<%= prenotazione.getEvento().getImmagine() %>">
@@ -28,12 +29,14 @@
                      <p><%= "Gratuito" %></p>
                      <% } else {%>
                      <p>Prezzo</p>
-                     <p><%= prenotazione.getEvento().getPrezzo() + " €" %></p>
+                     <% totale += prenotazione.getEvento().getPrezzo()* prenotazione.getQuantita(); %>
+                     <p><%= prenotazione.getEvento().getPrezzo()*prenotazione.getQuantita() + " €" %></p>
                      <% }  %>
                  <form method="post" action="carrello">
                      <input type="hidden" name="idPrenotazione" value="<%= prenotazione.getId() %>">
-                     <label for="quantita">Biglietto di ingresso</label> 
-	                 <input id="quantita" name="quantita" type="number" min="1" max="25" placeholder="0">
+                     <label for="quantita">Nr biglietti</label> 
+	                 <input id="quantita" name="quantita" type="number" min="1" max="25" value="1">
+	                 <button type="submit">&#8635;</button>
                  </form>
                      <!-- Cancellazione-->
                  <form method="post" action="delete-event">
@@ -42,7 +45,7 @@
                  </form>
                  </div>        
                      <% } %>
-            <p>Il totale è: <%=  " €"%></p>
+            <p>Il totale è: <%= totale + " €"%></p>
                      <% } %>
 			       <a href="carrello"><button class="buy" type="submit">Prenota</button></a>
 		<a href="servletCards"><button >Torna alla HOME</button></a>
