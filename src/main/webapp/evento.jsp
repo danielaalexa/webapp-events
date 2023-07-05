@@ -31,7 +31,7 @@
 
 		<p class="event-tag"><%= evento.getTagEvento().getNome() %></p>
 	<form method="get" action="carrello">
-		<input type="hidden" name="id" value="<%= evento.getId() %>">
+		<input type="hidden" name="eventoId" value="<%= evento.getId() %>">
 		<button type="submit"><i class="fa-solid fa-money-bill" style="color: #ffff;"></i> Prenota ora</button>
 	</form>
 	<a href="servletCards"><button ><i class="fa-solid fa-house" style="color: #ffff;"></i> Torna alla HOME</button></a>
