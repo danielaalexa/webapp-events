@@ -11,7 +11,6 @@
 
 </head>
 <body>
-	
 	<% Evento evento = (Evento) request.getAttribute("evento"); %>
 	<div class="event-container">
 		
