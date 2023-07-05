@@ -1,5 +1,7 @@
 package it.generationitaly.events.entity;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,17 +19,18 @@ public class Prenotazione {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id", nullable = false)
 	private int id;
-	
-	@Column(name = "quantita", nullable = true)
-	private int quantita;
-	
-	@ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "evento_id", nullable = false)
-    private Evento evento;
+	@Column(name = "quantita", nullable = false)
+	@ColumnDefault(value = "1")
+	private int quantita;
+
+	@ManyToOne
+	@JoinColumn(name = "user_id", nullable = false)
+	private User user;
+
+	@ManyToOne
+	@JoinColumn(name = "evento_id", nullable = false)
+	private Evento evento;
 
 	public int getId() {
 		return id;
@@ -66,5 +69,4 @@ public class Prenotazione {
 		return "Prenotazione [id=" + id + ", quantita=" + quantita + ", user=" + user + ", evento=" + evento + "]";
 	}
 
-	
 }
