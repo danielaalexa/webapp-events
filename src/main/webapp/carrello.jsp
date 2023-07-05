@@ -14,8 +14,8 @@
     	<%@ include file="navbar.jsp" %>
         <h1>Il Tuo Carrello</h1>
         
-         <% List<Prenotazione> prenotazioni = (List<Prenotazione>) request.getAttribute("prenotazioni"); %>
-            <% if(prenotazioni.isEmpty()){ %>
+			<% List<Prenotazione> prenotazioni = (List<Prenotazione>) request.getAttribute("prenotazioni");
+			   if (prenotazioni == null || prenotazioni.isEmpty()) { %>
             	 <p><%= "Il tuo carrello è vuoto..." %></p>
             <% } else {
                      for(Prenotazione prenotazione : prenotazioni) { %>
