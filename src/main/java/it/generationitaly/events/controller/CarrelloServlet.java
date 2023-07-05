@@ -38,11 +38,6 @@ public class CarrelloServlet extends HttpServlet {
 			List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
 			int id = Integer.parseInt(request.getParameter("id"));
 			Evento evento = eventoRepository.findById(id);
-			for (Prenotazione prenotazione : prenotazioni) {
-				if(prenotazione.getEvento() == evento) {
-					
-				}
-			}
 			Prenotazione prenotazione = new Prenotazione();
 			prenotazione.setUser(user);
 			prenotazione.setEvento(evento);
