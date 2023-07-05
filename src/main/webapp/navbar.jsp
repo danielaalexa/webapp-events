@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	%>
+	<%@page import="it.generationitaly.events.entity.User"%>
 	<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -29,26 +30,35 @@ background-color:#306437;
         </a>
 
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-          <li><a href="#" class="nav-link px-2 link-light">Home</a></li>
-          <li><a href="#" class="nav-link px-2 link-light">Sign Up</a></li>
-          <li><a href="#" class="nav-link px-2 link-light">Log in</a></li>
-          <li><a href="#" class="nav-link px-2 link-light">Ricerca</a></li>
+          <li><a href="servletCards" class="nav-link px-2 link-light">Home</a></li>
+          <li><a href="signup.jsp" class="nav-link px-2 link-light">Sign Up</a></li>
+          <li><a href="login.jsp" class="nav-link px-2 link-light">Log In</a></li>
+          <li><a href="carrello.jsp" class="nav-link px-2 link-light">Carrello</a></li>
         </ul>
 
-        <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-          <input type="search" class="form-control" placeholder="Ricerca..." aria-label="Search">
-        </form>
+        <div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
+        <a href="form-search.jsp"><button class="form-control">Ricerca...</button></a>
+        </div>
 
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <% User user = (User) session.getAttribute("user");
+             if (user != null){
+             %>
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+             <% 
+           }else{
+        	   %>
+        	<img src="https://avatars.githubusercontent.com/u/137268431?v=4" alt="mdo" width="32" height="32" class="rounded-circle"> 	   
+          <%	   
+           }
+          %>
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
-            <li><a class="dropdown-item" href="#">New project...</a></li>
+             <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><a class="dropdown-item" href="#">Settings</a></li>
-            <li><a class="dropdown-item" href="#">Profile</a></li>
             <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li><a class="dropdown-item" href="logout">Sign out</a></li>
           </ul>
         </div>
       </div>
