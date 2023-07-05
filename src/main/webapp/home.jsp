@@ -11,7 +11,7 @@
 <meta name="author" content="Livingstone Amang" />
 <meta name="generator" content="Hugo 0.112.5" />
 <title>Stivaletto | Homepage</title>
-<link rel="stylesheet" href="carousel.css" />
+
 <link rel="stylesheet"
 	href="path/to/font-awesome/css/font-awesome.min.css">
 <link
@@ -19,6 +19,7 @@
 	rel="stylesheet"
 	integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
 	crossorigin="anonymous" />
+	<link rel="stylesheet" href="carousel.css"></link>
 
 <script src="https://kit.fontawesome.com/43c824bcfa.js"
 	crossorigin="anonymous"></script>
