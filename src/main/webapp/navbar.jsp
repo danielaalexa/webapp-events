@@ -49,7 +49,7 @@ background-color:#306437;
              <% 
            }else{
         	   %>
-        	<img src="" alt="mdo" width="32" height="32" class="rounded-circle"> 	   
+        	<img src="https://avatars.githubusercontent.com/u/137268431?v=4" alt="mdo" width="32" height="32" class="rounded-circle"> 	   
           <%	   
            }
           %>
