@@ -11,6 +11,7 @@ import it.generationitaly.events.repository.EventoRepository;
 import it.generationitaly.events.repository.PrenotazioneRepository;
 import it.generationitaly.events.repository.impl.EventoRepositoryImpl;
 import it.generationitaly.events.repository.impl.PrenotazioneRepositoryImpl;
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -40,7 +41,6 @@ public class CarrelloServlet extends HttpServlet {
 			Prenotazione prenotazione = new Prenotazione();
 			prenotazione.setUser(user);
 			prenotazione.setEvento(evento);
-			prenotazione.setQuantita(1);
 			prenotazioneRepository.save(prenotazione);
 			prenotazioni.add(prenotazione);
 			user.setPrenotazioni(prenotazioni);
@@ -54,16 +54,28 @@ public class CarrelloServlet extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (request.getParameter("idPrenotazione") != null) {
-			int idPrenotazione = Integer.parseInt(request.getParameter("idPrenotazione"));
-			Prenotazione prenotazione = prenotazioneRepository.findById(idPrenotazione);
-			int quantita = Integer.parseInt(request.getParameter("quantita"));
-			prenotazione.setQuantita(quantita);
-			prenotazioneRepository.update(prenotazione);
-			response.sendRedirect("carrello.jsp");
+		int idPrenotazione = Integer.parseInt(request.getParameter("idPrenotazione"));
+		int quantita = Integer.parseInt(request.getParameter("quantita"));
+		
+		HttpSession session = request.getSession();
+		List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
+		for (Prenotazione prenotazione : prenotazioni) {
+			if (prenotazione.getId() == idPrenotazione) {
+				prenotazione.setQuantita(quantita);
+				prenotazioneRepository.update(prenotazione);
+				request.setAttribute("prenotazioni", prenotazioni);
+				request.getRequestDispatcher("carrello.jsp").forward(request, response);
+				return;
+			}
 		}
 		
-		
+		/*
+		  HttpSession session = request.getSession();
+	      List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
+	      prenotazioni.removeIf(prenotazione -> prenotazione.getId() == id);
+	      request.setAttribute("prenotazioni", prenotazioni);
+	      request.getRequestDispatcher("carrello.jsp").forward(request, response);
+	     */ 
 		// getBuy(request, response);
 
 	}
@@ -76,11 +88,12 @@ public class CarrelloServlet extends HttpServlet {
 		prenotazione.setQuantita(quantita);
 		prenotazioneRepository.update(prenotazione);
 		response.sendRedirect("carrello");
+		
+		request.getRequestDispatcher("carrello.jsp").forward(request, response);
 	}
 
 	private void getBuy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("").forward(request, response);
-		response.sendRedirect("conferma.jsp");
 	}
 
 }

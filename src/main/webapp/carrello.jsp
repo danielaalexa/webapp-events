@@ -35,7 +35,7 @@
                  <form method="post" action="carrello">
                      <input type="hidden" name="idPrenotazione" value="<%= prenotazione.getId() %>">
                      <label for="quantita">Nr biglietti</label> 
-	                 <input id="quantita" name="quantita" type="number" min="1" max="25" value="1">
+	                 <input id="quantita" name="quantita" type="number" min="1" max="25" value="<%= prenotazione.getQuantita()%>">
 	                 <button type="submit">&#8635;</button>
                  </form>
                      <!-- Cancellazione-->
