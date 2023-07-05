@@ -46,6 +46,7 @@ background-color:#306437;
              if (user != null){
              %>
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+            <a href="logout" class="nav-link px-2 link-light">LOGOUT</a>
              <% 
            }else{
         	   %>
