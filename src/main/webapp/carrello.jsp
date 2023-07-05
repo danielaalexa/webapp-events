@@ -2,12 +2,12 @@
 <%@page import="org.hibernate.internal.build.AllowSysOut"%>
 <%@page import="java.util.List"%>
 <%@page import="it.generationitaly.events.entity.Evento"%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <meta charset="ISO-8859-1">
+        <meta charset="UTF-8">
         <title>Carrello</title>
     </head>
     <body>
@@ -31,20 +31,20 @@
                      <p><%= prenotazione.getEvento().getPrezzo() + " €" %></p>
                      <% }  %>
                  <form method="post" action="carrello">
-                     <label for="biglietto">Biglietto di ingresso</label> 
-	                 <input id="biglietto" type="number" value="1">
+                     <input type="hidden" name="idPrenotazione" value="<%= prenotazione.getId() %>">
+                     <label for="quantita">Biglietto di ingresso</label> 
+	                 <input id="quantita" name="quantita" type="number" min="1" max="25" placeholder="0">
                  </form>
-                     <!-- Cancellare un evento?? -->
-                 <form action="delete-event" method="post">>
-                     <input type="hidden" name="id" value="<%= prenotazione.getEvento().getId() %>">
-                     <button type="submit" name="remove" value="Remove event">Rimuovi evento</button>
+                     <!-- Cancellazione-->
+                 <form method="post" action="delete-event">
+                     <input type="hidden" name="id" value="<%= prenotazione.getId() %>">
+                     <button type="submit" name="remove" value="Remove event">Elimina</button>
                  </form>
-                     <!-- Cancellare un evento?? -->
                  </div>        
                      <% } %>
-            <p>Il totale è: <%  %></p>
+            <p>Il totale è: <%=  " €"%></p>
                      <% } %>
-			       <a href="carrello?buy"><button class="buy" type="submit">Prenota</button></a>
+			       <a href="carrello"><button class="buy" type="submit">Prenota</button></a>
 		<a href="servletCards"><button >Torna alla HOME</button></a>
 		<footer class="text-body-secondary py-5">
 		<div class="container">

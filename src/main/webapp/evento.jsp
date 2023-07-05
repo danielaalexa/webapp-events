@@ -1,12 +1,12 @@
 <%@page import="it.generationitaly.events.entity.Evento"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <script src="https://kit.fontawesome.com/43c824bcfa.js" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="evento.css" ></link>
-<meta charset="ISO-8859-1">
+<meta charset="UTF-8">
 <title>Evento</title>
 
 </head>
@@ -26,24 +26,16 @@
 		<% if (evento.isGratuito()){ %>
 		<p class="event-type"><%= "Gratuito" %></p>
 		<% } else { %>
-		<p class="event-type"><i class="fa-solid fa-money-bill"></i> <%= evento.getPrezzo() %></p>
+		<p class="event-type"><i class="fa-solid fa-money-bill"></i> <%= evento.getPrezzo() + " €"%></p>
 		<% }  %>
 
-		<p class="event-tag"><%= evento.getTagEvento() %></p>
-	<form method="get" action="carrello">
-
-		<p><%= evento.getTagEvento().getNome() %></p>
+		<p class="event-tag"><%= evento.getTagEvento().getNome() %></p>
 	<form method="post" action="carrello">
-
 		<input type="hidden" name="id" value="<%= evento.getId() %>">
-		<button type="submit" class="carrello"><i class="fa-solid fa-money-bill" style="color: #ffff;"></i> Prenota ora</button>
+		<button type="submit"><i class="fa-solid fa-money-bill" style="color: #ffff;"></i> Prenota ora</button>
 	</form>
 	<a href="servletCards"><button ><i class="fa-solid fa-house" style="color: #ffff;"></i> Torna alla HOME</button></a>
 	</div>
-	
-		<button type="submit" class="carrello">Prenota ora</button></a>
-        </form>
-	    <a href="servletCards"><button >Torna alla HOME</button></a>
 	<footer class="text-body-secondary py-5">
 		<div class="container">
 			<p class="float-end mb-1">

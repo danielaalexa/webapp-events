@@ -24,15 +24,74 @@ public class ServletSearch extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		
+		System.out.println("siamo nella servlet");
 
+		String citta = request.getParameter("citta");
+		System.out.println("questa è la citta:"+citta); //stringa vuota
+		
+		String nome = request.getParameter("nome");
+		System.out.println("questa è il nome:"+nome);  //stringa vuota
+		
+		String tag = request.getParameter("searchTag"); //da null trovare soluzione
+		System.out.println("questo è il tag:"+tag);
+		
+		
+
+		
+		if ((request.getParameter("searchTag")!= null) && (request.getParameter("citta").length()>0) && (request.getParameter("nome").length()==0)) {
+			getEventoTagCitta(request, response);
+			return;
+		}
+		
+		if ((request.getParameter("searchTag")== null) &&(request.getParameter("citta").length()>0 ) && (request.getParameter("nome").length()>0)) {
+			getEventoCittaNome(request, response);
+			return;
+		}
+		
+		if ((request.getParameter("searchTag")!= null) && (request.getParameter("citta").length()==0 )&& (request.getParameter("nome").length()==0)) {
+			getEventoTag(request, response);
+			return;
+		}
+		
+		if ((request.getParameter("searchTag")== null) && ( request.getParameter("citta").length()>0) && (request.getParameter("nome").length()==0)) {
+			getEventoCitta(request, response);
+			return;
+		}
+	
+		
+		if ((request.getParameter("searchTag")== null) && ( request.getParameter("citta").length()== 0) && (request.getParameter("nome").length()>0 )) {
+			getEventoNome(request, response);
+			return;
+		}
+		
+		
+
+	}
+	
+	private void getEventoCittaNome(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		  String nome = request.getParameter("nome");
+	        String citta = request.getParameter("citta");
+	        
+	        List<Evento> eventi = eR.findByNomeAndCitta(nome, citta);
+	        
+	        request.setAttribute("eventi", eventi);
+	        request.getRequestDispatcher("risultati.jsp").forward(request, response);
+	}
+	
+	
+	private void getEventoTagCitta(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("searchTag"));
 		String citta = request.getParameter("citta");	
 		List<Evento> eventi = eR.findEventi1(id, citta);
 		request.setAttribute("eventi", eventi);
 		request.getRequestDispatcher("risultati.jsp").forward(request, response);
 
-
 	}
+	
+	
 
 	private void getEventoTag(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
