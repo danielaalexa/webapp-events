@@ -12,6 +12,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 @WebServlet("/delete-event")
 public class DeleteEventServlet extends HttpServlet {
@@ -20,20 +21,16 @@ public class DeleteEventServlet extends HttpServlet {
 	
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
         throws ServletException, IOException {
-    	/*
-		int id = Integer.parseInt(request.getParameter("id"));
-		prenotazioneRepository.deleteById(id);
-		response.sendRedirect("carrello.jsp");
-		*/
-    	
-    	List<Prenotazione> prenotazioni = prenotazioneRepository.findAll();
-    	request.setAttribute("prenotazioni", prenotazioni);
-		RequestDispatcher requestDispatcher = request.getRequestDispatcher("carrello.jsp");
-		requestDispatcher.forward(request, response);
-    	
+
+        int id = Integer.parseInt(request.getParameter("id"));
+        prenotazioneRepository.deleteById(id);
+
+        HttpSession session = request.getSession();
+        List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
+        prenotazioni.removeIf(prenotazione -> prenotazione.getId() == id);
+        request.setAttribute("prenotazioni", prenotazioni);
+        RequestDispatcher dispatcher = request.getRequestDispatcher("carrello.jsp");
+        dispatcher.forward(request, response);
         }
-        
-    	
-    	
-  
+
 }
