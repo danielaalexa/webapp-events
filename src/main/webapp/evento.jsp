@@ -11,7 +11,6 @@
 
 </head>
 <body>
-	<%@ include file="navbar.jsp" %>
 	<% Evento evento = (Evento) request.getAttribute("evento"); %>
 	<div class="event-container">
 		
