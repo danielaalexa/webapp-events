@@ -9,14 +9,14 @@
 	href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script src="registrazione.js"></script>
 <title>Sign Up</title>
 </head>
 <body>
-<%@ include file="navbar.jsp" %>
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-	<script src="registrazione.js"></script>
+	<%@ include file="navbar.jsp"%>
 	<section class="h-100 gradient-form" style="background-color: #eee;">
 		<div class="container py-5 h-100">
 			<div
@@ -32,7 +32,7 @@
 									</div>
 									<form method="post" action="sign-up">
 										<div class="form-outline mb-4">
-											<input class="form-control type=" text" id="signupNome"
+											<input class="form-control" type="text" id="signupNome"
 												name="nome" placeholder="Nome">
 										</div>
 										<div class="form-outline mb-4">
@@ -40,14 +40,13 @@
 												name="cognome" placeholder="Cognome">
 										</div>
 										<label for="signupSessoM">Sesso:</label>
-										<label for="signupSessoM">M</label> <input type="radio"
-											id="signupSessoM" name="sesso" value="M"> <label
-											for="signupSessoF">F</label> <input type="radio"
-											id="signupSessoF" name="sesso" value="F">
+										<label for="signupSessoM" style="margin-left: 8px">M</label>
+										<input type="radio"	id="signupSessoM" name="sesso" value="M">
+										<label for="signupSessoF" style="margin-left: 8px">F</label>
+										<input type="radio"	id="signupSessoF" name="sesso" value="F">
 										<div class="form-outline mb-4">
-											<label class="form-label" for="signupNascita">Data di
-												nascita:</label> <input class="form-control" type="date"
-												id="signupNascita" name="dataNascita">
+											<label class="form-label" for="signupNascita">Data di nascita:</label>
+											<input class="form-control" type="date" id="signupNascita" name="dataNascita">
 										</div>
 										<div class="form-outline mb-4">
 											<input class="form-control" type="text" id="signupUsername"
@@ -60,21 +59,21 @@
 										<div class="form-outline mb-4">
 											<input class="form-control" type="text" id="signupEmail"
 												name="email" placeholder="nomecognome@gmail.com">
+										</div>
+										<div class="form-outline mb-4">
 											<p>Inserisci il metodo di pagamento:</p>
-											<label for="signupCarta">Carta</label> <input type="radio"
-												id="signupCarta" name="metodoPagamentoId" value="1">
-											<label for="signupPaypal">Paypal</label> <input type="radio"
-												id="signupPaypal" name="metodoPagamentoId" value="2">
-											<label for="signupPagopa">Pagopa</label> <input type="radio"
-												id="signupPagopa" name="metodoPagamentoId" value="3">
-											<label for="signupSatispay">Satispay</label> <input
-												type="radio" id="signupSatispay" name="metodoPagamentoId"
-												value="4">
-											<div
-												class="d-flex align-items-center justify-content-center pb-4">
-												<button type="submit" class="btn btn-outline-danger">SIGN
-													UP</button>
-											</div>
+											<label for="signupCarta">Carta</label>
+											<input type="radio" id="signupCarta" name="metodoPagamentoId" value="1">
+											<label for="signupPaypal" style="margin-left: 8px">Paypal</label>
+											<input type="radio" id="signupPaypal" name="metodoPagamentoId" value="2">
+											<label for="signupPagopa" style="margin-left: 8px">Pagopa</label>
+											<input type="radio" id="signupPagopa" name="metodoPagamentoId" value="3">
+											<label for="signupSatispay" style="margin-left: 8px">Satispay</label>
+											<input type="radio" id="signupSatispay" name="metodoPagamentoId" value="4">
+										<div class="d-flex align-items-center justify-content-center pb-4"
+										     style="margin-top: 15px; margin-right: 40px">
+											<button type="submit" class="btn btn-outline-success">SIGN UP</button>
+										</div>
 										</div>
 									</form>
 								</div>
@@ -91,7 +90,7 @@
 				<a href="#">Back to the top</a>
 			</p>
 			<p class="mb-0">
-				<%@ include file="foother.html" %>
+				<%@ include file="foother.html"%>
 			</p>
 		</div>
 	</footer>
