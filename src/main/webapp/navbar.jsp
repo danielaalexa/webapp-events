@@ -1,6 +1,7 @@
 
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	%>
+	<%@page import="it.generationitaly.events.entity.User"%>
 	<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +42,17 @@ background-color:#306437;
 
         <div class="dropdown text-end">
           <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+          <% User user = (User) session.getAttribute("user");
+             if (user != null){
+             %>
             <img src="https://github.com/mdo.png" alt="mdo" width="32" height="32" class="rounded-circle">
+             <% 
+           }else{
+        	   %>
+        	<img src="" alt="mdo" width="32" height="32" class="rounded-circle"> 	   
+          <%	   
+           }
+          %>
           </a>
           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1">
             <li><a class="dropdown-item" href="#">New project...</a></li>
