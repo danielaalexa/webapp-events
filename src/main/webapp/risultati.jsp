@@ -42,6 +42,7 @@
 <%@ include file="navbar.jsp" %>
 	<%
 	List<Evento> eventi = (List<Evento>) request.getAttribute("eventi");
+	
 	%>
 	<form>
             <div class="container" >
@@ -49,6 +50,7 @@
               <div class="col-4">
                  <div "card" style="width: 40rem;">
 					<!-- Immagine evento -->
+					<% for(Evento evento : eventi){ %>
 					<img src="<%=evento.getImmagine()%>" alt="">
 					<rect width="100%" height="100%" fill="#55595c" />
 					<div class="card-body">
@@ -63,7 +65,8 @@
 						<p class="event-indirizzo"><%=evento.getIndirizzo()%></p>
 						<div class="d-flex justify-content-between align-items-center">
 							<a href="evento?id=<%=evento.getId()%>"><button
-									class="scopri-piu">Scopri di più</button></a>
+										class="scopri-piu">Scopri di più</button></a>
+								<%}%>
 						</div>
 					</div>
 				</div>
@@ -82,13 +85,16 @@
                        
                         <ul class="items">
                             
-                          <li><input type="radio" name="scelta"/>Apple </li>
-                          <li><input type="radio" name="scelta"/>Orange</li>
-                          <li><input type="radio" name="scelta"/>Grapes </li>
-                          <li><input type="radio" name="scelta"/>Berry </li>
-                          <li><input type="radio" name="scelta"/>Mango </li>
-                          <li><input type="radio" name="scelta"/>Banana </li>
-                          <li><input type="radio" name="scelta"/>Tomato</li>
+                          <li><input type="radio" name="citta" value="Bari"/>BARI</li>
+                          <li><input type="radio" name="citta" value="Bologna"/>BOLOGNA</li>
+                          <li><input type="radio" name="citta" value="Catania"/>CATANIA</li>
+                          <li><input type="radio" name="citta" value="Firenze"/>FIRENZE</li>
+                          <li><input type="radio" name="citta" value="Genova"/>GENOVA</li>
+                          <li><input type="radio" name="citta" value="Milano"/>MILANO</li>
+                          <li><input type="radio" name="citta" value="Napoli"/>NAPOLI</li>
+                          <li><input type="radio" name="citta" value="Palermo"/>PALERMO</li>
+                          <li><input type="radio" name="citta" value="Roma"/>ROMA</li>
+                          <li><input type="radio" name="citta" value="Torino"/>TORINO</li>
                             </div>
                         </ul>
                     
