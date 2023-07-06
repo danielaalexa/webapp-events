@@ -1,20 +1,32 @@
 <%@page import="it.generationitaly.events.entity.Evento"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
+	<%@ page import="it.generationitaly.events.entity.*" %>
 <!DOCTYPE html>
 <html>
-<head>
-<script src="https://kit.fontawesome.com/43c824bcfa.js" crossorigin="anonymous"></script>
-<link rel="stylesheet" href="evento.css" ></link>
-<meta charset="ISO-8859-1">
-<title>Evento</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-</head>
-<body>
-	
-	<% Evento evento = (Evento) request.getAttribute("evento"); %>
-	<div class="event-container">
-		
+    <title>Bootstrap 4, from LayoutIt!</title>
+
+    <meta
+      name="description"
+      content="Source code generated using layoutit.com"
+    />
+    <meta name="author" content="LayoutIt!" />
+
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+	<link rel="stylesheet" href="event.css">
+	<script src="https://kit.fontawesome.com/43c824bcfa.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8">
+<% Evento evento = (Evento) request.getAttribute("evento"); %>
 		<div class="image-container">
 		<img src="<%= evento.getImmagine() %>" class="evento-immagine">
 		</div>
@@ -35,6 +47,35 @@
 	</form>
 	<a href="servletCards"><button ><i class="fa-solid fa-house" style="color: #ffff;"></i> Torna alla HOME</button></a>
 	</div>
+		
 	
-</body>
+		<div class="col-md-4">
+			<h1>Altri Eventi che ti potreberro interessare</h1>
+	
+			  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images.unsplash.com/photo-1561489413-985b06da5bee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <button>Scopri di piu</button>
+  </div>
+</div>
+<br>
+			  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="https://images.unsplash.com/photo-1561489413-985b06da5bee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <button> Scopri di piu</button>
+  </div>
+</div>
+<br>
+
+
+
+</div>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
