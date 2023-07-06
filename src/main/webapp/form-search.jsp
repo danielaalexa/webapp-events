@@ -30,6 +30,7 @@
 									<br>
 									<label id="searchCitta">Città:</label>
 									<select class="form-control" list="GFGOptions" id="searchCitta" name="citta">
+									<option></option>
 									<option value="Bari">BARI</option>
 									<option value="Bologna">BOLOGNA</option>
 									<option value="Catania">CATANIA</option>
