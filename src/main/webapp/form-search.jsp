@@ -40,7 +40,7 @@
 									<option value="Napoli">NAPOLI</option>
 									<option value="Palermo">PALERMO</option>
 									<option value="Roma">ROMA</option>
-									<option value="">TORINO</option>
+									<option value="Torino">TORINO</option>
 								</select>
 								<br>
 								<button id="searchTag" name="searchTag" value="1"
