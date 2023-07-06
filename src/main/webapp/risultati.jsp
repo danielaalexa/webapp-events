@@ -120,7 +120,7 @@
                         </form>
                             <br>
                             <br>
-                           <button type="button" class="btn btn-outline-success">Cerca</button>
+                           <button type="button">Cerca</button>
                       </div> 
                     </div>
                   </div>
