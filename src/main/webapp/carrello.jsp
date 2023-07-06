@@ -8,7 +8,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Carrello</title>
+        <title>Carrello | Stivaletto</title>
     </head>
     <body>
     	<%@ include file="navbar.jsp" %>
@@ -47,10 +47,14 @@
                      <% } %>
             <p>Il totale è: <%= totale + " €"%></p>
                      <% } %>
-                    <form action="prenotaServlet" method="post">
-			       <button class="buy" type="submit">Prenota</button>
-			       </form>  
+                      <% if (prenotazioni == null || prenotazioni.isEmpty()) { %>
 		<a href="servletCards"><button >Torna alla HOME</button></a>
+		<% } else {%>
+		<form action="prenotaServlet" method="post">
+			       <button class="buy" type="submit">Prenota</button>
+			       </form>
+			       <a href="servletCards"><button >Torna alla HOME</button></a>
+		<% } %>
 		<footer class="text-body-secondary py-5">
 		<div class="container">
 			<p class="float-end mb-1">
