@@ -66,7 +66,7 @@
 			</div>
 			
 			<div class="col-md-4">
-				<h1>Altri Eventi ti potrebbero interessare</h1>
+				<h1>Altri eventi che ti potrebbero interessare</h1>
 				
 				<%
 				Evento evento1 = (Evento) request.getAttribute("evento1");
