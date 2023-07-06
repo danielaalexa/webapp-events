@@ -10,15 +10,13 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="login.css">
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
 <title>Log In</title>
 </head>
 <body>
-
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous"></script>
-		<%@ include file="navbar.jsp" %>
+	<%@ include file="navbar.jsp"%>
 	<section class="h-100 gradient-form" style="background-color: #eee;">
 		<div class="container py-5 h-100">
 			<div
@@ -32,7 +30,6 @@
 										<img src="" style="width: 185px;" alt="logo">
 										<h4 class="mt-1 mb-5 pb-1">...</h4>
 									</div>
-								</div>
 								<form method="post" action="loginServlet">
 									<div class="form-outline mb-4">
 										<input class="form-control" type="text" id="loginUsername"
@@ -43,15 +40,19 @@
 											name="password" placeholder="Password">
 									</div>
 									<%-- <a href="new-password.jsp">Forgot your password?</a> --%>
-									<% if(request.getParameter("credenzialiErrate") != null) { %>
-		                      		<p style="color: red;">Credenziali errate!</p>
-		                        	<% } %>
-									<button type="submit">LOG IN</button>
-									<div
-										class="d-flex align-items-center justify-content-center pb-4">
+									<%
+									if (request.getParameter("credenzialiErrate") != null) {
+									%>
+									<p style="color: red;">Credenziali errate!</p>
+									<%
+									}
+									%>
+									<div class="d-flex align-items-center justify-content-center pb-4">
+									<button type="submit" class="btn btn-outline-success">LOG IN</button>
+									</div>
+									<div class="d-flex align-items-center justify-content-center pb-4">
 										<p class="mb-0 me-2">Don't have an account?</p>
-										<a href="signup.jsp"><button type="button"
-												class="btn btn-outline-danger">CREATE ONE</button></a>
+										<a href="signup.jsp"><button type="button" class="btn btn-outline-danger">CREATE ONE</button></a>
 									</div>
 								</form>
 							</div>
@@ -63,6 +64,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</section>
 	<footer class="text-body-secondary py-5">
 		<div class="container">
@@ -70,7 +72,7 @@
 				<a href="#">Back to the top</a>
 			</p>
 			<p class="mb-0">
-				<%@ include file="foother.html" %>
+				<%@ include file="foother.html"%>
 			</p>
 		</div>
 	</footer>

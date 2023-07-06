@@ -1,9 +1,7 @@
 package it.generationitaly.events.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.List;
-
 import it.generationitaly.events.entity.Evento;
 import it.generationitaly.events.entity.Prenotazione;
 import it.generationitaly.events.entity.User;
@@ -25,65 +23,90 @@ public class CarrelloServlet extends HttpServlet {
 	private EventoRepository eventoRepository = new EventoRepositoryImpl();
 	private PrenotazioneRepository prenotazioneRepository = new PrenotazioneRepositoryImpl();
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		HttpSession session = request.getSession(); // request.getSession(false);
-		User user = (User) session.getAttribute("user");
-		System.out.println(user);
-		if (user == null) {
-			response.sendRedirect("login.jsp");
-		} else {
-			List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
-			int id = Integer.parseInt(request.getParameter("id"));
-			Evento evento = eventoRepository.findById(id);
-			Prenotazione prenotazione = new Prenotazione();
-			prenotazione.setUser(user);
-			prenotazione.setEvento(evento);
-			prenotazioneRepository.save(prenotazione);
-			prenotazioni.add(prenotazione);
-			user.setPrenotazioni(prenotazioni);
-			session.setAttribute("prenotazioni", prenotazioni);
-			request.setAttribute("prenotazioni", prenotazioni);
-			request.getRequestDispatcher("carrello.jsp").forward(request, response);
-			return;
-		}
-		if (request.getParameter("quantita") != null) {
-			getQuantita(request, response);
-			return;
-		}
-	}
-
-	protected void getQuantita(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		int idPrenotazione = Integer.parseInt(request.getParameter("idPrenotazione"));
-		Prenotazione prenotazione = prenotazioneRepository.findById(idPrenotazione);
-		int quantita = Integer.parseInt(request.getParameter("quantita"));
-		prenotazione.setQuantita(quantita);
-		prenotazioneRepository.update(prenotazione);
-	}
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		getBuy(request, response);
-
-		getRemove(request, response);
-	}
-
-	private void getBuy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-	}
-
-	private void getRemove(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		/*
-		List<Prenotazione> prenotazioni = new ArrayList<Prenotazione>();
+		System.out.println("siamo nella servlet carrello");
+		int eventoId = Integer.parseInt(request.getParameter("eventoId"));
+		Evento evento = eventoRepository.findById(eventoId);
+		
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
-		int id = Integer.parseInt(request.getParameter("id"));
-		Prenotazione prenotazione = prenotazioneRepository.findById(id);
-		prenotazioni.remove(prenotazione);
-		session.setAttribute("prenotazioni", prenotazioni);
-		response.sendRedirect("carrello");
-		*/
+		if (user == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		} else {
+			List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");	
+			if (prenotazioni.size() == 0) {
+				createNewCarrello(request, response, session, user, prenotazioni);
+				return;
+			} else {
+				for (Prenotazione p : prenotazioni) {
+					if (p.getEvento().getId() == eventoId) {
+						int quantita = p.getQuantita();
+						int quantitaModificata = quantita + 1;
+						p.setQuantita(quantitaModificata);
+						prenotazioneRepository.update(p);
+						saveChangesPrenotazioni(request, response, session, user, prenotazioni);
+						return;
+					} else {
+						Prenotazione prenotazione = new Prenotazione();
+						prenotazione.setUser(user);
+						prenotazione.setEvento(evento);
+						prenotazione.setQuantita(1);
+						prenotazioneRepository.save(prenotazione);
+						prenotazioni.add(prenotazione);
+						saveChangesPrenotazioni(request, response, session, user, prenotazioni);
+					}
+					return;
+				}
+			}
+		}
 	}
+	
+	private void saveChangesPrenotazioni(HttpServletRequest request, HttpServletResponse response, HttpSession session,
+			User user, List<Prenotazione> prenotazioni) throws ServletException, IOException {
+		user.setPrenotazioni(prenotazioni);
+		session.setAttribute("prenotazioni", prenotazioni);
+		request.setAttribute("prenotazioni", prenotazioni);
+		request.getRequestDispatcher("carrello.jsp").forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int idPrenotazione = Integer.parseInt(request.getParameter("idPrenotazione"));
+		int quantita = Integer.parseInt(request.getParameter("quantita"));
+
+		HttpSession session = request.getSession();
+		User user = (User) session.getAttribute("user");
+		List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
+		changeQuantita(request, response, session, user, prenotazioni, idPrenotazione, quantita);
+	}
+	
+	private void changeQuantita(HttpServletRequest request, HttpServletResponse response, HttpSession session,
+			User user, List<Prenotazione> prenotazioni, int idPrenotazione, int quantita)
+			throws ServletException, IOException {
+		for (Prenotazione prenotazione : prenotazioni) {
+			if (prenotazione.getId() == idPrenotazione) {
+				prenotazione.setQuantita(quantita);
+				prenotazioneRepository.update(prenotazione);
+				saveChangesPrenotazioni(request, response, session, user, prenotazioni);
+				return;
+			}
+		}
+	}
+
+	private void createNewCarrello(HttpServletRequest request, HttpServletResponse response, HttpSession session,
+			User user, List<Prenotazione> prenotazioni) throws ServletException, IOException {
+		int eventoId = Integer.parseInt(request.getParameter("eventoId"));
+		Evento evento = eventoRepository.findById(eventoId);
+		Prenotazione prenotazione = new Prenotazione();
+		prenotazione.setUser(user);
+		prenotazione.setEvento(evento);
+		prenotazione.setQuantita(1);
+		prenotazioneRepository.save(prenotazione);
+		prenotazioni.add(prenotazione);
+		saveChangesPrenotazioni(request, response, session, user, prenotazioni);
+		return;
+	}
+
 }

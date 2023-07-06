@@ -1,29 +1,24 @@
+
 <%@page import="it.generationitaly.events.entity.Evento"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
 	<%@ page import="it.generationitaly.events.entity.*" %>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-    <title>Bootstrap 4, from LayoutIt!</title>
-
-    <meta
-      name="description"
-      content="Source code generated using layoutit.com"
-    />
-    <meta name="author" content="LayoutIt!" />
-
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet" />
+<head>
+<script src="https://kit.fontawesome.com/43c824bcfa.js" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="evento.css" ></link>
 	<link rel="stylesheet" href="event.css">
-	<script src="https://kit.fontawesome.com/43c824bcfa.js" crossorigin="anonymous"></script>
-  </head>
+	
+<meta charset="UTF-8">
+<title>Evento</title>
+
+</head>
+
   <body>
+
 <div class="container-fluid">
 	<div class="row">
+	 
 		<div class="col-md-8">
 <% Evento evento = (Evento) request.getAttribute("evento"); %>
 		<div class="image-container">
@@ -71,6 +66,23 @@
 <br>
 
 
+
+	<form method="get" action="carrello">
+		<input type="hidden" name="eventoId" value="<%= evento.getId() %>">
+		<button type="submit"><i class="fa-solid fa-money-bill" style="color: #ffff;"></i> Prenota ora</button>
+	</form>
+	<a href="servletCards"><button ><i class="fa-solid fa-house" style="color: #ffff;"></i> Torna alla HOME</button></a>
+	</div>
+	<footer class="text-body-secondary py-5">
+		<div class="container">
+			<p class="float-end mb-1">
+				<a href="#">Back to the top</a>
+			</p>
+			<p class="mb-0">
+				<%@ include file="foother.html" %>
+			</p>
+		</div>
+	</footer>
 
 </div>
     <script src="js/jquery.min.js"></script>
