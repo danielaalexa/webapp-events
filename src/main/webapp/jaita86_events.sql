@@ -38,7 +38,7 @@ SELECT * FROM metodo_pagamento;
 
 CREATE TABLE prenotazione (
 id INT PRIMARY KEY AUTO_INCREMENT,
-quantita INT NOT NULL,
+quantita INT NOT NULL DEFAULT ('1'),
 user_id INT NOT NULL,
 evento_id INT NOT NULL,
 FOREIGN KEY (user_id) REFERENCES user(id) ON DELETE CASCADE,
