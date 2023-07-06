@@ -2,6 +2,7 @@ package it.generationitaly.events.controller;
 
 import java.io.IOException;
 import java.util.List;
+
 import it.generationitaly.events.entity.Evento;
 import it.generationitaly.events.entity.Prenotazione;
 import it.generationitaly.events.entity.User;
@@ -25,10 +26,6 @@ public class CarrelloServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("siamo nella servlet carrello");
-        int eventoId = Integer.parseInt(request.getParameter("eventoId"));
-        Evento evento = eventoRepository.findById(eventoId);
-
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
         if (user == null) {
@@ -36,6 +33,8 @@ public class CarrelloServlet extends HttpServlet {
             return;
         } else {
             List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
+            int eventoId = Integer.parseInt(request.getParameter("eventoId"));
+            Evento evento = eventoRepository.findById(eventoId);
             if (prenotazioni == null || prenotazioni.isEmpty()) {
                 createNewCarrello(request, response, session, user, evento);
             } else {

@@ -47,7 +47,9 @@
                      <% } %>
             <p>Il totale è: <%= totale + " €"%></p>
                      <% } %>
-			       <a href="pagina_conferma_carrello.html"><button class="buy" type="submit">Prenota</button></a>
+                    <form action="prenotaServlet" method="post">
+			       <button class="buy" type="submit">Prenota</button>
+			       </form>  
 		<a href="servletCards"><button >Torna alla HOME</button></a>
 		<footer class="text-body-secondary py-5">
 		<div class="container">
