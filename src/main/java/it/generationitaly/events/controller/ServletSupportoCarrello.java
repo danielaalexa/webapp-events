@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.List;
 
 import it.generationitaly.events.entity.Prenotazione;
+import it.generationitaly.events.entity.User;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -18,12 +19,16 @@ public class ServletSupportoCarrello extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("siamo nella servlet supporto");
 		HttpSession session = request.getSession();
-		List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
-		request.setAttribute("prenotazioni", prenotazioni);
-		request.getRequestDispatcher("carrello.jsp").forward(request, response);
-
+		User user = (User) session.getAttribute("user");
+		if (user == null) {
+			response.sendRedirect("login.jsp");
+			return;
+		} else {
+			List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
+			request.setAttribute("prenotazioni", prenotazioni);
+			request.getRequestDispatcher("carrello.jsp").forward(request, response);
+		}
 	}
 
 }
