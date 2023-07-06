@@ -109,8 +109,4 @@ public class CarrelloServlet extends HttpServlet {
 		return;
 	}
 
-	private void getBuy(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.getRequestDispatcher("conferma.jsp").forward(request, response);
-	}
-
 }

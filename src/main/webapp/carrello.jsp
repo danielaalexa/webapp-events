@@ -47,7 +47,7 @@
                      <% } %>
             <p>Il totale è: <%= totale + " €"%></p>
                      <% } %>
-			       <a href="carrello"><button class="buy" type="submit">Prenota</button></a>
+			       <a href="pagina_conferma_carrello"><button class="buy" type="submit">Prenota</button></a>
 		<a href="servletCards"><button >Torna alla HOME</button></a>
 		<footer class="text-body-secondary py-5">
 		<div class="container">
