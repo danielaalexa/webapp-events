@@ -33,7 +33,7 @@ header {
 				<ul
 					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
 					<li><a href="servletCards" class="nav-link px-2 link-light">Home</a></li>
-					<li><a href="carrello.jsp" class="nav-link px-2 link-light">Carrello</a></li>
+					<li><a href="servletSupportoCarrello" class="nav-link px-2 link-light">Carrello</a></li>
 				</ul>
 				<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
 					<a href="form-search.jsp"><button class="form-control">Ricerca...</button></a>

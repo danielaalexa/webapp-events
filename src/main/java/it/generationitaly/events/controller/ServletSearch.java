@@ -7,6 +7,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import com.mysql.cj.Session;
+
 import it.generationitaly.events.entity.Evento;
 import it.generationitaly.events.repository.EventoRepository;
 import it.generationitaly.events.repository.impl.EventoRepositoryImpl;

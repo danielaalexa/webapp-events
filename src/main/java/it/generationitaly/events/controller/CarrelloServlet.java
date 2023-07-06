@@ -26,6 +26,8 @@ public class CarrelloServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("siamo nella servlet carrello");
+		
 		HttpSession session = request.getSession();
 		User user = (User) session.getAttribute("user");
 		if (user == null) {
@@ -33,7 +35,10 @@ public class CarrelloServlet extends HttpServlet {
 			return;
 		} else {
 			List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
-			int eventoId = Integer.parseInt(request.getParameter("eventoId"));
+			String eventoIdAsString = (String) request.getAttribute("eventoId");
+			System.out.println("id evento nella servlet carrello" +eventoIdAsString);
+			int eventoId = Integer.parseInt(eventoIdAsString);
+			System.out.println("id evento parsato ad int"+eventoId);
 			Evento evento = eventoRepository.findById(eventoId);
 			if (prenotazioni.size() == 0) {
 				createNewCarrello(request, response, session, user, prenotazioni);
@@ -77,7 +82,10 @@ public class CarrelloServlet extends HttpServlet {
 
 	private void createNewCarrello(HttpServletRequest request, HttpServletResponse response, HttpSession session,
 			User user, List<Prenotazione> prenotazioni) throws ServletException, IOException {
-		int eventoId = Integer.parseInt(request.getParameter("eventoId"));
+		String eventoIdAsString = (String) request.getAttribute("eventoId");
+		System.out.println("id evento nel carrello" +eventoIdAsString);
+		int eventoId = Integer.parseInt(eventoIdAsString);
+		//int eventoId = Integer.parseInt(request.getParameter("eventoId"));
 		Evento evento = eventoRepository.findById(eventoId);
 		Prenotazione prenotazione = new Prenotazione();
 		prenotazione.setUser(user);
