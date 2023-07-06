@@ -2,7 +2,6 @@ package it.generationitaly.events.controller;
 
 import java.io.IOException;
 import java.util.List;
-
 import it.generationitaly.events.entity.Evento;
 import it.generationitaly.events.entity.Prenotazione;
 import it.generationitaly.events.entity.User;
@@ -34,24 +33,22 @@ public class CarrelloServlet extends HttpServlet {
 			response.sendRedirect("login.jsp");
 			return;
 		} else {
-			List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
-			String eventoIdAsString = (String) request.getAttribute("eventoId");
-			System.out.println("id evento nella servlet carrello" +eventoIdAsString);
-			int eventoId = Integer.parseInt(eventoIdAsString);
-			System.out.println("id evento parsato ad int"+eventoId);
+			List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");	
+			int eventoId = Integer.parseInt(request.getParameter("eventoId"));
 			Evento evento = eventoRepository.findById(eventoId);
 			if (prenotazioni.size() == 0) {
 				createNewCarrello(request, response, session, user, prenotazioni);
 				return;
 			} else {
 				for (Prenotazione p : prenotazioni) {
-					if (evento.getId() == p.getEvento().getId()) {
+					if (eventoId == p.getEvento().getId()) {
 						Prenotazione prenotIdentica = p;
 						int quantita = prenotIdentica.getQuantita();
 						int quantitaModificata = quantita + 1;
 						prenotIdentica.setQuantita(quantitaModificata);
 						prenotazioneRepository.update(prenotIdentica);
 						saveChangesPrenotazioni(request, response, session, user, prenotazioni);
+						return;
 					} else {
 						Prenotazione prenotazione = new Prenotazione();
 						prenotazione.setUser(user);
@@ -76,16 +73,11 @@ public class CarrelloServlet extends HttpServlet {
 		User user = (User) session.getAttribute("user");
 		List<Prenotazione> prenotazioni = (List<Prenotazione>) session.getAttribute("prenotazioni");
 		changeQuantita(request, response, session, user, prenotazioni, idPrenotazione, quantita);
-		
-		
 	}
 
 	private void createNewCarrello(HttpServletRequest request, HttpServletResponse response, HttpSession session,
 			User user, List<Prenotazione> prenotazioni) throws ServletException, IOException {
-		String eventoIdAsString = (String) request.getAttribute("eventoId");
-		System.out.println("id evento nel carrello" +eventoIdAsString);
-		int eventoId = Integer.parseInt(eventoIdAsString);
-		//int eventoId = Integer.parseInt(request.getParameter("eventoId"));
+		int eventoId = Integer.parseInt(request.getParameter("eventoId"));
 		Evento evento = eventoRepository.findById(eventoId);
 		Prenotazione prenotazione = new Prenotazione();
 		prenotazione.setUser(user);
