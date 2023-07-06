@@ -43,70 +43,11 @@
 	<%
 	List<Evento> eventi = (List<Evento>) request.getAttribute("eventi");
 	%>
-	<div class=class="container justify-content-center">
-	<div class="row">
-		<div class=class="col">
-		 <input type="text" id="form2Example11"
-                              placeholder="nome evento" />
-                         <br>
-                         <br>
-                      <div id="list1" class="dropdown-check-list" tabindex="100">
-                        <span class="anchor">Città</span>
-                       
-                        <ul class="items">
-                            
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                            </div>
-                        </ul>
-                    </div>
-                      </div>
-                        <br>
-                        <br>
-                        <div input type="submit">
-                          <input type="radio" name="pagamento"/>gratuito </li>
-                          <input type="radio" name="pagamento"/>pagamento</li>
-                        </div>
-                          <br>
-                          <br>
-                            <div input type="submit">
-                            <input type="radio" name="evento" value="Mela" /> musica
-                            <input type="radio" name="evento" value="Pera" /> commedia
-                            <input type="radio" name="evento" value="Banana" /> educazione
-                           
-                            
-                            
-                        </form>
-                            <br>
-                            <br>
-                           <button type="button" class="btn btn-outline-success">Cerca</button>
-                        </div>
-                        </div>
-                      </div>
-          
-    </section>
-                <script>
-                    var checkList = document.getElementById('list1');
-                    checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
-                      if (checkList.classList.contains('visible'))
-                        checkList.classList.remove('visible');
-                      else
-                        checkList.classList.add('visible');
-                    }
-                  </script>
-</body>
-</html>
-			<!-- Qui inizia La Card -->
-			<%
-			for (Evento evento : eventi) {
-			%>
-			<div class="col">
-				<div class="card shadow-sm">
+	<form>
+            <div class="container" >
+            <div class="row">       
+              <div class="col-4">
+                 <div "card" style="width: 40rem;">
 					<!-- Immagine evento -->
 					<img src="<%=evento.getImmagine()%>" alt="">
 					<rect width="100%" height="100%" fill="#55595c" />
@@ -126,6 +67,87 @@
 						</div>
 					</div>
 				</div>
+				</div>
+		  <form>
+      
+         
+          
+           <div class="col-4">
+                         <input type="text" id="form2Example11"
+                              placeholder="nome evento" />
+                         <br>
+                         <br>
+                      <div id="list1" class="dropdown-check-list" tabindex="100">
+                        <span class="anchor">Città</span>
+                       
+                        <ul class="items">
+                            
+                          <li><input type="radio" name="scelta"/>Apple </li>
+                          <li><input type="radio" name="scelta"/>Orange</li>
+                          <li><input type="radio" name="scelta"/>Grapes </li>
+                          <li><input type="radio" name="scelta"/>Berry </li>
+                          <li><input type="radio" name="scelta"/>Mango </li>
+                          <li><input type="radio" name="scelta"/>Banana </li>
+                          <li><input type="radio" name="scelta"/>Tomato</li>
+                            </div>
+                        </ul>
+                    
+                        <div class="form-outline mb-4">
+                          <label class="form-label" for="risultatiData">Da:</label>
+                          <input class="form-control" type="date" id="risultatiData" name="dataEvento">
+                        </div>
+                      <div class="form-outline mb-4">
+                          <label class="form-label" for="risultatiData">A:</label>
+                          <input class="form-control" type="date" id="risultatiData" name="dataEvento">
+                        </div>
+
+                        <br>
+                        <br>
+                        <div input type="submit">
+                          <input type="radio" name="pagamento"/>gratuito </li>
+                          <input type="radio" name="pagamento"/>pagamento</li>
+                        </div>
+                          <br>
+                          <br>
+                            <div input type="submit">
+                            <input type="radio" name="evento" value="Mela" /> Mela
+                            <input type="radio" name="evento" value="Pera" /> Pera
+                            <input type="radio" name="evento" value="Banana" /> Banana
+                           
+                            </div>
+                        
+                       
+                        </form>
+                            <br>
+                            <br>
+                           <button type="button" class="btn btn-outline-success">Cerca</button>
+                      </div> 
+                    </div>
+                  </div>
+                  </form>
+            
+      
+           </form>
+          </section>
+
+    </section>
+         <script>
+                    var checkList = document.getElementById('list1');
+                    checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
+                      if (checkList.classList.contains('visible'))
+                        checkList.classList.remove('visible');
+                      else
+                        checkList.classList.add('visible');
+                    }
+                  </script>
+</body>
+</html>
+			<!-- Qui inizia La Card -->
+			<%
+			for (Evento evento : eventi) {
+			%>
+			
+				
 			</div>
 			<%
 			}
