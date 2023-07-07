@@ -35,12 +35,14 @@ public class ServletSearch extends HttpServlet {
 		String nome = request.getParameter("nome");
 		System.out.println("questa è il nome:"+nome);  //stringa vuota
 		
-		String tag = request.getParameter("searchTag"); //da null trovare soluzione
+		String tag = request.getParameter("searchTag"); //null 
 		System.out.println("questo è il tag:"+tag);
 		
 		
+		if((request.getParameter("searchTag")== null) && (request.getParameter("citta").length()==0) && (request.getParameter("nome").length()==0)) {
+			response.sendRedirect("form-search.jsp?campiVuoti");
+		}
 
-		
 		if ((request.getParameter("searchTag")!= null) && (request.getParameter("citta").length()>0) && (request.getParameter("nome").length()==0)) {
 			getEventoTagCitta(request, response);
 			return;
@@ -62,8 +64,13 @@ public class ServletSearch extends HttpServlet {
 		}
 	
 		
-		if ((request.getParameter("searchTag")== null) && ( request.getParameter("citta").length()== 0) && (request.getParameter("nome").length()>0 )) {
+		if ((request.getParameter("searchTag")== null || request.getParameter("searchTag")!= null ) && ( request.getParameter("citta").length()== 0) && (request.getParameter("nome").length()>0 )) {
 			getEventoNome(request, response);
+			return;
+		}
+		
+		if ((request.getParameter("searchTag")!= null) && ( request.getParameter("citta").length()>= 0) && (request.getParameter("nome").length()>0 )) {
+			getEventoCittaNome(request, response);
 			return;
 		}
 		
@@ -80,6 +87,15 @@ public class ServletSearch extends HttpServlet {
 	        
 	        request.setAttribute("eventi", eventi);
 	        request.getRequestDispatcher("risultati.jsp").forward(request, response);
+	}
+	
+	private void getEventoTagNome(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String nome = request.getParameter("nome"); 
+		int id = Integer.parseInt(request.getParameter("searchTag"));
+		List<Evento> eventi = eR.findEventi2(id, nome);
+		request.setAttribute("eventi", eventi);
+		request.getRequestDispatcher("risultati.jsp").forward(request, response);
 	}
 	
 	

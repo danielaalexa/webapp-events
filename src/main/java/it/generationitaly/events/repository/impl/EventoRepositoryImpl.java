@@ -219,4 +219,31 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 
 	}
 
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Evento> findEventi2(int id, String searchTerm) {
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		List<Evento> eventi = new ArrayList<Evento>();
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			eventi = em
+					.createQuery(
+							"SELECT e FROM Evento e JOIN fetch e.tagEvento t WHERE t.id = :id AND e.nome LIKE :searchterm")
+					.setParameter("id", id).setParameter("searchTerm", "%" + searchTerm + "%" ).getResultList();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null && tx.isActive())
+				tx.rollback();
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return eventi;
+	}
+
 }

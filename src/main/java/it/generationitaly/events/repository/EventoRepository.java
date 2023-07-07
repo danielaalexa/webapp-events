@@ -27,5 +27,7 @@ public interface EventoRepository extends JpaRepository<Evento, Integer> {
 	List<Evento> findByCittaAndGratuito(String citta, boolean gratuito);
 
 	List<Evento> findByCittaDateBetween (String citta, Date date1, Date date2);
+	
+	List<Evento> findEventi2(int id, String nome);
 
 }
