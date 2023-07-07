@@ -45,9 +45,30 @@
 								</select>
 								<br>
 								<div input type="submit">
-                            <input type="radio" name="searchTag" value="1" /> Musica
-                            <input type="radio" name="searchTag" value="2" /> Commedia
-                            <input type="radio" name="searchTag" value="3" /> Educazione
+							<label for="music">Music</label>
+                            <input id="music" type="radio" name="searchTag" value="1"/>
+                            <label for="education">Education</label>
+                            <input id="education" type="radio" name="searchTag" value="2"/>
+                            <label for="comedy">Comedy</label>
+                            <input id="comedy" type="radio" name="searchTag" value="3"/>
+                            <br>
+                            <label for="business">Business</label>
+                            <input id="business" type="radio" name="searchTag" value="4"/>
+                            <label for="foodndrink">Food & Drink</label>
+                            <input id="foodndrink" type="radio" name="searchTag" value="5"/>
+                            <br>
+                            <label for="sportnhealth">Sport & Health</label>
+                            <input id="sportnhealth" type="radio" name="searchTag" value="6"/>
+                            <label for="charity">Charity</label>
+                            <input id="charity" type="radio" name="searchTag" value="7"/>
+                            <label for="art">Art</label>
+                            <input id="art" type="radio" name="searchTag" value="8"/>
+                            <br>
+                            <label for="hobbies">Hobbies</label>
+                            <input id="hobbies" type="radio" name="searchTag" value="9"/>
+                            <label for="holiday">Holiday</label>
+                            <input id="holiday" type="radio" name="searchTag" value="10"/>
+                             
                           
                             </div>
                              <br>
@@ -55,7 +76,7 @@
                              <% if(request.getParameter("campiVuoti") != null) { %>
 				             <p style="color: red;">COMPILA ALMENO UN CAMPO</p>
 			                 <% } %>                            
-							<button type="submit">Cerca</button>
+							<button style="margin-left: 25px" type="submit">Cerca</button>
 
 							</form>
 							<%--
@@ -89,9 +110,6 @@
 	</section>
 	<footer class="text-body-secondary py-5">
 		<div class="container">
-			<p class="float-end mb-1">
-				<a href="#">Back to the top</a>
-			</p>
 			<p class="mb-0">
 				<%@ include file="foother.html"%>
 			</p>

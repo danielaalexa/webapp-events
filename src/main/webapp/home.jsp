@@ -206,13 +206,21 @@
 							class="eventi-regione" type="submit">
 							<i class="fa-solid fa-music"></i> Music
 						</button>
-						<button id="searchTag" name="searchTag" value="2"
-							class="eventi-regione" type="submit">
-							<i class="fa-solid fa-school"></i> Education
-						</button>
 						<button id="searchTag" name="searchTag" value="3"
 							class="eventi-regione" type="submit">
 							<i class="fa-solid fa-laugh"></i> Comedy
+						</button>
+						<button id="searchTag" name="searchTag" value="8"
+							class="eventi-regione" type="submit">
+							<i class="fa-solid fa-brush"></i> Art
+						</button>
+						<button id="searchTag" name="searchTag" value="6"
+							class="eventi-regione" type="submit">
+							<i class="fa-solid fa-basketball"></i> Sport & Health
+						</button>
+						<button id="searchTag" name="searchTag" value="5"
+							class="eventi-regione" type="submit">
+							<i class="fa-solid fa-burger"></i> Food & Drink
 						</button>
 					</form>
 					<a href="form-search.jsp"><button class="eventi-regione">Altri...</button></a>
