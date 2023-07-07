@@ -13,17 +13,19 @@
 <title>Ricrca | Stivaletto</title>
 </head>
 <body>
-<section class="h-100 gradient-form" style="background-color: #eee;">
-	<%@ include file="navbar.jsp" %>
-		<div class="container py-5 h-100">
-			<div
-				class="row d-flex justify-content-center align-items-center h-100">
+<section class="h-1000 gradient-form" style="background-color: #eee;">
+	<%@ include file="navbar.jsp"%>
+		<div class="container py-5 h-800">
+			<div class="row d-flex justify-content-center align-items-center h-100">
 				<div class="col-xl-10">
-					<div class="row g-0">
-						<div class="col-lg-6">
-							<div class="text-center">
-							
-							</div>
+					<div class="card rounded-3 text-black">
+						<div class="row g-0">
+							<div class="col-lg-6">
+								<div class="card-body p-md-5 mx-md-4">
+									<div class="text-center">
+										<img src="https://cdn.logo.com/hotlink-ok/logo-social.png" style="width: 185px;" alt="logo">
+										<h4 class="mt-1 mb-5 pb-1">Stivaletto</h4>
+									</div>
 							<form method="get" action="servletSearch">
 								<input class="form-control" list="GFGOptions" id="searchNome" name="nome" placeholder="Nome evento">
 									<br>
@@ -49,10 +51,12 @@
                           
                             </div>
                              <br>
+
                              <% if(request.getParameter("campiVuoti") != null) { %>
 				             <p style="color: red;">COMPILA ALMENO UN CAMPO</p>
 			                 <% } %>                            
-							<button class="abc" type="submit">Cerca</button>
+							<button type="submit">Cerca</button>
+
 							</form>
 							<%--
 							<hr>
@@ -71,9 +75,16 @@
 							</form>
 							--%>
 						</div>
+						
 					</div>
+					<div class="col-lg-6 d-flex align-items-center">
+							<div class="text-white px-3 py-4 p-md-5 mx-md-4">
+							<img style="opacity: 0.4;" class="img-fluid" src="https://sostegno20.it/wp-content/uploads/2022/05/bambini-geografia-cartina-muta-italia.jpg">
+							</div>
 				</div>
 			</div>
+		</div>
+		</div>
 		</div>
 	</section>
 	<footer class="text-body-secondary py-5">

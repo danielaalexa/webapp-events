@@ -171,6 +171,17 @@ INSERT INTO evento VALUES('16', 'Seminario di Leadership', '2023-12-15', 'Firenz
 INSERT INTO evento VALUES('17', 'Convegno di Educazione Globale', '2024-01-10', 'Bologna', 'Partecipa al Convegno di Educazione Globale e scopri le sfide e le opportunità dell\'istruzione per preparare gli studenti al futuro. Accademici, educatori e professionisti condivideranno le loro visioni sulle competenze chiave, le nuove metodologie didattiche e l\'importanza dell\'educazione interculturale. Saranno presenti sessioni plenarie, panel di discussione e workshop interattivi.',
 'Un\'occasione unica per plasmare il futuro dell\'istruzione!', 'Palazzo dei Congressi, Piazza Costituzione, 40128 Bologna', 'https://images.unsplash.com/photo-1544531585-f14f463149ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 0, 60.0, 2);
 
+INSERT INTO evento VALUES('18', 'Laugh Your Head Off: Filippo Spreafico - En Stand Up Comedy (Free Entrance)', '2023-07-09', 'Firenze', 'Filippo Spreafico is an Italian comedian, theater and TV performer, and radio host.
+
+He works in English and Italian. Filippo has performed stand-up comedy on Italian national television (Rai 2) and Comedy Central IT, and was a regular cast member in award-winning satirical program "Battute?". Filippo has taken his solo shows to the Edinburgh Festival and the Adelaide and Melbourne Comedy Festivals.
+
+He also performed in the United States (Comedy Store in Los Angeles, Punchline in San Francisco, Cap City in Austin) and regularly tours Europe.
+
+He trained in improvisation and clowning in Chicago (Second City) and Paris (Ecole Gaulier). Since 2020 Filippo has had a podcast called "Anything Goes," in English, and "Con un fico di voce," in Italian, both of which feature audio sketches, surreal interviews, and forgettable history lessons.', 'Laugh Your Head Off: English Stand Up Comedy by Filippo Spreafico. Filippo is an Italian comedian, theater and TV performer, and radio host.', 'Via della Funga, 27 50136 Firenze', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F550259229%2F269597953202%2F1%2Foriginal.20230707-070534?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2200%2C1100&s=973b5e9e7c2f379d6ba4bbd8ef2d61d6', '1', '0.0', '3');
+
+INSERT INTO evento VALUES('19', 'Divergente by Andrea Paone | Stand Up Comedy Night ', '2023-10-06', 'Bari', 'Divergente è il sesto stand up comedy show di Andrea Paone e il primo che sarà sia in inglese che in italiano.
+
+In questo nuovo spettacolo comico Paone racconta come è stato vivere in una famiglia divorziata, cresciuto da una madre femminista e come ha affrontato i suoi disturbi alimentari e ADHD negli anni Novanta. Infine parlerà dei suoi viaggi in giro per il mondo, della paura di volare e di come sia diventato sempre più difficile fare satira politica ai giorni di oggi.', 'Divergente è il sesto stand up comedy show di Andrea Paone, uno show irriverente, guascone come nella natura del comico livornese.', 'Parco due Giugno 80 Via della Costituente 70125 Bari', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F548843929%2F1305314011303%2F1%2Foriginal.20230705-145612?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=1%2C303%2C25700%2C12850&s=598bb5a6826c9aeee2efb57c330db5ee', '0', '10.0', '3');
 
 
 INSERT INTO evento VALUES('20', 'Concerto Live di Rock', '2023-11-25', 'Torino', 'Vieni a goderti un concerto live di rock con band famose provenienti da tutto il mondo. Lasciati trasportare dall\'energia travolgente della musica rock e goditi una serata indimenticabile insieme ad altri appassionati.',
@@ -181,10 +192,48 @@ INSERT INTO evento VALUES('20', 'Concerto Live di Rock', '2023-11-25', 'Torino',
 INSERT INTO evento VALUES('21', 'Mostra d\'Arte Contemporanea', '2023-12-08', 'Napoli', 'Immergiti nell\'universo dell\'arte contemporanea attraverso una straordinaria mostra che presenta opere di artisti rinomati a livello internazionale. Ammira le diverse forme di espressione artistica e lasciati ispirare dalla creatività e dall\'innovazione che caratterizzano l\'arte moderna.',
 'Un viaggio emozionante nel mondo dell\'arte contemporanea!', 'Museo d\'Arte Contemporanea Donna Regina, Via Settembrini, 79, 80139 Napoli', 'https://images.unsplash.com/photo-1527980965255-1b4c0be2a64e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 0, 20.0, 8);
 
+INSERT INTO evento VALUES('22', '11^ CORRIMONTE "Memorial Vito Prezioso"', '2023-08-05', 'Napoli', 'Gara podistica di km 9,9 Competitiva - Gara podistica di km 9,9 Non Competitiva - Gare categorie giovanili.', '11^ CORRIMONTE Memorial Vito Prezioso Sabato 5 Agosto 2023. Gara podistica di km 9,9 Competitiva.', 'Monte Sant Angelo PIAZZA BENEFICENZA 71037', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F520790749%2F109381706499%2F1%2Foriginal.20230523-151556?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C406%2C1654%2C827&s=b0a132cff704396d13290224a0761b63', '1', '0.0', '6');
+
 
 INSERT INTO evento VALUES('23', 'Conferenza di Tecnologia', '2024-01-15', 'Firenze', 'Partecipa alla conferenza di tecnologia e scopri le ultime novità nel campo dell\'innovazione tecnologica. Esperti di settore condivideranno le tendenze emergenti, i futuri sviluppi e le applicazioni pratiche delle nuove tecnologie. Avrai l\'opportunità di interagire con i relatori e di ampliare la tua conoscenza nel mondo della tecnologia.',
 'Un\'immersione nel futuro della tecnologia!', 'Palazzo dei Congressi, Piazza Adua, 1, 50123 Firenze', 'https://english.news.cn/europe/20220903/e32d5ebc8c7c4179b7668fac78678454/617858f18e644600815a390016c6a45b.jpg', 0, 40.0, 4);
 
+INSERT INTO evento VALUES('24', 'Stretching for cyclist & Gravel Ride', '2023-07-13', 'Milano', 'Upcycle & Yoga à Porter love cycling e insieme organizzano una sgambata estiva al tramonto. Prima di pedalare qualche esercizio di allungamento al parco poi tutti in sella!
+
+ATTENZIONE: è obbligatorio il casco e la dotazioni di luci anteriore e posteriore.
+
+18:30 Ritrovo presso Parco Porto di Mare, zona Corvetto Milano presso area tronchi.
+
+Vedi la mappa qui: https://goo.gl/maps/ikGkyDjwpPtbjxNm6
+
+Sessione di stretching per ciclisti con Yoga à Porter
+
+19:00 Gravel ride 40km (la traccia verrà inviata qualche giorno prima)
+
+21:30 Arrivo da Upcycle, birrette, saluti estivi e in regalo il poster di YàP&Up 20 mins stretching sequence for cyclist - grafica e illustrazioni di @andrea_q - per le tue sessioni di allungamento a casa e dove vuoi!', 'Upcycle & Yoga à Porter love cycling! Prima di pedalare qualche esercizio di allungamento e poi tutti in sella per una sgambata al tramonto!', 'Località
+
+Upcycle Milano Bike Cafè via A.M.Ampère 59 20131 Milano', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F546021379%2F83757558317%2F1%2Foriginal.20230630-071312?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C6912%2C3456&s=1f6698dab6b6efdf8eda1ca9fb4c409d', '1', '0.0', '6');
+
+INSERT INTO evento VALUES('25', 'Milano Whisky Festival & Rum Show!', '2023-12-04', 'Milano', 'Al Milano Whisky Festival & Rum Show! potrai:
+degustare i migliori whisky disponibili in Italia
+partecipare a masterclass
+seguire seminari e workshop
+acquistare la tua bottiglia preferita
+degustazioni a partire da €3,00', 'Milano Whisky Festival & Rum Show!', 'Fondazione Stelline 61 Corso Magenta 20123 Milano', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F457129879%2F164355402384%2F1%2Foriginal.20230228-170630?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C1%2C2154%2C1077&s=c2e55e0a46dcbaa6d6f474f80a6b5065', '0', '15.0', '5');
+
+INSERT INTO evento VALUES('26', 'Cuciniamo insieme i biscotti alle erbe!', '2023-07-08', 'Bologna', 'Sabato 8 luglio alle ore 11:30, ti aspettiamo nell aia della Cascina per un laboratorio creativo di cucina.
+
+Ogni ricetta racconta una storia fatta di persone, emozioni, legami. Preparare un piatto è condivisione, divertimento, amore, confronto e lavoro di squadra.
+
+Oggi impariamo che i fiori si possono anche mangiare.
+
+Scopri come cucinare (e gustare) i biscotti con erbe e fiori insieme alle amiche di LopLop Associazione!
+
+Per bambini a partire dai 5 anni.', 'Cuciniamo i biscotti con le erbe e i fiori!', 'La Cascina 3 Via Pier Paolo Pasolini 20151 ', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F544560339%2F216243996677%2F1%2Foriginal.20230628-105845?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C290%2C940%2C470&s=31e8d0ac8cbf36106467d44765be3f79', '1', '0.0', '5');
+
+INSERT INTO evento VALUES('27', 'Un mare di emozioni- atelier con lettura animata', '2023-08-08', 'Catania', 'T﻿i aspettiamo sabato 8 luglio alle ore 10:00 per un laboratorio sensoriale dedicato ai bambini dai 3 ai 5 anni e alle loro famiglie.
+
+Un atelier alla scoperta della vita nel mare: pesci di tante forme e colori vivono le loro avventure in balia di tante emozioni. Quante saranno? Vieni a scoprirlo attraverso questa esperienza unica e magica. ', 'Un mare di emozioni - atelier con lettura animata.', 'La Cascina 3 Via Pier Paolo Pasolini', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F544616039%2F216243996677%2F1%2Foriginal.jpg?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=83f0f091addbfb28a4d12410bc240b7f', '1', '0.0', '6');
 
 
 INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
