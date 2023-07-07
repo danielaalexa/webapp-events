@@ -13,7 +13,7 @@
 	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 	crossorigin="anonymous"></script>
 <script src="registrazione.js"></script>
-<title>Sign Up</title>
+<title>Sign Up | Stivaletto</title>
 </head>
 <body>
 	<%@ include file="navbar.jsp"%>

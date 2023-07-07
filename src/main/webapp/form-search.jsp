@@ -10,7 +10,7 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="form_source.css">
-<title>Cerca Evento</title>
+<title>Ricrca | Stivaletto</title>
 </head>
 <body>
 	<%@ include file="navbar.jsp" %>

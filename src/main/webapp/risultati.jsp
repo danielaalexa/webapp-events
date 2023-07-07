@@ -10,7 +10,7 @@
 <meta name="description" content="" />
 <meta name="author" content="Livingstone Amang" />
 <meta name="generator" content="Hugo 0.112.5" />
-<title>Risultati</title>
+<title>Risultati | Stivaletto</title>
 <link rel="stylesheet" href="carousel.css" />
 <link rel="stylesheet"
 	href="path/to/font-awesome/css/font-awesome.min.css">

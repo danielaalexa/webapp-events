@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="event.css">
 
 <meta charset="UTF-8">
-<title>Evento</title>
+<title>Info Evento | Stivaletto</title>
 
 </head>
 
