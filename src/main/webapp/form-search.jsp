@@ -74,9 +74,9 @@
                              <br>
 
                              <% if(request.getParameter("campiVuoti") != null) { %>
-				             <p style="color: red;">COMPILA ALMENO UN CAMPO</p>
+				             <p style="color: red;">Compila almeno un campo!</p>
 			                 <% } %>                            
-							<button style="margin-left: 25px" type="submit">Cerca</button>
+							<button type="submit">Cerca</button>
 
 							</form>
 							<%--
