@@ -16,8 +16,9 @@
 <title>Log In</title>
 </head>
 <body>
-	<%@ include file="navbar.jsp"%>
+	
 	<section class="h-100 gradient-form" style="background-color: #eee;">
+	<%@ include file="navbar.jsp"%>
 		<div class="container py-5 h-100">
 			<div
 				class="row d-flex justify-content-center align-items-center h-100">
@@ -27,8 +28,8 @@
 							<div class="col-lg-6">
 								<div class="card-body p-md-5 mx-md-4">
 									<div class="text-center">
-										<img src="" style="width: 185px;" alt="logo">
-										<h4 class="mt-1 mb-5 pb-1">...</h4>
+										<img src="https://cdn.logo.com/hotlink-ok/logo-social.png" style="width: 185px;" alt="logo">
+										<h4 class="mt-1 mb-5 pb-1">Stivaletto</h4>
 									</div>
 								<form method="post" action="loginServlet">
 									<div class="form-outline mb-4">
@@ -48,17 +49,19 @@
 									}
 									%>
 									<div class="d-flex align-items-center justify-content-center pb-4">
-									<button type="submit" class="btn btn-outline-success">LOG IN</button>
+									<button class="abc" type="submit">LOG IN</button>
 									</div>
 									<div class="d-flex align-items-center justify-content-center pb-4">
 										<p class="mb-0 me-2">Don't have an account?</p>
-										<a href="signup.jsp"><button type="button" class="btn btn-outline-danger">CREATE ONE</button></a>
+										<a href="signup.jsp"><button class="abc" type="button">CREATE ONE</button></a>
 									</div>
 								</form>
 							</div>
 						</div>
-						<div class="col-lg-6 d-flex align-items-center gradient-custom-2">
-							<div class="text-white px-3 py-4 p-md-5 mx-md-4"></div>
+						<div class="col-lg-6 d-flex align-items-center">
+							<div class="text-white px-3 py-4 p-md-5 mx-md-4">
+							<img style="opacity: 0.4;" class="img-fluid" src="https://sostegno20.it/wp-content/uploads/2022/05/bambini-geografia-cartina-muta-italia.jpg">
+							</div>
 						</div>
 					</div>
 				</div>
@@ -69,7 +72,7 @@
 	<footer class="text-body-secondary py-5">
 		<div class="container">
 			<p class="float-end mb-1">
-				<a href="#">Back to the top</a>
+				<a href="#"><button class="abc">Back to top</button></a>
 			</p>
 			<p class="mb-0">
 				<%@ include file="foother.html"%>
