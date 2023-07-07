@@ -10,7 +10,7 @@
 	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	crossorigin="anonymous">
 <link rel="stylesheet" href="form_source.css">
-<title>Cerca Evento</title>
+<title>Ricrca | Stivaletto</title>
 </head>
 <body>
 	<%@ include file="navbar.jsp" %>
@@ -30,16 +30,17 @@
 									<br>
 									<label id="searchCitta">Città:</label>
 									<select class="form-control" list="GFGOptions" id="searchCitta" name="citta">
-									<option value="Napoli">Napoli</option>
-									<option value="Milano">Milano</option>
-									<option value="Roma">Roma</option>
-									<option value="Torino">Torino</option>
-									<option value="Catania">Catania</option>
-									<option value="Bologna">Bologna</option>
-									<option value="Genova">Genova</option>
-									<option value="Palermo">Palermo</option>
-									<option value="Bari">Bari</option>
-									<option value="Firenze">Firenze</option>
+									<option></option>
+									<option value="Bari">BARI</option>
+									<option value="Bologna">BOLOGNA</option>
+									<option value="Catania">CATANIA</option>
+									<option value="Firenze">FIRENZE</option>
+									<option value="Genova">GENOVA</option>
+									<option value="Milano">MILANO</option>
+									<option value="Napoli">NAPOLI</option>
+									<option value="Palermo">PALERMO</option>
+									<option value="Roma">ROMA</option>
+									<option value="Torino">TORINO</option>
 								</select>
 								<br>
 								<button id="searchTag" name="searchTag" value="1"

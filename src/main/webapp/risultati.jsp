@@ -10,7 +10,7 @@
 <meta name="description" content="" />
 <meta name="author" content="Livingstone Amang" />
 <meta name="generator" content="Hugo 0.112.5" />
-<title>Risultati</title>
+<title>Risultati | Stivaletto</title>
 <link rel="stylesheet" href="carousel.css" />
 <link rel="stylesheet"
 	href="path/to/font-awesome/css/font-awesome.min.css">
@@ -42,72 +42,15 @@
 <%@ include file="navbar.jsp" %>
 	<%
 	List<Evento> eventi = (List<Evento>) request.getAttribute("eventi");
+	
 	%>
-	<div class=class="container justify-content-center">
-	<div class="row">
-		<div class=class="col">
-		 <input type="text" id="form2Example11"
-                              placeholder="nome evento" />
-                         <br>
-                         <br>
-                      <div id="list1" class="dropdown-check-list" tabindex="100">
-                        <span class="anchor">Città</span>
-                       
-                        <ul class="items">
-                            
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                          <li><input type="radio" name="scelta"/> </li>
-                            </div>
-                        </ul>
-                    </div>
-                      </div>
-                        <br>
-                        <br>
-                        <div input type="submit">
-                          <input type="radio" name="pagamento"/>gratuito </li>
-                          <input type="radio" name="pagamento"/>pagamento</li>
-                        </div>
-                          <br>
-                          <br>
-                            <div input type="submit">
-                            <input type="radio" name="evento" value="Mela" /> musica
-                            <input type="radio" name="evento" value="Pera" /> commedia
-                            <input type="radio" name="evento" value="Banana" /> educazione
-                           
-                            
-                            
-                        </form>
-                            <br>
-                            <br>
-                           <button type="button" class="btn btn-outline-success">Cerca</button>
-                        </div>
-                        </div>
-                      </div>
-          
-    </section>
-                <script>
-                    var checkList = document.getElementById('list1');
-                    checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
-                      if (checkList.classList.contains('visible'))
-                        checkList.classList.remove('visible');
-                      else
-                        checkList.classList.add('visible');
-                    }
-                  </script>
-</body>
-</html>
-			<!-- Qui inizia La Card -->
-			<%
-			for (Evento evento : eventi) {
-			%>
-			<div class="col">
-				<div class="card shadow-sm">
+	<form>
+            <div class="container" >
+            <div class="row">       
+              <div class="col-4">
+                 <div "card" style="width: 40rem;">
 					<!-- Immagine evento -->
+					<% for(Evento evento : eventi){ %>
 					<img src="<%=evento.getImmagine()%>" alt="">
 					<rect width="100%" height="100%" fill="#55595c" />
 					<div class="card-body">
@@ -122,10 +65,95 @@
 						<p class="event-indirizzo"><%=evento.getIndirizzo()%></p>
 						<div class="d-flex justify-content-between align-items-center">
 							<a href="evento?id=<%=evento.getId()%>"><button
-									class="scopri-piu">Scopri di più</button></a>
+										class="scopri-piu">Scopri di più</button></a>
+								<%}%>
 						</div>
 					</div>
 				</div>
+				</div>
+		  <form>
+      
+         
+          
+           <div class="col-4">
+                         <input type="text" id="form2Example11"
+                              placeholder="nome evento" />
+                         <br>
+                         <br>
+                      <div id="list1" class="dropdown-check-list" tabindex="100">
+                        <span class="anchor">Città</span>
+                       
+                        <ul class="items">
+                            
+                          <li><input type="radio" name="citta" value="Bari"/>BARI</li>
+                          <li><input type="radio" name="citta" value="Bologna"/>BOLOGNA</li>
+                          <li><input type="radio" name="citta" value="Catania"/>CATANIA</li>
+                          <li><input type="radio" name="citta" value="Firenze"/>FIRENZE</li>
+                          <li><input type="radio" name="citta" value="Genova"/>GENOVA</li>
+                          <li><input type="radio" name="citta" value="Milano"/>MILANO</li>
+                          <li><input type="radio" name="citta" value="Napoli"/>NAPOLI</li>
+                          <li><input type="radio" name="citta" value="Palermo"/>PALERMO</li>
+                          <li><input type="radio" name="citta" value="Roma"/>ROMA</li>
+                          <li><input type="radio" name="citta" value="Torino"/>TORINO</li>
+                            </div>
+                        </ul>
+                    
+                        <div class="form-outline mb-4">
+                          <label class="form-label" for="risultatiData">Da:</label>
+                          <input class="form-control" type="date" id="risultatiData" name="dataEvento">
+                        </div>
+                      <div class="form-outline mb-4">
+                          <label class="form-label" for="risultatiData">A:</label>
+                          <input class="form-control" type="date" id="risultatiData" name="dataEvento">
+                        </div>
+
+                        <br>
+                        <br>
+                        <div input type="submit">
+                          <input type="radio" name="pagamento"/>gratuito </li>
+                          <input type="radio" name="pagamento"/>pagamento</li>
+                        </div>
+                          <br>
+                          <br>
+                            <div input type="submit">
+                            <input type="radio" name="evento" value="Mela" /> Mela
+                            <input type="radio" name="evento" value="Pera" /> Pera
+                            <input type="radio" name="evento" value="Banana" /> Banana
+                           
+                            </div>
+                        
+                       
+                        </form>
+                            <br>
+                            <br>
+                           <button type="button" class="btn btn-outline-success">Cerca</button>
+                      </div> 
+                    </div>
+                  </div>
+                  </form>
+            
+      
+           </form>
+          </section>
+
+    </section>
+         <script>
+                    var checkList = document.getElementById('list1');
+                    checkList.getElementsByClassName('anchor')[0].onclick = function (evt) {
+                      if (checkList.classList.contains('visible'))
+                        checkList.classList.remove('visible');
+                      else
+                        checkList.classList.add('visible');
+                    }
+                  </script>
+</body>
+</html>
+			<!-- Qui inizia La Card -->
+			<%
+			for (Evento evento : eventi) {
+			%>
+			
+				
 			</div>
 			<%
 			}
