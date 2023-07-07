@@ -142,3 +142,52 @@ INSERT INTO tag_evento VALUES ('3', 'Comedy');
 
 SELECT * FROM tag_evento;
 -- DROP TABLE tag_evento;
+
+
+
+
+
+
+
+INSERT INTO evento VALUES('11', 'Concerto Live: Le Stelle del Jazz', '2023-08-15', 'Milano', 'Vieni a goderti una serata magica con il concerto live di "Le Stelle del Jazz". Gli artisti di fama internazionale si esibiranno sul palco e ti regaleranno un esperienza musicale indimenticabile. Non perdere l\'opportunità di ascoltare le note melodiose di questo genere musicale intramontabile.',
+'Un concerto unico che ti lascerà senza fiato!', 'Teatro Alla Scala, Via Filodrammatici, 2, 20121 Milano', 'https://hancockinstitute.org/media/108A4554.jpg', 0, 35.0, 1);
+
+INSERT INTO evento VALUES('12', 'Corso di Fotografia Digitale', '2023-09-05', 'Roma', 'Immergiti nel mondo della fotografia digitale con il nostro corso intensivo. Avrai l\'opportunità di imparare le tecniche avanzate di scatto, la post-produzione e la composizione fotografica. Il corso sarà tenuto da esperti del settore e ti forniremo tutto il materiale necessario per le esercitazioni pratiche.',
+'Non perdere l\'occasione di sviluppare le tue abilità fotografiche!', 'Via del Corso, 123, 00187 Roma', 'https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1171&q=80', 1, 0.0, 2);
+
+INSERT INTO evento VALUES('13', 'Spettacolo Comico: La Risata è Assicurata', '2023-10-10', 'Napoli', 'Vieni a divertirti con lo spettacolo comico "La Risata è Assicurata". Gli artisti di cabaret più divertenti del momento ti faranno ridere a crepapelle con le loro battute esilaranti e i siparietti comici. Preparati a una serata di puro divertimento e allegria!',
+'Un evento che ti farà scoppiare dalle risate!', 'Teatro Bellini, Via Conte di Ruvo, 14, 80133 Napoli', 'https://cdn.comedy.co.uk/images/library/comedies/900x450/r/russell_howard_stand_up_central_2.jpg', 0, 25.0, 3);
+
+
+INSERT INTO evento VALUES('14', 'Conferenza Nazionale sull Educazione Digitale', '2023-11-20', 'Milano', 'Partecipa alla Conferenza Nazionale sull\'Educazione Digitale e scopri come la tecnologia sta trasformando il settore dell\'istruzione. Esperti di livello internazionale condivideranno le ultime tendenze, best practice e innovazioni nell\'ambito dell\'educazione digitale. Saranno presenti relatori di fama mondiale, workshop interattivi e opportunità di networking.',
+'Un evento unico per esplorare il futuro dell\'istruzione!', 'Centro Congressi MiCo, Piazzale Carlo Magno, 1, 20149 Milano', 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 1, 30.0, 2);
+
+INSERT INTO evento VALUES('15', 'Hackathon: Innovazione e Soluzioni', '2023-12-05', 'Roma', 'Partecipa al nostro Hackathon sulla tematica "Innovazione e Soluzioni per l\'Ecosostenibilità" e unisciti ad una community di creativi, programmatori e innovatori. Collabora in squadra per sviluppare progetti sostenibili che contribuiscano a un futuro migliore. Esperti del settore forniranno mentorship e premi saranno assegnati ai progetti più innovativi.',
+'Un\'opportunità straordinaria per creare un impatto positivo!', 'Città dell\'Altra Economia, Largo Dino Frisullo, 00154 Roma', 'https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80', 0, 45.0, 2);
+
+INSERT INTO evento VALUES('16', 'Seminario di Leadership', '2023-12-15', 'Firenze', 'Partecipa al nostro Seminario di Leadership e scopri i segreti dei grandi leader che hanno lasciato un impronta nel mondo. Esperti di leadership condividono strategie, esperienze e competenze chiave per guidare con successo sia se stessi che gli altri. Il seminario fornirà spunti preziosi per sviluppare e potenziare le tue capacità di leadership.',
+'Un\'occasione imperdibile per diventare un leader di successo!', 'Palazzo degli Affari, Piazza Adua, 1, 50123 Firenze', 'https://images.unsplash.com/photo-1561489404-42f13a2f09a2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 1, 25.0, 2);
+
+INSERT INTO evento VALUES('17', 'Convegno di Educazione Globale', '2024-01-10', 'Bologna', 'Partecipa al Convegno di Educazione Globale e scopri le sfide e le opportunità dell\'istruzione per preparare gli studenti al futuro. Accademici, educatori e professionisti condivideranno le loro visioni sulle competenze chiave, le nuove metodologie didattiche e l\'importanza dell\'educazione interculturale. Saranno presenti sessioni plenarie, panel di discussione e workshop interattivi.',
+'Un\'occasione unica per plasmare il futuro dell\'istruzione!', 'Palazzo dei Congressi, Piazza Costituzione, 40128 Bologna', 'https://images.unsplash.com/photo-1544531585-f14f463149ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 0, 60.0, 2);
+
+
+
+INSERT INTO evento VALUES('20', 'Concerto Live di Rock', '2023-11-25', 'Torino', 'Vieni a goderti un concerto live di rock con band famose provenienti da tutto il mondo. Lasciati trasportare dall\'energia travolgente della musica rock e goditi una serata indimenticabile insieme ad altri appassionati.',
+'Un\'esplosione di note e emozioni!', 'Stadio Olimpico Grande Torino, Corso Sebastopoli, 123, 10134 Torino', 'https://images.unsplash.com/photo-1604177052603-c2b4cff228db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 0, 35.0, 1);
+
+
+
+INSERT INTO evento VALUES('21', 'Mostra d\'Arte Contemporanea', '2023-12-08', 'Napoli', 'Immergiti nell\'universo dell\'arte contemporanea attraverso una straordinaria mostra che presenta opere di artisti rinomati a livello internazionale. Ammira le diverse forme di espressione artistica e lasciati ispirare dalla creatività e dall\'innovazione che caratterizzano l\'arte moderna.',
+'Un viaggio emozionante nel mondo dell\'arte contemporanea!', 'Museo d\'Arte Contemporanea Donna Regina, Via Settembrini, 79, 80139 Napoli', 'https://images.unsplash.com/photo-1527980965255-1b4c0be2a64e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 0, 20.0, 8);
+
+
+INSERT INTO evento VALUES('23', 'Conferenza di Tecnologia', '2024-01-15', 'Firenze', 'Partecipa alla conferenza di tecnologia e scopri le ultime novità nel campo dell\'innovazione tecnologica. Esperti di settore condivideranno le tendenze emergenti, i futuri sviluppi e le applicazioni pratiche delle nuove tecnologie. Avrai l\'opportunità di interagire con i relatori e di ampliare la tua conoscenza nel mondo della tecnologia.',
+'Un\'immersione nel futuro della tecnologia!', 'Palazzo dei Congressi, Piazza Adua, 1, 50123 Firenze', 'https://english.news.cn/europe/20220903/e32d5ebc8c7c4179b7668fac78678454/617858f18e644600815a390016c6a45b.jpg', 0, 40.0, 4);
+
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Conferenza strategie di marketing digitale', '2023-11-20', 'Milano', 'Partecipa alla conferenza sulle strategie di marketing digitale e scopri le ultime tendenze nel campo del marketing online. Esperti di marketing condivideranno le strategie vincenti, le best practice e le tattiche per promuovere il tuo business online.', 'Una guida pratica al marketing digitale!', 'Centro Congressi MiCo, Piazzale Carlo Magno, 1, 20149 Milano', 'https://www.wearemarketing.com/uploads/blog-images/d740e2416baaeeddacbb0808d0071568fe38f59b.jpeg', 0, 30.0, 4);
+
