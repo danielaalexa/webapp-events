@@ -22,8 +22,7 @@
 					<div class="row g-0">
 						<div class="col-lg-6">
 							<div class="text-center">
-								<img src="" style="width: 185px;" alt="logo">
-								<h4 class="mt-1 mb-5 pb-1">...</h4>
+							
 							</div>
 							<form method="get" action="servletSearch">
 								<input class="form-control" list="GFGOptions" id="searchNome" name="nome" placeholder="Nome evento">
@@ -43,14 +42,15 @@
 									<option value="Torino">TORINO</option>
 								</select>
 								<br>
-								<button id="searchTag" name="searchTag" value="1"
-									class="btn btn-dark" type="button">Music</button>
-								<button id="searchTag" name="searchTag" value="2"
-									class="btn btn-dark" type="button">Education</button>
-								<button id="searchTag" name="searchTag" value="3"
-									class="btn btn-dark" type="button">Comedy</button>
-									<br>
-							    <button class="btn btn-dark" type="submit">Search</button>
+								<div input type="submit">
+                            <input type="radio" name="evento" value="Musica" /> Musica
+                            <input type="radio" name="evento" value="Commedia" /> Commedia
+                            <input type="radio" name="evento" value="Educazione" /> Educazione
+                          
+                            </div>
+                             <br>
+                             
+							  <button class="abc" type="submit">Cerca</button>
 							</form>
 							<%--
 							<hr>
