@@ -13,8 +13,8 @@
 <title>Ricrca | Stivaletto</title>
 </head>
 <body>
+<section class="h-100 gradient-form" style="background-color: #eee;">
 	<%@ include file="navbar.jsp" %>
-	<section class="h-100 gradient-form" style="background-color: #eee;">
 		<div class="container py-5 h-100">
 			<div
 				class="row d-flex justify-content-center align-items-center h-100">
@@ -43,14 +43,14 @@
 								</select>
 								<br>
 								<div input type="submit">
-                            <input type="radio" name="evento" value="Musica" /> Musica
-                            <input type="radio" name="evento" value="Commedia" /> Commedia
-                            <input type="radio" name="evento" value="Educazione" /> Educazione
+                            <input type="radio" name="searchTag" value="1" /> Musica
+                            <input type="radio" name="searchTag" value="2" /> Commedia
+                            <input type="radio" name="searchTag" value="3" /> Educazione
                           
                             </div>
                              <br>
                              
-							  <button class="abc" type="submit">Cerca</button>
+							<button class="abc" type="submit">Cerca</button>
 							</form>
 							<%--
 							<hr>
