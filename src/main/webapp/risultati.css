@@ -39,18 +39,7 @@ input[type="radio"] {
   margin-right: 20px;
 }
 
-input[type="radio"]::before {
-  content: "";
 
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(yellow);
-}
-
-.form-control:focus-within {
-  color: green;
-}
 .col-md-4 {
   display: flex;
   flex-direction: column;
@@ -81,15 +70,7 @@ input[type="radio"]::before {
   cursor: pointer;
   box-shadow: rgba(250, 160, 4, 0.15) 0px 7px 29px 0px;
 }
-button {
-  background-color: #f1c27b;
-  width: 100%;
-  color: white;
-  border: none;
-  padding: 8px;
-  font-family: "Poppins";
-  font-weight: 500;
-}
+
 button:hover {
   background-color: #f38600;
   transform: scale(1.1);
