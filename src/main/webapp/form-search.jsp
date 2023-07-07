@@ -49,7 +49,9 @@
                           
                             </div>
                              <br>
-                             
+                             <% if(request.getParameter("campiVuoti") != null) { %>
+				             <p style="color: red;">COMPILA ALMENO UN CAMPO</p>
+			                 <% } %>                            
 							<button class="abc" type="submit">Cerca</button>
 							</form>
 							<%--
