@@ -240,3 +240,38 @@ INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo,
 VALUES
 ('Conferenza strategie di marketing digitale', '2023-11-20', 'Milano', 'Partecipa alla conferenza sulle strategie di marketing digitale e scopri le ultime tendenze nel campo del marketing online. Esperti di marketing condivideranno le strategie vincenti, le best practice e le tattiche per promuovere il tuo business online.', 'Una guida pratica al marketing digitale!', 'Centro Congressi MiCo, Piazzale Carlo Magno, 1, 20149 Milano', 'https://www.wearemarketing.com/uploads/blog-images/d740e2416baaeeddacbb0808d0071568fe38f59b.jpeg', 0, 30.0, 4);
 
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Festival del management', '2023-12-05', 'Roma', 'Partecipa a un workshop intensivo sullo sviluppo delle competenze manageriali e apprendi le abilità necessarie per guidare con successo una squadra. I relatori condivideranno esperienze pratiche, strumenti e strategie per migliorare le tue capacità di leadership.', 'Migliora le tue competenze manageriali!', 'Città dell\'Altra Economia, Largo Dino Frisullo, 00154 Roma', 'https://www.lum.it/wp-content/uploads/2023/01/Festival-news-690-1-690x440.jpg', 0, 50.0, 4);
+
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Corso di yoga e meditazione', '2023-11-25', 'Torino', 'Partecipa al corso di yoga e meditazione per rilassare la mente e rinvigorire il corpo. Esperti insegnanti ti guideranno attraverso diverse pratiche di yoga e meditazione per promuovere il benessere e la salute.', 'Trova l\'equilibrio tra corpo e mente!', 'Centro Yoga Bliss, Via Giuseppe Luigi Lagrange, 1, 10123 Torino', 'https://www.posturabenessere.com/resources/1200x1200/97d67a87bff00005805857578f786f08.webp.webp', 0, 25.0, 5);
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Conferenza sulla nutrizione', '2023-12-08', 'Napoli', 'Partecipa alla conferenza sulla nutrizione e lo stile di vita sano per imparare come fare scelte alimentari consapevoli e adottare abitudini salutari. Esperti nutrizionisti e professionisti del settore condivideranno consigli pratici per mantenere una dieta equilibrata e uno stile di vita attivo.', 'Scopri il potere della nutrizione per una vita sana!', 'Centro Congressi Napoli, Via Partenope, 36, 80121 Napoli', 'https://www.himss.org/sites/hde/files/styles/page_pt1_xl/public/Health-20-Annual-Conference-Enters-Its-13th-Year-in-the-Tech-Revolution-1024x512.jpg?itok=qExDXVYE', 0, 20.0, 5);
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Festival del gusto e dei sapori locali', '2023-11-20', 'Milano', 'Partecipa al festival del gusto e dei sapori locali e scopri le prelibatezze culinarie della regione. Produttori locali, chef rinomati e sommelier ti guideranno in un viaggio gastronomico attraverso i piatti tradizionali e i vini pregiati della zona.', 'Un\'esperienza culinaria indimenticabile!', 'Parco Esposizioni Novegro, Via Novegro, 20090 Segrate (MI)', 'https://d36tnp772eyphs.cloudfront.net/blogs/1/2018/08/People-eating-Fiera-del-Riso.jpg', 0, 30.0, 6);
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Cena di Gala Benefica per l\'Educazione', '2023-12-10', 'Roma', 'Unisciti a noi per una cena di gala benefica dedicata a sostenere l\'educazione dei bambini. Goditi una serata di alta cucina, intrattenimento dal vivo e ospiti speciali, contribuendo allo stesso tempo a una grande causa.', 'Sostieni l\'educazione dei bambini con la nostra cena di gala benefica!', 'Grand Hotel, Via Veneto, 123, 00187 Roma', 'https://consciousmagazine.co/wp-content/uploads/2013/05/maylist.jpg', 0, 100.0, 7);
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Laboratorio di Fotografia', '2023-12-05', 'Milano', 'Partecipa al laboratorio di fotografia e impara le tecniche fondamentali per scattare foto straordinarie. Esplora l\'arte della fotografia con esperti del settore che condivideranno consigli pratici e trucchi per migliorare le tue abilità fotografiche.', 'Coltiva la tua passione per la fotografia!', 'Studio Fotografico XYZ, Via Fotografi, 10, 20100 Milano', 'https://jsp.co.id/wp-content/uploads/2018/09/hunting-foto.jpg', 0, 30.0, 9);
+
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Mercatino Natalizio', '2023-12-15', 'Torino', 'Entra nel magico mondo natalizio con il nostro mercatino natalizio. Scopri bancarelle piene di regali, artigianato locale, cibo tradizionale e intrattenimento natalizio. Trascorri una giornata piena di atmosfera festiva e divertimento per tutta la famiglia.', 'Esperienza natalizia indimenticabile!', 'Piazza Castello, 10123 Torino', 'https://www.areepubbliche.it/sites/default/files/uploads/field_image/torino-mercatini-natale-2019-2020.jpg', 1, 0.0, 10);
