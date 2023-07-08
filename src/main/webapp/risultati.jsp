@@ -54,15 +54,15 @@
 						<label style="color: #f38600; font-weight: bold;"
 							class="form-label" for="risultatiData">Da:</label> <input
 							class="form-control" type="date" id="risultatiData"
-							name="dataEvento"> <label
+							name="data1"> <label
 							style="color: #f38600; font-weight: bold;" class="form-label"
 							for="risultatiData">A:</label> <input class="form-control"
-							type="date" id="risultatiData" name="dataEvento">
+							type="date" id="risultatiData" name="data2">
 						<div input type="submit">
 							<ul>
 								<li
 									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: green;">
-									<input type="radio" name="pagamento" />gratuito
+									<input type="radio" name="gratuito" />gratuito
 								</li>
 								<li
 									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: #f38600;"><input
