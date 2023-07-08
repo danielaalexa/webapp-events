@@ -63,6 +63,21 @@ tag_evento_id INT NOT NULL,
 FOREIGN KEY (tag_evento_id) references tag_evento(id) ON DELETE CASCADE
 );
 
+SELECT * FROM evento;
+DROP TABLE evento;
+
+CREATE TABLE tag_evento (
+id INT PRIMARY KEY AUTO_INCREMENT,
+nome VARCHAR(45) NOT NULL
+);
+
+INSERT INTO tag_evento VALUES ('1', 'Music');
+INSERT INTO tag_evento VALUES ('2', 'Education');
+INSERT INTO tag_evento VALUES ('3', 'Comedy');
+
+SELECT * FROM tag_evento;
+-- DROP TABLE tag_evento;
+
 INSERT INTO evento VALUES('1','Suonimobili - Medioeval Jazz','2023-07-09','Napoli','L’organo portativo medioevale nelle mani di Catalina Vicens, una delle massime esperte mondiali, e il sassofono di Massimiliano Milesi, distintosi negli ultimi anni come una delle voci più interessanti del panorama jazzistico nazionale: i due musicisti suoneranno insieme per la prima volta nell’incredibile ambiente medioevale della Canonica di San Salvatore. Catalina Vicens, musicista di origine cilena, inizia molto presto la sua carriera: a 20 anni aveva già tenuto recital importanti nel Nord e Sud America. Specializzata sugli strumenti a tastiera antichi, collabora alla ricostruzione di organi rinascimentali e medievali e nel 2021 è nominata curatrice della Collezione Tagliavini. È considerata dalla stampa internazionale come una delle musiciste più interessanti per la sua capacità di traghettare la musica antica verso il contemporaneo. Organic Creatures è il suo ultimo progetto che esegue suonando l’organo portativo, strumento del XV secolo che Catalina riporta alla luce confermando la sua ispirazione di musicista ricercatrice.
 
 Massimiliano Milesi non è solo apprezzato per essere un eccellente sassofonista (tenore e soprano), ma è anche stimato per le doti di compositore, con stimoli provenienti dal rock.', 'Tre set di concerti con musica contemporanea antica e moderna.', 'Chiesa di San Salvatore Via Castello 23891 Barzanò','https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F533962019%2F1533498871993%2F1%2Foriginal.20230612-103009?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C1600%2C800&s=0a658f07d5a2a8a87f3bf5270e89a266','1','0.0','1');
@@ -126,28 +141,7 @@ Il tutto in una location eccezionale, Auditorium Innovation Center di Fondazione
 
 Ci sarà una proiezione dei 3 cortometraggi vincitori nelle rispettive categorie 2D, 3D e Stop Motion: - Shell in Love by Svilen Dimitrov - AIKĀNE by Daniel Sousa, Dean Hamer, Joe Wilson - Txotxongiloa by Sonia Estévez - CIRCLE by Ke Wang - Footprints In The Forest by Juhaidah Joemin, Sandra Khoo. E infine, la proiezione del miglior film di animazione: METAMORPHOSIS - by Michele Fasano (ITA).',
 
-'T﻿orna a Nana Bianca il Film Festival organizzato da TATE e curato da Lorenzo Ciani.', 'Nana Bianca 10 Piazza di Cestello 50124 Firenze', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F535878909%2F191653209741%2F1%2Foriginal.20230614-153249?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C4%2C2178%2C1089&s=7275c9cc87a02bf4ca2745b2bf07301c', 0, 20.0, 2);
-
-SELECT * FROM evento;
-DROP TABLE evento;
-
-CREATE TABLE tag_evento (
-id INT PRIMARY KEY AUTO_INCREMENT,
-nome VARCHAR(45) NOT NULL
-);
-
-INSERT INTO tag_evento VALUES ('1', 'Music');
-INSERT INTO tag_evento VALUES ('2', 'Education');
-INSERT INTO tag_evento VALUES ('3', 'Comedy');
-
-SELECT * FROM tag_evento;
--- DROP TABLE tag_evento;
-
-
-
-
-
-
+'T﻿orna a Nana Bianca il Film Festival organizzato da TATE e curato da Lorenzo Ciani.', 'Nana Bianca 10 Piazza di Cestello 50124 Firenze', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F535878909%2F191653209741%2F1%2Foriginal.20230614-153249?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C4%2C2178%2C1089&s=7275c9cc87a02bf4ca2745b2bf07301c', 0, 20.0, 8);
 
 INSERT INTO evento VALUES('11', 'Concerto Live: Le Stelle del Jazz', '2023-08-15', 'Milano', 'Vieni a goderti una serata magica con il concerto live di "Le Stelle del Jazz". Gli artisti di fama internazionale si esibiranno sul palco e ti regaleranno un esperienza musicale indimenticabile. Non perdere l\'opportunità di ascoltare le note melodiose di questo genere musicale intramontabile.',
 'Un concerto unico che ti lascerà senza fiato!', 'Teatro Alla Scala, Via Filodrammatici, 2, 20121 Milano', 'https://hancockinstitute.org/media/108A4554.jpg', 0, 35.0, 1);
@@ -157,7 +151,6 @@ INSERT INTO evento VALUES('12', 'Corso di Fotografia Digitale', '2023-09-05', 'R
 
 INSERT INTO evento VALUES('13', 'Spettacolo Comico: La Risata è Assicurata', '2023-10-10', 'Napoli', 'Vieni a divertirti con lo spettacolo comico "La Risata è Assicurata". Gli artisti di cabaret più divertenti del momento ti faranno ridere a crepapelle con le loro battute esilaranti e i siparietti comici. Preparati a una serata di puro divertimento e allegria!',
 'Un evento che ti farà scoppiare dalle risate!', 'Teatro Bellini, Via Conte di Ruvo, 14, 80133 Napoli', 'https://cdn.comedy.co.uk/images/library/comedies/900x450/r/russell_howard_stand_up_central_2.jpg', 0, 25.0, 3);
-
 
 INSERT INTO evento VALUES('14', 'Conferenza Nazionale sull Educazione Digitale', '2023-11-20', 'Milano', 'Partecipa alla Conferenza Nazionale sull\'Educazione Digitale e scopri come la tecnologia sta trasformando il settore dell\'istruzione. Esperti di livello internazionale condivideranno le ultime tendenze, best practice e innovazioni nell\'ambito dell\'educazione digitale. Saranno presenti relatori di fama mondiale, workshop interattivi e opportunità di networking.',
 'Un evento unico per esplorare il futuro dell\'istruzione!', 'Centro Congressi MiCo, Piazzale Carlo Magno, 1, 20149 Milano', 'https://images.unsplash.com/photo-1587825140708-dfaf72ae4b04?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 1, 30.0, 2);
@@ -183,17 +176,13 @@ INSERT INTO evento VALUES('19', 'Divergente by Andrea Paone', '2023-10-06', 'Bar
 
 In questo nuovo spettacolo comico Paone racconta come è stato vivere in una famiglia divorziata, cresciuto da una madre femminista e come ha affrontato i suoi disturbi alimentari e ADHD negli anni Novanta. Infine parlerà dei suoi viaggi in giro per il mondo, della paura di volare e di come sia diventato sempre più difficile fare satira politica ai giorni di oggi.', 'Divergente è il sesto stand up comedy show di Andrea Paone, uno show irriverente, guascone come nella natura del comico livornese.', 'Parco due Giugno 80 Via della Costituente 70125 Bari', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F548843929%2F1305314011303%2F1%2Foriginal.20230705-145612?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=1%2C303%2C25700%2C12850&s=598bb5a6826c9aeee2efb57c330db5ee', '0', '10.0', '3');
 
-
 INSERT INTO evento VALUES('20', 'Concerto Live di Rock', '2023-11-25', 'Torino', 'Vieni a goderti un concerto live di rock con band famose provenienti da tutto il mondo. Lasciati trasportare dall\'energia travolgente della musica rock e goditi una serata indimenticabile insieme ad altri appassionati.',
 'Un\'esplosione di note e emozioni!', 'Stadio Olimpico Grande Torino, Corso Sebastopoli, 123, 10134 Torino', 'https://images.unsplash.com/photo-1604177052603-c2b4cff228db?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 0, 35.0, 1);
-
-
 
 INSERT INTO evento VALUES('21', 'Mostra d\'Arte Contemporanea', '2023-12-08', 'Napoli', 'Immergiti nell\'universo dell\'arte contemporanea attraverso una straordinaria mostra che presenta opere di artisti rinomati a livello internazionale. Ammira le diverse forme di espressione artistica e lasciati ispirare dalla creatività e dall\'innovazione che caratterizzano l\'arte moderna.',
 'Un viaggio emozionante nel mondo dell\'arte contemporanea!', 'Museo d\'Arte Contemporanea Donna Regina, Via Settembrini, 79, 80139 Napoli', 'https://images.unsplash.com/photo-1527980965255-1b4c0be2a64e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 0, 20.0, 8);
 
 INSERT INTO evento VALUES('22', '11^ CORRIMONTE "Memorial Vito Prezioso"', '2023-08-05', 'Napoli', 'Gara podistica di km 9,9 Competitiva - Gara podistica di km 9,9 Non Competitiva - Gare categorie giovanili.', '11^ CORRIMONTE Memorial Vito Prezioso Sabato 5 Agosto 2023. Gara podistica di km 9,9 Competitiva.', 'Monte Sant Angelo PIAZZA BENEFICENZA 71037', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F520790749%2F109381706499%2F1%2Foriginal.20230523-151556?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C406%2C1654%2C827&s=b0a132cff704396d13290224a0761b63', '1', '0.0', '6');
-
 
 INSERT INTO evento VALUES('23', 'Conferenza di Tecnologia', '2024-01-15', 'Firenze', 'Partecipa alla conferenza di tecnologia e scopri le ultime novità nel campo dell\'innovazione tecnologica. Esperti di settore condivideranno le tendenze emergenti, i futuri sviluppi e le applicazioni pratiche delle nuove tecnologie. Avrai l\'opportunità di interagire con i relatori e di ampliare la tua conoscenza nel mondo della tecnologia.',
 'Un\'immersione nel futuro della tecnologia!', 'Palazzo dei Congressi, Piazza Adua, 1, 50123 Firenze', 'https://english.news.cn/europe/20220903/e32d5ebc8c7c4179b7668fac78678454/617858f18e644600815a390016c6a45b.jpg', 0, 40.0, 4);
@@ -231,36 +220,29 @@ Scopri come cucinare (e gustare) i biscotti con erbe e fiori insieme alle amiche
 
 Per bambini a partire dai 5 anni.', 'Cuciniamo i biscotti con le erbe e i fiori!', 'La Cascina 3 Via Pier Paolo Pasolini 20151 ', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F544560339%2F216243996677%2F1%2Foriginal.20230628-105845?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C290%2C940%2C470&s=31e8d0ac8cbf36106467d44765be3f79', '1', '0.0', '5');
 
-INSERT INTO evento VALUES('27', 'Un mare di emozioni- atelier con lettura animata', '2023-08-08', 'Catania', 'T﻿i aspettiamo sabato 8 luglio alle ore 10:00 per un laboratorio sensoriale dedicato ai bambini dai 3 ai 5 anni e alle loro famiglie.
+INSERT INTO evento VALUES('27', 'Un mare di emozioni con lettura animata', '2023-08-08', 'Catania', 'T﻿i aspettiamo sabato 8 luglio alle ore 10:00 per un laboratorio sensoriale dedicato ai bambini dai 3 ai 5 anni e alle loro famiglie.
 
-Un atelier alla scoperta della vita nel mare: pesci di tante forme e colori vivono le loro avventure in balia di tante emozioni. Quante saranno? Vieni a scoprirlo attraverso questa esperienza unica e magica. ', 'Un mare di emozioni - atelier con lettura animata.', 'La Cascina 3 Via Pier Paolo Pasolini', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F544616039%2F216243996677%2F1%2Foriginal.jpg?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=83f0f091addbfb28a4d12410bc240b7f', '1', '0.0', '6');
-
+Un atelier alla scoperta della vita nel mare: pesci di tante forme e colori vivono le loro avventure in balia di tante emozioni. Quante saranno? Vieni a scoprirlo attraverso questa esperienza unica e magica. ', 'Un mare di emozioni - atelier con lettura animata.', 'La Cascina 3 Via Pier Paolo Pasolini', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F544616039%2F216243996677%2F1%2Foriginal.jpg?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2160%2C1080&s=83f0f091addbfb28a4d12410bc240b7f', '1', '0.0', '8');
 
 INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
 VALUES
 ('Conferenza strategie di marketing digitale', '2023-11-20', 'Milano', 'Partecipa alla conferenza sulle strategie di marketing digitale e scopri le ultime tendenze nel campo del marketing online. Esperti di marketing condivideranno le strategie vincenti, le best practice e le tattiche per promuovere il tuo business online.', 'Una guida pratica al marketing digitale!', 'Centro Congressi MiCo, Piazzale Carlo Magno, 1, 20149 Milano', 'https://www.wearemarketing.com/uploads/blog-images/d740e2416baaeeddacbb0808d0071568fe38f59b.jpeg', 0, 30.0, 4);
 
-
-
 INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
 VALUES
 ('Festival del management', '2023-12-05', 'Roma', 'Partecipa a un workshop intensivo sullo sviluppo delle competenze manageriali e apprendi le abilità necessarie per guidare con successo una squadra. I relatori condivideranno esperienze pratiche, strumenti e strategie per migliorare le tue capacità di leadership.', 'Migliora le tue competenze manageriali!', 'Città dell\'Altra Economia, Largo Dino Frisullo, 00154 Roma', 'https://www.lum.it/wp-content/uploads/2023/01/Festival-news-690-1-690x440.jpg', 0, 50.0, 4);
 
-
-
 INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
 VALUES
-('Corso di yoga e meditazione', '2023-11-25', 'Torino', 'Partecipa al corso di yoga e meditazione per rilassare la mente e rinvigorire il corpo. Esperti insegnanti ti guideranno attraverso diverse pratiche di yoga e meditazione per promuovere il benessere e la salute.', 'Trova l\'equilibrio tra corpo e mente!', 'Centro Yoga Bliss, Via Giuseppe Luigi Lagrange, 1, 10123 Torino', 'https://www.posturabenessere.com/resources/1200x1200/97d67a87bff00005805857578f786f08.webp.webp', 0, 25.0, 5);
+('Corso di yoga e meditazione', '2023-11-25', 'Torino', 'Partecipa al corso di yoga e meditazione per rilassare la mente e rinvigorire il corpo. Esperti insegnanti ti guideranno attraverso diverse pratiche di yoga e meditazione per promuovere il benessere e la salute.', 'Trova l\'equilibrio tra corpo e mente!', 'Centro Yoga Bliss, Via Giuseppe Luigi Lagrange, 1, 10123 Torino', 'https://www.posturabenessere.com/resources/1200x1200/97d67a87bff00005805857578f786f08.webp.webp', 0, 25.0, 6);
 
 INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
 VALUES
 ('Conferenza sulla nutrizione', '2023-12-08', 'Napoli', 'Partecipa alla conferenza sulla nutrizione e lo stile di vita sano per imparare come fare scelte alimentari consapevoli e adottare abitudini salutari. Esperti nutrizionisti e professionisti del settore condivideranno consigli pratici per mantenere una dieta equilibrata e uno stile di vita attivo.', 'Scopri il potere della nutrizione per una vita sana!', 'Centro Congressi Napoli, Via Partenope, 36, 80121 Napoli', 'https://www.himss.org/sites/hde/files/styles/page_pt1_xl/public/Health-20-Annual-Conference-Enters-Its-13th-Year-in-the-Tech-Revolution-1024x512.jpg?itok=qExDXVYE', 0, 20.0, 5);
 
-
 INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
 VALUES
-('Festival del gusto e dei sapori locali', '2023-11-20', 'Milano', 'Partecipa al festival del gusto e dei sapori locali e scopri le prelibatezze culinarie della regione. Produttori locali, chef rinomati e sommelier ti guideranno in un viaggio gastronomico attraverso i piatti tradizionali e i vini pregiati della zona.', 'Un\'esperienza culinaria indimenticabile!', 'Parco Esposizioni Novegro, Via Novegro, 20090 Segrate (MI)', 'https://d36tnp772eyphs.cloudfront.net/blogs/1/2018/08/People-eating-Fiera-del-Riso.jpg', 0, 30.0, 6);
-
+('Festival del gusto e dei sapori locali', '2023-11-20', 'Milano', 'Partecipa al festival del gusto e dei sapori locali e scopri le prelibatezze culinarie della regione. Produttori locali, chef rinomati e sommelier ti guideranno in un viaggio gastronomico attraverso i piatti tradizionali e i vini pregiati della zona.', 'Un\'esperienza culinaria indimenticabile!', 'Parco Esposizioni Novegro, Via Novegro, 20090 Segrate (MI)', 'https://d36tnp772eyphs.cloudfront.net/blogs/1/2018/08/People-eating-Fiera-del-Riso.jpg', 0, 30.0, 5);
 
 INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
 VALUES
@@ -270,8 +252,8 @@ INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo,
 VALUES
 ('Laboratorio di Fotografia', '2023-12-05', 'Milano', 'Partecipa al laboratorio di fotografia e impara le tecniche fondamentali per scattare foto straordinarie. Esplora l\'arte della fotografia con esperti del settore che condivideranno consigli pratici e trucchi per migliorare le tue abilità fotografiche.', 'Coltiva la tua passione per la fotografia!', 'Studio Fotografico XYZ, Via Fotografi, 10, 20100 Milano', 'https://jsp.co.id/wp-content/uploads/2018/09/hunting-foto.jpg', 0, 30.0, 9);
 
-
-
 INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
 VALUES
 ('Mercatino Natalizio', '2023-12-15', 'Torino', 'Entra nel magico mondo natalizio con il nostro mercatino natalizio. Scopri bancarelle piene di regali, artigianato locale, cibo tradizionale e intrattenimento natalizio. Trascorri una giornata piena di atmosfera festiva e divertimento per tutta la famiglia.', 'Esperienza natalizia indimenticabile!', 'Piazza Castello, 10123 Torino', 'https://www.areepubbliche.it/sites/default/files/uploads/field_image/torino-mercatini-natale-2019-2020.jpg', 1, 0.0, 10);
+
+-- INSERT INTO evento(nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id) VALUES('nome', 'data', 'citta', 'descrizione', 'descrizione_card', 'indirizzo', 'immagine', '1', '0.0', '6');
