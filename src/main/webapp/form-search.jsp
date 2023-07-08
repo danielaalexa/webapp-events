@@ -54,11 +54,11 @@
                             <br>
                             <label for="business">Business</label>
                             <input id="business" type="radio" name="searchTag" value="4"/>
-                            <label for="foodndrink">Food & Drink</label>
-                            <input id="foodndrink" type="radio" name="searchTag" value="5"/>
-                            <br>
                             <label for="sportnhealth">Sport & Health</label>
-                            <input id="sportnhealth" type="radio" name="searchTag" value="6"/>
+                            <input id="sportnhealth" type="radio" name="searchTag" value="5"/>
+                            <br>
+                            <label for="foodndrink">Food & Drink</label>
+                            <input id="foodndrink" type="radio" name="searchTag" value="6"/>
                             <label for="charity">Charity</label>
                             <input id="charity" type="radio" name="searchTag" value="7"/>
                             <label for="art">Art</label>
