@@ -1,0 +1,26 @@
+@charset "UTF-8";
+.search-btn{
+	width:100px;
+	padding:10px;
+	border:none;
+	outline:none;
+	border-radius:15px;
+	  background-color:white;
+	  color:grey;
+	  transition:.5s;
+	  
+}
+.search-btn:hover{
+	width:800px;
+	 border-left:solid 20px orange;
+	} 
+	
+.links-nav{
+	text-decoration:none;
+	color:white;
+	font-weight:bold;
+}
+.links-nav:hover{
+	color: #f38600;
+  transform: scale(1.1);
+}
