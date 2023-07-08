@@ -74,12 +74,18 @@
 					<div class="form-group"></div>
 				</form>
 			</div>
-
+			
+			
+			
+			
+			
+			
+              <div class="col-md-6">
+				<div class="row ">
 			<%
 			for (Evento evento : eventi) {
 			%>
-			<div class="col-md-3">
-				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+			
 					<div class="card" style="width: 18rem">
 						<img class="card-img-top" src="<%=evento.getImmagine()%>" alt="" />
 						<div class="card-body">
@@ -91,56 +97,14 @@
 									class="scopri-piu">Scopri di più</button></a>
 						</div>
 					</div>
-				</div>
-			</div>
+		
 			<%}%>
 		</div>
 	</div>
-	<!-- 
-            <div class="card" style="width: 18rem">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-           <button>Scopri di piu</button>  
-            </div>
-          </div>
-
-
-            <div class="card" style="width: 18rem">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1464047736614-af63643285bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-            <button>Scopri di piu</button>  
-            </div>
-          </div>
-
-
-
-              <div class="card" style="width: 18rem">
-            <img class="card-img-top" src="https://images.unsplash.com/photo-1556125574-d7f27ec36a06?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Card image cap" />
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">
-                Some quick example text to build on the card title and make up
-                the bulk of the card's content.
-              </p>
-             <button>Scopri di piu</button>  
-            </div>
-          </div>
-      </div>
-      </div>
-        </div>
-      </div>
-    </div>
--->
+			</div>
+			</div>
+	
+        
 	<script src="https://kit.fontawesome.com/43c824bcfa.js"
 		crossorigin="anonymous"></script>
 </body>
