@@ -54,8 +54,7 @@
 							class="d-block w-100" alt="..." />
 						<div class="carousel-caption d-none d-md-block">
 							<h5 class="c-title">Benvenuto su Stivaletto Events</h5>
-							<p class="c-description">Some representative placeholder
-								content for the first slide.</p>
+							<p class="c-description">Che tu sia appassionato di musica, arte, sport o cultura, Stivaletto Events offre una vasta gamma di possibilità per rendere le tue serate indimenticabili.</p>
 						</div>
 					</div>
 					<div class="carousel-item">
@@ -64,8 +63,7 @@
 							class="d-block w-100" alt="..." />
 						<div class="carousel-caption d-none d-md-block">
 							<h5 class="c-title">Siamo i migliori in Italia</h5>
-							<p class="c-description">Some representative placeholder
-								content for the second slide.</p>
+							<p class="c-description">Con Stivaletto, scopri gli eventi più straordinari e vivi esperienze uniche in tutta Italia!</p>
 						</div>
 					</div>
 					<div class="carousel-item">
@@ -74,8 +72,7 @@
 							class="d-block w-100" alt="..." />
 						<div class="carousel-caption d-none d-md-block">
 							<h5 class="c-title">I tuoi eventi su Stivaletto</h5>
-							<p class="c-description">Some representative placeholder
-								content for the third slide.</p>
+							<p class="c-description">Scopri una miriade di eventi unici e indimenticabili, personalizzati appositamente per te, su Stivaletto - il luogo ideale per vivere le tue passioni allo stato puro.</p>
 						</div>
 					</div>
 				</div>

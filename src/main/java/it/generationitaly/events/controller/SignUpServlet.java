@@ -36,32 +36,44 @@ public class SignUpServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String sesso = request.getParameter("sesso");
 
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+		
 		String dataNascitaAsString = request.getParameter("dataNascita");
-		System.out.println(dataNascitaAsString);
-		Date dataNascita = null;
-		try {
-			dataNascita = formatter.parse(dataNascitaAsString);
-		} catch (ParseException e) {
-			System.err.println(e.getMessage());
+		System.out.println("data di nascita"+dataNascitaAsString);
+		String metodoPagamentoIdAsString = request.getParameter("metodoPagamentoId");
+		System.out.println("metodo pagamento id"+metodoPagamentoIdAsString);
+       
+
+		if(nome.length()>0 && cognome.length()>0 && username.length()>0 && password.length()>0 && email.length()>0 && sesso.length()>0 && dataNascitaAsString.length()>0 && metodoPagamentoIdAsString!= null ) {
+		
+			SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
+			Date dataNascita = null;
+			try {
+				dataNascita = formatter.parse(dataNascitaAsString);
+			} catch (ParseException e) {
+				System.err.println(e.getMessage());
+			}
+			 int metodoPagamentoId = Integer.parseInt(metodoPagamentoIdAsString);
+		        System.out.println(metodoPagamentoId);
+				MetodoPagamento metodoPagamento = metodoPagamentoRepository.findById(metodoPagamentoId);
+			
+			User user = new User();
+			user.setNome(nome);
+			user.setCognome(cognome);
+			user.setUsername(username);
+			user.setPassword(password);
+			user.setEmail(email);
+			user.setSesso(sesso);
+			user.setDataNascita(dataNascita);
+	        user.setMetodoPagamento(metodoPagamento);
+	        
+	        
+			userRepository.save(user);
+			response.sendRedirect("login.jsp");
+
+		}else {
+			response.sendRedirect("signup.jsp?campiObbligatori");
 		}
-        int metodoPagamentoId = Integer.parseInt(request.getParameter("metodoPagamentoId"));
-        System.out.println(metodoPagamentoId);
-		MetodoPagamento metodoPagamento = metodoPagamentoRepository.findById(metodoPagamentoId);
-
-		User user = new User();
-		user.setNome(nome);
-		user.setCognome(cognome);
-		user.setUsername(username);
-		user.setPassword(password);
-		user.setEmail(email);
-		user.setSesso(sesso);
-		user.setDataNascita(dataNascita);
-        user.setMetodoPagamento(metodoPagamento);
-        
-		userRepository.save(user);
-		response.sendRedirect("login.jsp");
-
+		
 	}
 
 }

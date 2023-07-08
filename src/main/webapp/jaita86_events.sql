@@ -171,7 +171,7 @@ INSERT INTO evento VALUES('16', 'Seminario di Leadership', '2023-12-15', 'Firenz
 INSERT INTO evento VALUES('17', 'Convegno di Educazione Globale', '2024-01-10', 'Bologna', 'Partecipa al Convegno di Educazione Globale e scopri le sfide e le opportunità dell\'istruzione per preparare gli studenti al futuro. Accademici, educatori e professionisti condivideranno le loro visioni sulle competenze chiave, le nuove metodologie didattiche e l\'importanza dell\'educazione interculturale. Saranno presenti sessioni plenarie, panel di discussione e workshop interattivi.',
 'Un\'occasione unica per plasmare il futuro dell\'istruzione!', 'Palazzo dei Congressi, Piazza Costituzione, 40128 Bologna', 'https://images.unsplash.com/photo-1544531585-f14f463149ec?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80', 0, 60.0, 2);
 
-INSERT INTO evento VALUES('18', 'Laugh Your Head Off: Filippo Spreafico - En Stand Up Comedy (Free Entrance)', '2023-07-09', 'Firenze', 'Filippo Spreafico is an Italian comedian, theater and TV performer, and radio host.
+INSERT INTO evento VALUES('18', 'Laugh Your Head Off: Filippo Spreafico', '2023-07-09', 'Firenze', 'Filippo Spreafico is an Italian comedian, theater and TV performer, and radio host.
 
 He works in English and Italian. Filippo has performed stand-up comedy on Italian national television (Rai 2) and Comedy Central IT, and was a regular cast member in award-winning satirical program "Battute?". Filippo has taken his solo shows to the Edinburgh Festival and the Adelaide and Melbourne Comedy Festivals.
 
@@ -179,7 +179,7 @@ He also performed in the United States (Comedy Store in Los Angeles, Punchline i
 
 He trained in improvisation and clowning in Chicago (Second City) and Paris (Ecole Gaulier). Since 2020 Filippo has had a podcast called "Anything Goes," in English, and "Con un fico di voce," in Italian, both of which feature audio sketches, surreal interviews, and forgettable history lessons.', 'Laugh Your Head Off: English Stand Up Comedy by Filippo Spreafico. Filippo is an Italian comedian, theater and TV performer, and radio host.', 'Via della Funga, 27 50136 Firenze', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F550259229%2F269597953202%2F1%2Foriginal.20230707-070534?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=0%2C0%2C2200%2C1100&s=973b5e9e7c2f379d6ba4bbd8ef2d61d6', '1', '0.0', '3');
 
-INSERT INTO evento VALUES('19', 'Divergente by Andrea Paone | Stand Up Comedy Night ', '2023-10-06', 'Bari', 'Divergente è il sesto stand up comedy show di Andrea Paone e il primo che sarà sia in inglese che in italiano.
+INSERT INTO evento VALUES('19', 'Divergente by Andrea Paone', '2023-10-06', 'Bari', 'Divergente è il sesto stand up comedy show di Andrea Paone e il primo che sarà sia in inglese che in italiano.
 
 In questo nuovo spettacolo comico Paone racconta come è stato vivere in una famiglia divorziata, cresciuto da una madre femminista e come ha affrontato i suoi disturbi alimentari e ADHD negli anni Novanta. Infine parlerà dei suoi viaggi in giro per il mondo, della paura di volare e di come sia diventato sempre più difficile fare satira politica ai giorni di oggi.', 'Divergente è il sesto stand up comedy show di Andrea Paone, uno show irriverente, guascone come nella natura del comico livornese.', 'Parco due Giugno 80 Via della Costituente 70125 Bari', 'https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F548843929%2F1305314011303%2F1%2Foriginal.20230705-145612?w=940&auto=format%2Ccompress&q=75&sharp=10&rect=1%2C303%2C25700%2C12850&s=598bb5a6826c9aeee2efb57c330db5ee', '0', '10.0', '3');
 
@@ -240,3 +240,38 @@ INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo,
 VALUES
 ('Conferenza strategie di marketing digitale', '2023-11-20', 'Milano', 'Partecipa alla conferenza sulle strategie di marketing digitale e scopri le ultime tendenze nel campo del marketing online. Esperti di marketing condivideranno le strategie vincenti, le best practice e le tattiche per promuovere il tuo business online.', 'Una guida pratica al marketing digitale!', 'Centro Congressi MiCo, Piazzale Carlo Magno, 1, 20149 Milano', 'https://www.wearemarketing.com/uploads/blog-images/d740e2416baaeeddacbb0808d0071568fe38f59b.jpeg', 0, 30.0, 4);
 
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Festival del management', '2023-12-05', 'Roma', 'Partecipa a un workshop intensivo sullo sviluppo delle competenze manageriali e apprendi le abilità necessarie per guidare con successo una squadra. I relatori condivideranno esperienze pratiche, strumenti e strategie per migliorare le tue capacità di leadership.', 'Migliora le tue competenze manageriali!', 'Città dell\'Altra Economia, Largo Dino Frisullo, 00154 Roma', 'https://www.lum.it/wp-content/uploads/2023/01/Festival-news-690-1-690x440.jpg', 0, 50.0, 4);
+
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Corso di yoga e meditazione', '2023-11-25', 'Torino', 'Partecipa al corso di yoga e meditazione per rilassare la mente e rinvigorire il corpo. Esperti insegnanti ti guideranno attraverso diverse pratiche di yoga e meditazione per promuovere il benessere e la salute.', 'Trova l\'equilibrio tra corpo e mente!', 'Centro Yoga Bliss, Via Giuseppe Luigi Lagrange, 1, 10123 Torino', 'https://www.posturabenessere.com/resources/1200x1200/97d67a87bff00005805857578f786f08.webp.webp', 0, 25.0, 5);
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Conferenza sulla nutrizione', '2023-12-08', 'Napoli', 'Partecipa alla conferenza sulla nutrizione e lo stile di vita sano per imparare come fare scelte alimentari consapevoli e adottare abitudini salutari. Esperti nutrizionisti e professionisti del settore condivideranno consigli pratici per mantenere una dieta equilibrata e uno stile di vita attivo.', 'Scopri il potere della nutrizione per una vita sana!', 'Centro Congressi Napoli, Via Partenope, 36, 80121 Napoli', 'https://www.himss.org/sites/hde/files/styles/page_pt1_xl/public/Health-20-Annual-Conference-Enters-Its-13th-Year-in-the-Tech-Revolution-1024x512.jpg?itok=qExDXVYE', 0, 20.0, 5);
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Festival del gusto e dei sapori locali', '2023-11-20', 'Milano', 'Partecipa al festival del gusto e dei sapori locali e scopri le prelibatezze culinarie della regione. Produttori locali, chef rinomati e sommelier ti guideranno in un viaggio gastronomico attraverso i piatti tradizionali e i vini pregiati della zona.', 'Un\'esperienza culinaria indimenticabile!', 'Parco Esposizioni Novegro, Via Novegro, 20090 Segrate (MI)', 'https://d36tnp772eyphs.cloudfront.net/blogs/1/2018/08/People-eating-Fiera-del-Riso.jpg', 0, 30.0, 6);
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Cena di Gala Benefica per l\'Educazione', '2023-12-10', 'Roma', 'Unisciti a noi per una cena di gala benefica dedicata a sostenere l\'educazione dei bambini. Goditi una serata di alta cucina, intrattenimento dal vivo e ospiti speciali, contribuendo allo stesso tempo a una grande causa.', 'Sostieni l\'educazione dei bambini con la nostra cena di gala benefica!', 'Grand Hotel, Via Veneto, 123, 00187 Roma', 'https://consciousmagazine.co/wp-content/uploads/2013/05/maylist.jpg', 0, 100.0, 7);
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Laboratorio di Fotografia', '2023-12-05', 'Milano', 'Partecipa al laboratorio di fotografia e impara le tecniche fondamentali per scattare foto straordinarie. Esplora l\'arte della fotografia con esperti del settore che condivideranno consigli pratici e trucchi per migliorare le tue abilità fotografiche.', 'Coltiva la tua passione per la fotografia!', 'Studio Fotografico XYZ, Via Fotografi, 10, 20100 Milano', 'https://jsp.co.id/wp-content/uploads/2018/09/hunting-foto.jpg', 0, 30.0, 9);
+
+
+
+INSERT INTO evento (nome, data, citta, descrizione, descrizione_card, indirizzo, immagine, gratuito, prezzo, tag_evento_id)
+VALUES
+('Mercatino Natalizio', '2023-12-15', 'Torino', 'Entra nel magico mondo natalizio con il nostro mercatino natalizio. Scopri bancarelle piene di regali, artigianato locale, cibo tradizionale e intrattenimento natalizio. Trascorri una giornata piena di atmosfera festiva e divertimento per tutta la famiglia.', 'Esperienza natalizia indimenticabile!', 'Piazza Castello, 10123 Torino', 'https://www.areepubbliche.it/sites/default/files/uploads/field_image/torino-mercatini-natale-2019-2020.jpg', 1, 0.0, 10);
