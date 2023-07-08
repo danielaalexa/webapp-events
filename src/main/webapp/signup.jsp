@@ -72,6 +72,13 @@
 											<input type="radio" id="signupPagopa" name="metodoPagamentoId" value="3">
 											<label for="signupSatispay" style="margin-left: 8px">Satispay</label>
 											<input type="radio" id="signupSatispay" name="metodoPagamentoId" value="4">
+										     <%
+									         if (request.getParameter("campiObbligatori") != null) {
+								             %>
+									         <p style="color: red;">Cambi obbligatori!</p>
+									         <%
+									         }
+									         %>
 										<div class="d-flex align-items-center justify-content-center pb-4"
 										     style="margin-top: 15px; margin-right: 40px">
 											<button type="submit">SIGN UP</button>
