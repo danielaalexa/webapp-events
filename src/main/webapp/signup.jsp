@@ -75,7 +75,7 @@
 										     <%
 									         if (request.getParameter("campiObbligatori") != null) {
 								             %>
-									         <p style="color: red;">Cambi obbligatori!</p>
+									         <p style="color: red;">Campi obbligatori!</p>
 									         <%
 									         }
 									         %>
