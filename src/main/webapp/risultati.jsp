@@ -63,7 +63,9 @@
 							<ul>
 								<li
 									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: green;">
+
 									<input type="radio" name="gratuito"  value="true"/>gratuito
+
 								</li>
 								<li
 									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: #f38600;"><input

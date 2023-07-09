@@ -18,7 +18,7 @@
     <div class="container-fluid">
         <div class="row">
         <h1><i class="fa-solid fa-cart-shopping" style="color: #0d6f06;"></i>I Tuoi Eventi</h1>
-            <div class="col-md-8">
+            <div class="col-md-12">
                
                 <% List<Prenotazione> prenotazioni = (List<Prenotazione>) request.getAttribute("prenotazioni");
                    if (prenotazioni == null || prenotazioni.isEmpty()) { %>
@@ -55,12 +55,12 @@
                                </div>
                            </div>
                        <% }%>
-                       <p>Il totale è: <%= totale + " €"%></p>
+                             <p>Il totale è: <%= totale + " €"%>
                 <%}%>  
              
             
              <div class="col-md-4">
-              
+               
                 <% if (prenotazioni == null || prenotazioni.isEmpty()) { %>
                     <a href="servletCards"><button>Torna alla HOME</button></a>
                 <% } else { %>
