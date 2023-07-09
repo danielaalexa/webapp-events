@@ -71,11 +71,36 @@
                              
                           
                             </div>
+                            		<div class="form-group">
+						<label style="color: #f38600; font-weight: bold;"
+							class="form-label" for="risultatiData">Da:</label> <input
+							class="form-control" type="date" id="risultatiData"
+							name="data1"> <label
+							style="color: #f38600; font-weight: bold;" class="form-label"
+							for="risultatiData">A:</label> <input class="form-control"
+							type="date" id="risultatiData" name="data2">
+						<div input type="submit">
+							<ul>
+								<li
+									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: green;">
+									<input type="radio" name="gratuito"  value="true"/>gratuito
+								</li>
+								<li
+									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: #f38600;"><input
+									type="radio" name="gratuito" value="false"/>pagamento</li>
+							</ul>
+						</div>
                              <br>
 
                              <% if(request.getParameter("campiVuoti") != null) { %>
 				             <p style="color: red;">Compila almeno un campo!</p>
-			                 <% } %>                            
+			                 <% } %>
+			                   <% if(request.getParameter("dataIncompleta1") != null) { %>
+				             <p style="color: red;">Inserisci entrambe le date!</p>
+			                 <% } %>
+			                   <% if(request.getParameter("dataIncompleta2") != null) { %>
+				             <p style="color: red;">Inserisci entrambe le date!</p>
+			                 <% } %>                                                
 							<button type="submit">Cerca</button>
 
 							</form>

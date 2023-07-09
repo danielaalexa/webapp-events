@@ -27,15 +27,16 @@
 				<h1 style="color: green; font-weight: bold;">Imposta la tua
 					Ricerca</h1>
 				<br>
-				<form>
+				<form action="servletSearch" method="get">
+				 
 					<div class="form-group">
 						<input type="text" class="form-control"
-							id="exampleFormControlInput1" placeholder="Nome Evento" />
+							id="exampleFormControlInput1" placeholder="Nome Evento"  name="nome"/>
 					</div>
 					<div id="list1" class="dropdown-check-list" tabindex="100">
 						<span style="color: #f38600; font-weight: bold;" class="anchor">Città:</span>
 
-						<ul class="items">
+					       <ul class="items">
 
 							<li><input type="radio" name="citta" value="Bari" />BARI</li>
 							<li><input type="radio" name="citta" value="Bologna" />BOLOGNA</li>
@@ -54,22 +55,22 @@
 						<label style="color: #f38600; font-weight: bold;"
 							class="form-label" for="risultatiData">Da:</label> <input
 							class="form-control" type="date" id="risultatiData"
-							name="dataEvento"> <label
+							name="data1"> <label
 							style="color: #f38600; font-weight: bold;" class="form-label"
 							for="risultatiData">A:</label> <input class="form-control"
-							type="date" id="risultatiData" name="dataEvento">
+							type="date" id="risultatiData" name="data2">
 						<div input type="submit">
 							<ul>
 								<li
 									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: green;">
-									<input type="radio" name="pagamento" />gratuito
+									<input type="radio" name="gratuito"  value="true"/>gratuito
 								</li>
 								<li
 									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: #f38600;"><input
-									type="radio" name="pagamento" />pagamento</li>
+									type="radio" name="gratuito" value="false"/>pagamento</li>
 							</ul>
 						</div>
-						<button type="button" class="cerca-btn">Cerca</button>
+						<button type="submit" class="cerca-btn">Cerca</button>
 					</div>
 					<div class="form-group"></div>
 				</form>
