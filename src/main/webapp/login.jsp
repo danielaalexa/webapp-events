@@ -27,7 +27,7 @@
 							<div class="col-lg-6">
 								<div class="card-body p-md-5 mx-md-4">
 									<div class="text-center">
-										<img src="https://cdn.logo.com/hotlink-ok/logo-social.png" style="width: 185px;" alt="logo">
+										<img src="stivaletto.png" style="width: 185px;" alt="logo">
 										<h4 class="mt-1 mb-5 pb-1">Stivaletto</h4>
 									</div>
 								<form method="post" action="loginServlet">
