@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="risultati.css">
 </head>
 <body>
-	<%@ include file="navbar.jsp"%>
+
 	<%
 	List<Evento> eventi = (List<Evento>) request.getAttribute("eventi");
 	%>
@@ -109,6 +109,7 @@
 	</div>
 			</div>
 			</div>
+			<a class="torna" href="servletCards"><div class="torna-home" ><i class="fa-solid fa-house" style="color: #ffffff;"></i></div></a>
 	
         
 	<script src="https://kit.fontawesome.com/43c824bcfa.js"
