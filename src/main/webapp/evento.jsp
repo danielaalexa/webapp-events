@@ -1,7 +1,7 @@
 
 <%@page import="it.generationitaly.events.entity.Evento"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="UTF-8"%>
 <%@ page import="it.generationitaly.events.entity.*"%>
 <html>
 <head>
@@ -47,7 +47,7 @@
 				%>
 				<p class="event-type">
 					<i class="fa-solid fa-money-bill"></i>
-					<%=evento.getPrezzo()%></p>
+					<%=evento.getPrezzo()+ " â‚¬"%></p>
 				<%
 				}
 				%>
@@ -79,7 +79,7 @@
 						<h5 class="card-title"><%=evento1.getNome()%></h5>
 						<p class="card-text"><%=evento1.getDescrizioneCard()%></p>
 						<a href="evento?id=<%=evento1.getId()%>"><button
-										class="scopri-piu">Scopri di più</button></a>
+										class="scopri-piu">Scopri di piï¿½</button></a>
 					</div>
 				</div>
 				<br>
@@ -90,7 +90,7 @@
 						<h5 class="card-title"><%=evento2.getNome()%></h5>
 						<p class="card-text"><%=evento2.getDescrizioneCard()%></p>
 						<a href="evento?id=<%=evento2.getId()%>"><button
-										class="scopri-piu">Scopri di più</button></a>
+										class="scopri-piu">Scopri di piï¿½</button></a>
 					</div>
 				</div>
 			</div>
