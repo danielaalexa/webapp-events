@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 import it.generationitaly.events.entity.Evento;
 
+
 public interface EventoRepository extends JpaRepository<Evento, Integer> {
 
 	List<Evento> findByTagId(int id);
@@ -33,5 +34,7 @@ public interface EventoRepository extends JpaRepository<Evento, Integer> {
 	List<Evento> findByNomeAndDataBetween(String searchterm, Date date1, Date date2);
 	
 	List<Evento> findByNomeAndTagIdAndCittaAndGratuitoAndDataBetween(String searchterm, int id, String citta, boolean gratuito, Date date1, Date date2);
+	
+	List<Evento> findByCittaAndTagEventoAndDataBetween(String citta, int id, Date date1, Date date2);
 
 }
