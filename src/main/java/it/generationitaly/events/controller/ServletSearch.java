@@ -25,26 +25,6 @@ public class ServletSearch extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("siamo nella servlet");
-
-		String citta = request.getParameter("citta");
-		System.out.println("questa è la citta:" + citta); // stringa vuota
-
-		String nome = request.getParameter("nome");
-		System.out.println("questa è il nome:" + nome); // stringa vuota
-
-		String tag = request.getParameter("searchTag"); // null
-		System.out.println("questo è il tag:" + tag);
-
-		String booleanAsString = request.getParameter("gratuito");
-		System.out.println("questo è il boolean:" + booleanAsString);
-
-		String dataAsString1 = request.getParameter("data1");
-		System.out.println("questa è la data1" + dataAsString1);
-
-		String dataAsString2 = request.getParameter("data2");
-		System.out.println("questa è la data2" + dataAsString2);
-
 		if ((request.getParameter("searchTag") == null) && (request.getParameter("citta").length() == 0)
 				&& (request.getParameter("nome").length() == 0) && (request.getParameter("data1").length() == 0)
 				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") == null)) {
