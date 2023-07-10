@@ -6,9 +6,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
-
-import com.mysql.cj.Session;
-
 import it.generationitaly.events.entity.Evento;
 import it.generationitaly.events.repository.EventoRepository;
 import it.generationitaly.events.repository.impl.EventoRepositoryImpl;
@@ -98,9 +95,10 @@ public class ServletSearch extends HttpServlet {
 			return;
 		}
 
-		if ((request.getParameter("searchTag") == null || request.getParameter("searchTag") != null) && (request.getParameter("citta").length() == 0)
-				&& (request.getParameter("nome").length() > 0) && (request.getParameter("data1").length() == 0)
-				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") == null)) {
+		if ((request.getParameter("searchTag") == null || request.getParameter("searchTag") != null)
+				&& (request.getParameter("citta").length() == 0) && (request.getParameter("nome").length() > 0)
+				&& (request.getParameter("data1").length() == 0) && (request.getParameter("data2").length() == 0)
+				&& (request.getParameter("gratuito") == null)) {
 			getEventoNome(request, response);
 			return;
 		}
@@ -127,6 +125,128 @@ public class ServletSearch extends HttpServlet {
 			return;
 		}
 
+		if ((request.getParameter("searchTag") != null) && (request.getParameter("citta").length() == 0)
+				&& (request.getParameter("nome").length() == 0) && (request.getParameter("data1").length() == 0)
+				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") != null)) {
+			getEventoTagGratuito(request, response);
+			return;
+		}
+
+		if ((request.getParameter("searchTag") != null) && (request.getParameter("citta").length() == 0)
+				&& (request.getParameter("nome").length() == 0) && (request.getParameter("data1").length() > 0)
+				&& (request.getParameter("data2").length() > 0) && (request.getParameter("gratuito") == null)) {
+			getEventoTagData(request, response);
+			return;
+		}
+		
+		if ((request.getParameter("searchTag") == null) && (request.getParameter("citta").length() == 0)
+				&& (request.getParameter("nome").length() > 0) && (request.getParameter("data1").length() > 0)
+				&& (request.getParameter("data2").length() > 0) && (request.getParameter("gratuito") == null)) {
+			getEventoNomeData(request, response);
+			return;
+		}
+		
+		if ((request.getParameter("searchTag") != null) && (request.getParameter("citta").length() > 0)
+				&& (request.getParameter("nome").length() > 0) && (request.getParameter("data1").length() > 0)
+				&& (request.getParameter("data2").length() > 0) && (request.getParameter("gratuito") != null)) {
+			getEventoAll(request, response);
+			return;
+		}
+
+	}
+	
+	private void getEventoAll(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String nome = request.getParameter("nome");
+		int id = Integer.parseInt(request.getParameter("searchTag"));
+		boolean gratuito = Boolean.parseBoolean(request.getParameter("gratuito"));
+		String citta = request.getParameter("citta");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+		String data1AsString = request.getParameter("data1");
+		Date data1 = null;
+		try {
+			data1 = formatter.parse(data1AsString);
+		} catch (ParseException e) {
+			e.getMessage();
+		}
+
+		String data2AsString = request.getParameter("data2");
+		Date data2 = null;
+		try {
+			data2 = formatter.parse(data2AsString);
+		} catch (ParseException e) {
+			e.getMessage();
+		}
+
+		List<Evento> eventi = eR.findByNomeAndTagIdAndCittaAndGratuitoAndDataBetween(nome, id, citta, gratuito, data1, data2);
+
+		request.setAttribute("eventi", eventi);
+		request.getRequestDispatcher("risultati.jsp").forward(request, response);
+	}
+
+	
+	private void getEventoNomeData(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String nome = request.getParameter("nome");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+		String data1AsString = request.getParameter("data1");
+		Date data1 = null;
+		try {
+			data1 = formatter.parse(data1AsString);
+		} catch (ParseException e) {
+			e.getMessage();
+		}
+
+		String data2AsString = request.getParameter("data2");
+		Date data2 = null;
+		try {
+			data2 = formatter.parse(data2AsString);
+		} catch (ParseException e) {
+			e.getMessage();
+		}
+
+		List<Evento> eventi = eR.findByNomeAndDataBetween(nome, data1, data2);
+
+		request.setAttribute("eventi", eventi);
+		request.getRequestDispatcher("risultati.jsp").forward(request, response);
+	}
+
+
+	private void getEventoTagData(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("searchTag"));
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+		String data1AsString = request.getParameter("data1");
+		Date data1 = null;
+		try {
+			data1 = formatter.parse(data1AsString);
+		} catch (ParseException e) {
+			e.getMessage();
+		}
+
+		String data2AsString = request.getParameter("data2");
+		Date data2 = null;
+		try {
+			data2 = formatter.parse(data2AsString);
+		} catch (ParseException e) {
+			e.getMessage();
+		}
+
+		List<Evento> eventi = eR.findByTagIdAndDataBetween(id, data1, data2);
+
+		request.setAttribute("eventi", eventi);
+		request.getRequestDispatcher("risultati.jsp").forward(request, response);
+	}
+
+	private void getEventoTagGratuito(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		int id = Integer.parseInt(request.getParameter("searchTag"));
+		boolean gratuito = Boolean.parseBoolean(request.getParameter("gratuito"));
+
+		List<Evento> eventi = eR.findByTagIdAndGratuito(id, gratuito);
+
+		request.setAttribute("eventi", eventi);
+		request.getRequestDispatcher("risultati.jsp").forward(request, response);
 	}
 
 	private void getEventoCittaNome(HttpServletRequest request, HttpServletResponse response)
