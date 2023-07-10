@@ -15,7 +15,7 @@
 <body>
 	<section class="h-1000 gradient-form" style="background-color: #eee;">
 		<%@ include file="navbar.jsp"%>
-		<div class="container py-5 h-800">
+		<div class="container py-5 h-1000">
 			<div
 				class="row d-flex justify-content-center align-items-center h-100">
 				<div class="col-xl-10">
@@ -24,8 +24,8 @@
 							<div class="col-lg-6">
 								<div class="card-body p-md-5 mx-md-4">
 									<div class="text-center">
-										<img src="stivaletto.png" style="width: 185px;" alt="logo">
-										<h4 class="mt-1 mb-5 pb-1">Stivaletto</h4>
+										<img src="Logo stivaletto colore.png" style="width: 300px;" alt="logo">
+	
 									</div>
 									<form method="get" action="servletSearch">
 										<input class="form-control" list="GFGOptions" id="searchNome"

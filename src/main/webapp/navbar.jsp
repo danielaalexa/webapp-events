@@ -24,8 +24,8 @@ header {
 	<header class="p-3 mb-3 border-bottom">
 		<div class="container">
 			<div
-				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-				<img src="stivaletto.png" style="width: 100px;" alt="logo">
+				class="d-flex  align-items-center justify-content-space-evenly justify-content-lg-start">
+				
 				<a href="/"
 					class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
 					<svg class="bi me-2" width="40" height="32" role="img"
@@ -33,8 +33,11 @@ header {
 					<use xlink:href="#bootstrap"></use></svg>
 				</a>
 
-				<ul
-					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+				<div
+					class="nav">
+				
+					<div class="logo-container"><img class="logo"  src="stivaletto-logo.png"  alt="logo"></div>
+			
 					<li><a href="servletCards" class="nav-link px-2 link-light"><i class="fa-solid fa-house" style="color: #ffffff;"></i> Home</a></li>
 					<li><a href="servletSupportoCarrello" class="nav-link px-2 link-light"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> Carrello</a></li>
 				</ul>
@@ -64,7 +67,7 @@ header {
 							<li><a class="dropdown-item" href="#">Settings</a></li>
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="logout">LOG OUT</a></li>
-						</ul>
+						</div>
 						<a class="links-nav" href="logout" class="nav-link px-2 link-light">LOG OUT</a>
 					</div>
 					<!--

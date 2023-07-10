@@ -29,8 +29,8 @@
 							<div class="col-lg-6">
 								<div class="card-body p-md-5 mx-md-4">
 									<div class="text-center">
-										<img src="stivaletto.png" style="width: 185px;" alt="logo">
-										<h4 class="mt-1 mb-5 pb-1">Stivaletto</h4>
+											<img src="Logo stivaletto colore.png" style="width: 300px;" alt="logo">
+										
 									</div>
 									<form method="post" action="sign-up">
 										<div class="form-outline mb-4">
