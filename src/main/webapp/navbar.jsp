@@ -25,6 +25,7 @@ header {
 		<div class="container">
 			<div
 				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+				<img src="stivaletto.png" style="width: 100px;" alt="logo">
 				<a href="/"
 					class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
 					<svg class="bi me-2" width="40" height="32" role="img"
@@ -34,8 +35,8 @@ header {
 
 				<ul
 					class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-					<li><a href="servletCards" class="nav-link px-2 link-light"><i class="fa-solid fa-house" style="color: #ffffff;"></i>Home</a></li>
-					<li><a href="servletSupportoCarrello" class="nav-link px-2 link-light"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i>Carrello</a></li>
+					<li><a href="servletCards" class="nav-link px-2 link-light"><i class="fa-solid fa-house" style="color: #ffffff;"></i> Home</a></li>
+					<li><a href="servletSupportoCarrello" class="nav-link px-2 link-light"><i class="fa-solid fa-cart-shopping" style="color: #ffffff;"></i> Carrello</a></li>
 				</ul>
 				<div class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
 					<a href="form-search.jsp"><button class="search-btn">Ricerca...</button></a>
@@ -64,7 +65,7 @@ header {
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="logout">LOG OUT</a></li>
 						</ul>
-						<a href="logout" class="nav-link px-2 link-light">LOG OUT</a>
+						<a class="links-nav" href="logout" class="nav-link px-2 link-light">LOG OUT</a>
 					</div>
 					<!--
 					<a href="logout" class="nav-link px-2 link-light">LOG OUT</a>
