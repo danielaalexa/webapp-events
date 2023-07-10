@@ -57,74 +57,76 @@ public class ServletSearch extends HttpServlet {
 		if ((request.getParameter("searchTag") == null || request.getParameter("searchTag") != null)
 				&& (request.getParameter("citta").length() == 0 || request.getParameter("citta").length() > 0)
 				&& (request.getParameter("nome").length() == 0 || request.getParameter("nome").length() > 0)
-				&& (request.getParameter("data1").length() == 0)
-				&& (request.getParameter("data2").length() > 0)
-				&& (request.getParameter("gratuito")!= null || request.getParameter("gratuito")== null )) {
+				&& (request.getParameter("data1").length() == 0) && (request.getParameter("data2").length() > 0)
+				&& (request.getParameter("gratuito") != null || request.getParameter("gratuito") == null)) {
 			response.sendRedirect("form-search.jsp?dataIncompleta1");
 		}
 
 		if ((request.getParameter("searchTag") == null || request.getParameter("searchTag") != null)
 				&& (request.getParameter("citta").length() == 0 || request.getParameter("citta").length() > 0)
 				&& (request.getParameter("nome").length() == 0 || request.getParameter("nome").length() > 0)
-				&& (request.getParameter("data1").length() > 0) 
-				&& (request.getParameter("data2").length() == 0)
-				&& (request.getParameter("gratuito")!= null || request.getParameter("gratuito")== null )) {
+				&& (request.getParameter("data1").length() > 0) && (request.getParameter("data2").length() == 0)
+				&& (request.getParameter("gratuito") != null || request.getParameter("gratuito") == null)) {
 			response.sendRedirect("form-search.jsp?dataIncompleta2");
 		}
 
-		/*
-		 * if ((request.getParameter("searchTag") != null) &&
-		 * (request.getParameter("citta").length() > 0) &&
-		 * (request.getParameter("nome").length() == 0)) { getEventoTagCitta(request,
-		 * response); return; }
-		 * 
-		 * if ((request.getParameter("searchTag") == null) &&
-		 * (request.getParameter("citta").length() > 0) &&
-		 * (request.getParameter("nome").length() > 0)) { getEventoCittaNome(request,
-		 * response); return; }
-		 * 
-		 * if ((request.getParameter("searchTag") != null) &&
-		 * (request.getParameter("citta").length() == 0) &&
-		 * (request.getParameter("nome").length() == 0)) { getEventoTag(request,
-		 * response); return; }
-		 * 
-		 * if ((request.getParameter("searchTag") == null) &&
-		 * (request.getParameter("citta").length() > 0) &&
-		 * (request.getParameter("nome").length() == 0)) { getEventoCitta(request,
-		 * response); return; }
-		 * 
-		 * if ((request.getParameter("searchTag") == null) &&
-		 * (request.getParameter("citta").length() == 0) &&
-		 * (request.getParameter("nome").length() > 0)) { getEventoNome(request,
-		 * response); return; }
-		 * 
-		 * if ((request.getParameter("searchTag") != null) &&
-		 * (request.getParameter("citta").length() == 0) &&
-		 * (request.getParameter("nome").length() > 0)) { getEventoTagNome(request,
-		 * response); return;
-		 * 
-		 * }
-		 * 
-		 * if ((request.getParameter("data1").length() == 0) &&
-		 * (request.getParameter("data2").length() == 0) &&
-		 * (request.getParameter("gratuito") != null)) { getEventoGratuito(request,
-		 * response); return; }
-		 * 
-		 * if ((request.getParameter("data1").length() > 0) &&
-		 * (request.getParameter("data2").length() > 0) &&
-		 * (request.getParameter("gratuito") == null)) { getEventoDateBetween(request,
-		 * response); return; }
-		 * 
-		 * if ((request.getParameter("data1").length() == 0) &&
-		 * (request.getParameter("data2").length() > 0) &&
-		 * (request.getParameter("gratuito") == null)) {
-		 * response.sendRedirect("risultati.jsp?campiVuoti"); return; }
-		 * 
-		 * if ((request.getParameter("data1").length() > 0) &&
-		 * (request.getParameter("data2").length() == 0) &&
-		 * (request.getParameter("gratuito") == null)) {
-		 * response.sendRedirect("risultati.jsp?campiVuoti"); return; }
-		 */
+		if ((request.getParameter("searchTag") != null) && (request.getParameter("citta").length() > 0)
+				&& (request.getParameter("nome").length() == 0) && (request.getParameter("data1").length() == 0)
+				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") == null)) {
+			getEventoTagCitta(request, response);
+			return;
+		}
+
+		if ((request.getParameter("searchTag") == null) && (request.getParameter("citta").length() > 0)
+				&& (request.getParameter("nome").length() > 0) && (request.getParameter("data1").length() == 0)
+				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") == null)) {
+			getEventoCittaNome(request, response);
+			return;
+		}
+
+		if ((request.getParameter("searchTag") != null) && (request.getParameter("citta").length() == 0)
+				&& (request.getParameter("nome").length() == 0) && (request.getParameter("data1").length() == 0)
+				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") == null)) {
+			getEventoTag(request, response);
+			return;
+		}
+
+		if ((request.getParameter("searchTag") == null) && (request.getParameter("citta").length() > 0)
+				&& (request.getParameter("nome").length() == 0) && (request.getParameter("data1").length() == 0)
+				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") == null)) {
+			getEventoCitta(request, response);
+			return;
+		}
+
+		if ((request.getParameter("searchTag") == null || request.getParameter("searchTag") != null) && (request.getParameter("citta").length() == 0)
+				&& (request.getParameter("nome").length() > 0) && (request.getParameter("data1").length() == 0)
+				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") == null)) {
+			getEventoNome(request, response);
+			return;
+		}
+
+		if ((request.getParameter("searchTag") != null) && (request.getParameter("citta").length() == 0)
+				&& (request.getParameter("nome").length() > 0) && (request.getParameter("data1").length() == 0)
+				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") == null)) {
+			getEventoTagNome(request, response);
+			return;
+
+		}
+
+		if ((request.getParameter("searchTag") == null) && (request.getParameter("citta").length() == 0)
+				&& (request.getParameter("nome").length() == 0) && (request.getParameter("data1").length() == 0)
+				&& (request.getParameter("data2").length() == 0) && (request.getParameter("gratuito") != null)) {
+			getEventoGratuito(request, response);
+			return;
+		}
+
+		if ((request.getParameter("searchTag") == null) && (request.getParameter("citta").length() == 0)
+				&& (request.getParameter("nome").length() == 0) && (request.getParameter("data1").length() > 0)
+				&& (request.getParameter("data2").length() > 0) && (request.getParameter("gratuito") == null)) {
+			getEventoDateBetween(request, response);
+			return;
+		}
+
 	}
 
 	private void getEventoCittaNome(HttpServletRequest request, HttpServletResponse response)
@@ -196,8 +198,8 @@ public class ServletSearch extends HttpServlet {
 	private void getEventoDateBetween(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		SimpleDateFormat formatter = new SimpleDateFormat("dd-MM-yyyy", Locale.ENGLISH);
-		String data1AsString = request.getParameter("date1");
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
+		String data1AsString = request.getParameter("data1");
 		Date data1 = null;
 		try {
 			data1 = formatter.parse(data1AsString);
@@ -205,7 +207,7 @@ public class ServletSearch extends HttpServlet {
 			e.getMessage();
 		}
 
-		String data2AsString = request.getParameter("date2");
+		String data2AsString = request.getParameter("data2");
 		Date data2 = null;
 		try {
 			data2 = formatter.parse(data2AsString);
