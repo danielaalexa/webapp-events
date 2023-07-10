@@ -27,12 +27,14 @@
 				<h1 style="color: green; font-weight: bold;">Imposta la tua
 					Ricerca</h1>
 				<br>
-				<form>
+				<form action="servletSearch" method="get">
+				 
 					<div class="form-group">
 						<input type="text" class="form-control"
-							id="exampleFormControlInput1" placeholder="Nome Evento" />
+							id="exampleFormControlInput1" placeholder="Nome Evento"  name="nome"/>
 					</div>
 					<div id="list1" class="dropdown-check-list" tabindex="100">
+
 						<label id="searchCitta">Città:</label>
 									<select class="form-control" list="GFGOptions" id="searchCitta" name="citta">
 									<option></option>
@@ -47,6 +49,10 @@
 									<option value="Roma">ROMA</option>
 									<option value="Torino">TORINO</option>
 								</select>
+
+						<span style="color: #f38600; font-weight: bold;" class="anchor">Città:</span>
+
+					      
 					</div>
 					<div class="form-group">
 						<label style="color: #f38600; font-weight: bold;"
@@ -60,14 +66,16 @@
 							<ul>
 								<li
 									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: green;">
-									<input type="radio" name="gratuito" />gratuito
+
+									<input type="radio" name="gratuito"  value="true"/>gratuito
+
 								</li>
 								<li
 									style="font-size: 1.5rem; list-style: none; font-weight: bold; color: #f38600;"><input
-									type="radio" name="pagamento" />pagamento</li>
+									type="radio" name="gratuito" value="false"/>pagamento</li>
 							</ul>
 						</div>
-						<button type="button" class="cerca-btn">Cerca</button>
+						<button type="submit" class="cerca-btn">Cerca</button>
 					</div>
 					<div class="form-group"></div>
 				</form>
