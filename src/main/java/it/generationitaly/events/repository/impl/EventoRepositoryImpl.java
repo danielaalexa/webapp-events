@@ -119,22 +119,6 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 
 	}
 
-	@Override
-	public List<Evento> findByData(Date date) {
-		EntityManager em = null;
-		List<Evento> eventi = null;
-		try {
-			em = emf.createEntityManager();
-			eventi = em.createQuery("SELECT e FROM Evento e WHERE e.data=:date", Evento.class)
-					.setParameter("date", date).getResultList();
-		} catch (PersistenceException e) {
-			System.err.println(e.getMessage());
-		} finally {
-			if (em != null)
-				em.close();
-		}
-		return eventi;
-	}
 
 	@SuppressWarnings("unchecked")
 	@Override
@@ -246,4 +230,114 @@ public class EventoRepositoryImpl extends JpaRepositoryImpl<Evento, Integer> imp
 		return eventi;
 	}
 
+	@Override
+	public List<Evento> findByTagIdAndGratuito(int id, boolean gratuito) {
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		List<Evento> eventi = new ArrayList<Evento>();
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			eventi = em.createQuery("SELECT e FROM Evento e JOIN fetch e.tagEvento t WHERE e.gratuito = :gratuito AND e.tagEvento.id = :id", Evento.class)
+					.setParameter("gratuito", gratuito)
+					.setParameter("id", id)
+					.getResultList();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null && tx.isActive())
+				tx.rollback();
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return eventi;
+	}
+
+	@Override
+	public List<Evento> findByTagIdAndDataBetween(int id, Date date1, Date date2) {
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		List<Evento> eventi = new ArrayList<Evento>();
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			eventi = em.createQuery("SELECT e FROM Evento e JOIN fetch e.tagEvento t WHERE e.tagEvento.id = :id AND e.data BETWEEN :date1 AND :date2", Evento.class)
+					.setParameter("id", id)
+					.setParameter("date1", date1)
+					.setParameter("date2", date2)
+					.getResultList();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null && tx.isActive())
+				tx.rollback();
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return eventi;
+	}
+
+	@Override
+	public List<Evento> findByNomeAndDataBetween(String searchterm, Date date1, Date date2) {
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		List<Evento> eventi = new ArrayList<Evento>();
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e WHERE e.nome LIKE :searchterm AND e.data BETWEEN :date1 AND :date2", Evento.class);
+			query.setParameter("searchterm", "%" + searchterm + "%");
+            query.setParameter("date1", date1);
+            query.setParameter("date2", date2);
+		    eventi = query.getResultList();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null && tx.isActive())
+				tx.rollback();
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return eventi;
+	}
+
+	@Override
+	public List<Evento> findByNomeAndTagIdAndCittaAndGratuitoAndDataBetween(String searchterm, int id, String citta,
+			boolean gratuito, Date date1, Date date2) {
+		EntityManager em = null;
+		EntityTransaction tx = null;
+		List<Evento> eventi = new ArrayList<Evento>();
+		try {
+			em = emf.createEntityManager();
+			tx = em.getTransaction();
+			tx.begin();
+			TypedQuery<Evento> query = em.createQuery("SELECT e FROM Evento e JOIN fetch e.tagEvento t WHERE e.nome LIKE :searchterm AND e.tagEvento.id = :id AND e.citta = :citta AND e.gratuito = :gratuito AND e.data BETWEEN :date1 AND :date2", Evento.class);
+			query.setParameter("searchterm", "%" + searchterm + "%");
+			query.setParameter("id", id);
+			query.setParameter("citta", citta);
+			query.setParameter("gratuito", gratuito);
+            query.setParameter("date1", date1);
+            query.setParameter("date2", date2);
+		    eventi = query.getResultList();
+			tx.commit();
+		} catch (PersistenceException e) {
+			if (tx != null && tx.isActive())
+				tx.rollback();
+			System.err.println(e.getMessage());
+		} finally {
+			if (em != null) {
+				em.close();
+			}
+		}
+		return eventi;
+	}
 }
