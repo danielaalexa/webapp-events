@@ -34,22 +34,25 @@
 							id="exampleFormControlInput1" placeholder="Nome Evento"  name="nome"/>
 					</div>
 					<div id="list1" class="dropdown-check-list" tabindex="100">
+
+						<label id="searchCitta">Città:</label>
+									<select class="form-control" list="GFGOptions" id="searchCitta" name="citta">
+									<option></option>
+									<option value="Bari">BARI</option>
+									<option value="Bologna">BOLOGNA</option>
+									<option value="Catania">CATANIA</option>
+									<option value="Firenze">FIRENZE</option>
+									<option value="Genova">GENOVA</option>
+									<option value="Milano">MILANO</option>
+									<option value="Napoli">NAPOLI</option>
+									<option value="Palermo">PALERMO</option>
+									<option value="Roma">ROMA</option>
+									<option value="Torino">TORINO</option>
+								</select>
+
 						<span style="color: #f38600; font-weight: bold;" class="anchor">Città:</span>
 
-					       <ul class="items">
-
-							<li><input type="radio" name="citta" value="Bari" />BARI</li>
-							<li><input type="radio" name="citta" value="Bologna" />BOLOGNA</li>
-							<li><input type="radio" name="citta" value="Catania" />CATANIA</li>
-							<li><input type="radio" name="citta" value="Firenze" />FIRENZE</li>
-							<li><input type="radio" name="citta" value="Genova" />GENOVA</li>
-							<li><input type="radio" name="citta" value="Milano" />MILANO</li>
-							<li><input type="radio" name="citta" value="Napoli" />NAPOLI</li>
-							<li><input type="radio" name="citta" value="Palermo" />PALERMO</li>
-							<li><input type="radio" name="citta" value="Roma" />ROMA</li>
-							<li><input type="radio" name="citta" value="Torino" />TORINO</li>
-
-						</ul>
+					      
 					</div>
 					<div class="form-group">
 						<label style="color: #f38600; font-weight: bold;"
