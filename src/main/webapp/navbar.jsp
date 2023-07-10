@@ -25,7 +25,7 @@ header {
 		<div class="container">
 			<div
 				class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-				
+				<img src="stivaletto.png" style="width: 100px;" alt="logo">
 				<a href="/"
 					class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
 					<svg class="bi me-2" width="40" height="32" role="img"
@@ -65,7 +65,7 @@ header {
 							<li><hr class="dropdown-divider"></li>
 							<li><a class="dropdown-item" href="logout">LOG OUT</a></li>
 						</ul>
-						<a href="logout" class="nav-link px-2 link-light">LOG OUT</a>
+						<a class="links-nav" href="logout" class="nav-link px-2 link-light">LOG OUT</a>
 					</div>
 					<!--
 					<a href="logout" class="nav-link px-2 link-light">LOG OUT</a>
